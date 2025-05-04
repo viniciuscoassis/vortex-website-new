@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Frame, Menu, X } from "lucide-react"
@@ -42,7 +43,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
-            <Frame className="w-6 h-6 text-emerald-400" />
+            <Image 
+              src="/logo.png" 
+              alt="Vortex Foundation Logo" 
+              width={32} 
+              height={32} 
+              className="w-8 h-8"
+            />
             <span className="text-white">Vortex Foundation</span>
           </Link>
 
