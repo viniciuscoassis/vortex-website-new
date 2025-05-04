@@ -1,0 +1,31 @@
+{
+  "name": "Amarallure",
+  "description": "There are black holes that devour stars, and then there is Amarallure, which tempts them. This one's different: elegant, indulgent, almost seductive. It feels like it doesn't consume out of need, but out of desire.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/70.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Hyper-Stellar"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Sublime"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Velvet Ellipse"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Waltzing Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Entrapment"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Infrared Drift"
+    }
+  ]
+} 

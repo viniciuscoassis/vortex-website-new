@@ -1,0 +1,31 @@
+{
+  "name": "Howl",
+  "description": "It spins with the fury of a hundred suns unwept. Howl is the echo of a war that ended before time began: a black hole born not of death, but rebellion.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/69.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Hyper-Stellar"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Rage"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Helixstorm"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Violent"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Dual-Star Detonation"
+    }
+  ]
+} 

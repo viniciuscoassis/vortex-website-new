@@ -1,0 +1,31 @@
+{
+  "name": "Solari",
+  "description": "Solari was first observed transmitting prime numbers into deep space. Then silence. It's unclear whether it was built, born, or merely discovered. But its orbit behaves like a script: one line rewritten. Forever.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/71.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Architectonic-Class"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Timeless"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Algorithmic Ellipse"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Binary Loop"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Logicbound"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Dark Syntax"
+    }
+  ]
+} 

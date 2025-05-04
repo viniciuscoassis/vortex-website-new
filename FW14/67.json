@@ -1,0 +1,31 @@
+{
+  "name": "Cluster",
+  "description": "A celestial pantheon collapsed into itself and became one many-eyed god. A sovereign among voids, its silence is composed of many voices. To approach it is to be watched by the absence of sight.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/67.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Compound"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Multinodal"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Hegemony"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Hierarchical"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Gravitational Choir"
+    }
+  ]
+} 

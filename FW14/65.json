@@ -1,0 +1,31 @@
+{
+  "name": "Verdant",
+  "description": "In the emerald-deep sectors where no starmap dares extend, Virid Obsidian pulses at the center of a forgotten procession of moons. Its glow is not reflection, but memory: the last breath of dying light trapped in an endless spiral.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/65.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Pre-Cosmic"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Serpent-like"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Elegiac"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Emerald Radiation"
+    }
+  ]
+} 
