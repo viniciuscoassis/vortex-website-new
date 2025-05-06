@@ -1,0 +1,38 @@
+{
+  "id": 19,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Pathway ",
+  "description": "The Pathway is adorned with celestial trails, guiding cosmic travelers through the vast cosmic expanse.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Guiding"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Pathweaving"
+    }
+  ],
+  "image": "ipfs://QmQnCnmH8HzzaN2yy4GyZzsCJyyhDUb3jtCHFAjVEqzurG/ID18.JPG",
+  "animation_url": ""
+}

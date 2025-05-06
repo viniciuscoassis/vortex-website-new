@@ -1,0 +1,38 @@
+{
+  "id": 12,
+  "owner": "0xD88CFF1D9F7e0E511Ca50f6f169C03354b384135",
+  "name": "Oculus",
+  "description": " The gravitational pull of the Oculus is not just a force of attraction; it is a metaphysical gaze that draws all cosmic matter into the scrutiny of its ever-watchful eyes.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Watchful"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Cellestial Suveillance "
+    }
+  ],
+  "image": "ipfs://QmVbzC8sJs84KQyQKERGLevSasxLfcaphTUTMWSuHbPeKt/2.png",
+  "animation_url": ""
+}

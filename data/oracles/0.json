@@ -1,0 +1,38 @@
+{
+  "id": 0,
+  "owner": "0x35beed229ed0cDd0430191eA48C9b9e972A2B4e2",
+  "name": " The Ancient One",
+  "description": "A celestial sentinel that predates the birth of galaxies, a cosmic sage whispering the ancient hymns of the universe.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Ancient"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Strong"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Star collapse"
+    }
+  ],
+  "image": "ipfs://QmYiFeBwDJen8aWF4by6pRB6tGHayQ3fP7fkjsr6UB4eEb/0.png",
+  "animation_url": ""
+}

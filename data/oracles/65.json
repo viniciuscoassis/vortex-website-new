@@ -1,0 +1,35 @@
+{
+  "id": 65,
+  "owner": "0x60604A93e0dA21ff373043fcD37D6a98357eF858",
+  "name": "Golden Weave",
+  "description": "The Golden Weave is a black hole of delicate brilliance, its form traced by impossibly thin golden filaments, interwoven like the threads of a celestial tapestry. fragile in appearance yet absolute in force, it ensnares light and matter in an intricate dance before unraveling them into nothingness.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Ephemeral"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Slender"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Intricate"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Deceptive"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Threading"
+    }
+  ],
+  "image": "ipfs://QmZqJHwmotQyUrd6fwvBHTgdd9qhyZdFsiRe2J7iJ8J34C/64.PNG"
+}

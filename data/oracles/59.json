@@ -1,0 +1,35 @@
+{
+  "id": 59,
+  "owner": "0xd93BAb51CD83881cE1228650B9798EE8FC3E746c",
+  "name": "Conduit",
+  "description": "The Conduit is a black hole whose energy is harnessed and manipulated by a mysterious creature lurking in the depths of space. It is symbiotic, existing in a state of mutual dependence with the enigmatic being that controls its power.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Symbiotic"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Vast"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Coiled"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Subjugating"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bio-Mechanical Fusion"
+    }
+  ],
+  "image": "ipfs://QmUfJnELVWsj6mavaqy6nnKW9ArFKhgEYLoeBYRQwfQNYT/58.png"
+}

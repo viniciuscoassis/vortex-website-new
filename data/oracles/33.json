@@ -1,0 +1,35 @@
+{
+  "id": 33,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "The Fall",
+  "description": "The Fall represents the eternal descent into oblivion, plunging voyagers into the depths of despair.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Eternal Descent"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Unyielding"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Cosmic Descent"
+    }
+  ],
+  "image": "ipfs://QmV8Z5cF4ELPjL5ohaz93t4qLczVJ9h5r93MoM8DGmaeu2/32.png"
+}

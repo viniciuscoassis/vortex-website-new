@@ -37,9 +37,7 @@ export function OraclesGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {oracles.map((oracle) => {
-        const imageUrl = oracle.metadata.image
-          ? oracle.metadata.image.replace('ipfs://', 'https://ipfs.io/ipfs/')
-          : "/placeholder.png"
+        const imageUrl = oracle.metadata.image.replace('ipfs://', 'https://ipfs.io/ipfs/')
 
         return (
           <Card

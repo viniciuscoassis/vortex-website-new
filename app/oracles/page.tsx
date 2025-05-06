@@ -1,14 +1,11 @@
 "use client"
 
-import { useEffect } from "react"
 import { GalaxyBackground } from "@/components/galaxy-background"
 import { OraclesGrid } from "@/components/oracles/oracles-grid"
 import { Badge } from "@/components/ui/badge"
-import { useOracleStore } from "@/lib/store/oracles"
 import { useOracles } from "@/hooks/use-oracles"
 
 export default function Oracles() {
-  const { oracles } = useOracleStore()
   const { totalSupply } = useOracles()
 
   return (

@@ -1,0 +1,35 @@
+{
+  "id": 53,
+  "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+  "name": "Peak",
+  "description": "The Peak rises majestically in the cosmic landscape, resembling a mountain with a perpetual flame burning atop its tip.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Majestic"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Monumental"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Serene"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Reverent"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Eruption"
+    }
+  ],
+  "image": "ipfs://QmSqrbqCanWDinwgFAEzkSzwFjRu3Q3iR66LAVL3tXE6QZ/52.png"
+}

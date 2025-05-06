@@ -1,0 +1,33 @@
+{
+  "id": 69,
+  "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+  "name": "Trivortex",
+  "description": "Suspended at the intersection of three galactic currents, Trivortex Axiom balances entropy across planes. Each spiral is a law, each rotation a sentence. Scholars say it doesn't exist in space, but defines it.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/68.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Triad-Vector Core"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Primordial"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Vast"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Tri-Spiral Sync"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Asymmetry"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Tri-Fold Collapse"
+    }
+  ]
+}

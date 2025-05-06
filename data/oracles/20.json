@@ -1,0 +1,38 @@
+{
+  "id": 20,
+  "owner": "0x9e138C3C1249f1627168D02359A4BA82e5f2EBd4",
+  "name": "Guiding Star",
+  "description": "The enigmatic Guiding Star, a black hole that serves as a celestial guide for those who venture towards it. Emitting a gentle and guiding light, it stands as a Celestial Beacon, cutting through the darkness to lead all those who wander.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Gentle"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Serene"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Energy Outburst"
+    }
+  ],
+  "image": "ipfs://QmXVSRPNgU77uvL96oDtgbkcGA1agvDZPH8FHiSHS3qnBa/ID19.JPG",
+  "animation_url": ""
+}

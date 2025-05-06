@@ -1,0 +1,2875 @@
+{
+  "oracles": [
+    {
+      "id": 0,
+      "owner": "0x35beed229ed0cDd0430191eA48C9b9e972A2B4e2",
+      "uri": "ipfs://QmRPpS8N9XbE1xKyUm7s2zZxBy8TwpHSiVMXHU7WADdXWN/0",
+      "metadata": {
+        "name": " The Ancient One",
+        "description": "A celestial sentinel that predates the birth of galaxies, a cosmic sage whispering the ancient hymns of the universe.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Ancient"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Strong"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Star collapse"
+          }
+        ],
+        "image": "ipfs://QmYiFeBwDJen8aWF4by6pRB6tGHayQ3fP7fkjsr6UB4eEb/0.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 1,
+      "owner": "0xF468595bDBdFDC1c3dC60f22815F340a2526E6E9",
+      "uri": "ipfs://QmYeS6ieNYggLa5daEqhUzALd6w87HyUn47Kj18eoLpMzP/0",
+      "metadata": {
+        "name": "Slumbering Spiral",
+        "description": "A celestial vagabond spining a cosmic lullaby, inviting all who gaze upon it to partake in the tranquil dance of the universe.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Ancient"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Strong"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Star collapse"
+          }
+        ],
+        "image": "ipfs://QmWDVLNrznxJ6MU2Zi6N9KQm7DKiM3UTLMGv2okjY8oFgs/1.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 2,
+      "owner": "0xeAB8E50f305C3B97aa5EB818E09A59124C357B91",
+      "uri": "ipfs://Qmaxh7HfWQiCsNEaYS45qDQuLcyh87dFuS4emBPeGKnYyH/0",
+      "metadata": {
+        "name": "QuasarQuicksilver",
+        "description": "The quicksilver marvel that defies the laws of cosmic stillness, carving paths trough the vastness of space.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Time Bending"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Extreme"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Galactic Sprint"
+          }
+        ],
+        "image": "ipfs://QmcFpfHzR6PmDxHcy1WReYZ5qdvFv4FrLd4DetnPSmq8xF/2.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 3,
+      "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+      "uri": "ipfs://QmTQQSmQRP7Mup4P9Nd8cJkX1z6kH88ZH2CWH7H9Baf4ug/0",
+      "metadata": {
+        "name": "Eclipsing Vortex",
+        "description": "A celestial dreamer in the cosmic symphony, gently weaving tales in the tapestry of the night sky",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Ancient"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Extreme"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Galactic Ballet"
+          }
+        ],
+        "image": "ipfs://QmVJzHMQ5Zt9iD8asufAva1oHfMu4WFYWnoYhLdPPG49By/3.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 4,
+      "owner": "0xf2e4a05cBae83fb3173BECEe7a31686e8A6ae3Ce",
+      "uri": "ipfs://QmNnGC1qfTVFSateZnDxbPqkBVtsqRXBhPH8TgQ7VCq9tD/0",
+      "metadata": {
+        "name": "Dreamweaver",
+        "description": "A celestial mistery where cosmic threads interwine and the ethereal dance of reality and dreams converges in the enigmatic grasp of the Dreamweaver Abyss",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Timeless Weaver"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Nebular Elegy"
+          }
+        ],
+        "image": "ipfs://QmPRACQxzMQuqa5DkE1b8jQBtN71fNEPfKgPKPQrqtEHXZ/4.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 5,
+      "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+      "uri": "ipfs://QmXGLML5o3YDfMmYHYyAZBVmURwabuxqyzdyEro1TsmXQB/0",
+      "metadata": {
+        "name": "Uzumaki",
+        "description": "Emerging from the convergence of dark energies and otherworldly forces, as if summoned from the nightmares woven by the fabric of the universe. Spiralling away in a dreadful sorrow.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Dreadful"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Dark Energy Convergence"
+          }
+        ],
+        "image": "ipfs://QmQfqpqeqBAFP1KBcL1ytyPKd7TM1k4Jwbx9cpnTPkb3oa/5.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 6,
+      "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+      "uri": "ipfs://QmVsfuD4EwpmxHGmrnqvgqo96xzpR3tVpt2BCoNsbQWQA4/0",
+      "metadata": {
+        "name": "Werther's Lament",
+        "description": "A cosmic entity with a heavy heart. Its mournful spin reflects the universal theme of unrequited love, akin to Young Werther's sorrows. Celestial wanderers are drawn by its sorrowful pull, entering a nebular tragedy that mirrors the melancholic tale across the cosmos.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Weeping"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Melancholic "
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Stellar Tragedy"
+          }
+        ],
+        "image": "ipfs://QmaWVVFvQghGGJeNqZ81QAgyyJsfhQreDT7M7UKaHWXDa7/6.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 7,
+      "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+      "uri": "ipfs://QmRPVY3ahci1LFTwy3YfSGBkWXrj7YTCXoEsPXuqfDAnqD/0",
+      "metadata": {
+        "name": "The Jackpot",
+        "description": "Gazing into this abyss grants you infinite luck – only if it gazes back.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Formation Process",
+            "value": "Pure luck"
+          }
+        ],
+        "image": "ipfs://QmYaEKXzgBwcjGepQtRBJ7KfjtdgaEcheFZhqhh11MPLtU/7.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 8,
+      "owner": "0x35beed229ed0cDd0430191eA48C9b9e972A2B4e2",
+      "uri": "ipfs://QmWGeXqr8vsbnxU43oXh3efLwbwSSadiwev83QHqk4M1ya/0",
+      "metadata": {
+        "name": "The Crossroads",
+        "description": "At the convergence of celestial pathways, there exists a supermassive black hole of unparalled desolation. Those who chance upon The Crossroads are drawn by an irresistible force — a relentess abyss that beckons them into the cosmic crucible.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Stillness"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Strong"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Star collapse"
+          }
+        ],
+        "image": "ipfs://QmUckeHzkzMcwMz68QLCtaZusw2G2R28fts3LYNmiuxsmx/8.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 9,
+      "owner": "0xCe5213D07FD17a75Ab96409f76E807e01FAAc16f",
+      "uri": "ipfs://QmYwuPk4e6RvheNucbK69TEaqHPhQL1Ddxnk29j54s1ppy/0",
+      "metadata": {
+        "name": "Abyssal Vacuum ",
+        "description": "Emerging from the vast reaches of nothingness where not even light can escape, a vast vacuum at the heart of the cosmos.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Extreme"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Cosmic Vacancy"
+          }
+        ],
+        "image": "ipfs://QmRssvWzyXbbwVW2DJ8UWbzqXSU5MmMwuE9wrHq35uPBXA/9.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 10,
+      "owner": "0xaa882903D7E8D07Bf44242A11E7368d1B8dE9F92",
+      "uri": "ipfs://QmQeg6HSKEvMeSuqfdYYtkrM5Ye73usrY21cdqj1EEw4gR/0",
+      "metadata": {
+        "name": "Umbral",
+        "description": "The Umbral casts an eternal nightfall across space, where not even starlight can escape its grasp. The surroundings are held in a cold and longing stillness.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Stillness"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Obscure"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Dark Energy Convergence"
+          }
+        ],
+        "image": "ipfs://QmcY7bRFdQrQHVLS9WczN52RF9b2ibCfuJK1PMdGfxvQQA/0.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 11,
+      "owner": "0x35beed229ed0cDd0430191eA48C9b9e972A2B4e2",
+      "uri": "ipfs://QmNxSuYbeAiPDWXEuzG6o2SpfAsr144v98xRkQhLrnLtjd/0",
+      "metadata": {
+        "name": "Aquarelle",
+        "description": "This cosmic masterpiece is a testament to cosmic artistry—a breathtaking watercolor display that invites observers to marvel at the beauty etched into the canvas of the Universe.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Subtle"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Cellestial Aquerelle"
+          }
+        ],
+        "image": "ipfs://QmZco1QxhSRvvURQBzzcQxr8DgtZAj9qNsPuySj8S5aUwh/1.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 12,
+      "owner": "0xD88CFF1D9F7e0E511Ca50f6f169C03354b384135",
+      "uri": "ipfs://QmUaPr9bXP1HtPMg4dhjR3gVf9mAHdWWC9WYxwoDBR1qDR/0",
+      "metadata": {
+        "name": "Oculus",
+        "description": " The gravitational pull of the Oculus is not just a force of attraction; it is a metaphysical gaze that draws all cosmic matter into the scrutiny of its ever-watchful eyes.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Watchful"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Cellestial Suveillance "
+          }
+        ],
+        "image": "ipfs://QmVbzC8sJs84KQyQKERGLevSasxLfcaphTUTMWSuHbPeKt/2.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 13,
+      "owner": "0xaa882903D7E8D07Bf44242A11E7368d1B8dE9F92",
+      "uri": "ipfs://QmUv3oucYT74YaRLjg8RJCETVnmxkmkkbK4ajHZZ6upYcb/0",
+      "metadata": {
+        "name": "Furor",
+        "description": "Furor emanates a fierce and angry glow, a display of intense and vibrant colors that mirror its cosmic wrath.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Aggresive Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Furious"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Energy Outburst"
+          }
+        ],
+        "image": "ipfs://QmYuJmLBdBgMetKT5BGnkA4sjmzTkcZLfA8E69z4YmtjKd/3.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 14,
+      "owner": "0x04eEaadf602411105414727596E956F85216C0C9",
+      "uri": "ipfs://QmfMmAsZF9gfgGuGSoa3GfbU7hpErv6t3S8724bDiihTaW/0",
+      "metadata": {
+        "name": "Morpho",
+        "description": "Its playful shapeshifting nature create a mesmerizing display of ever-changing shapes and colors, a cosmic kaleidoscope that defies predictabillity.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Shapeshifting"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Illusory"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Creativity"
+          }
+        ],
+        "image": "ipfs://QmRLbeVku34bN6mURWxia8nHAF3p56LosDAEeYoSNTEGrA/4.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 15,
+      "owner": "0xbCCC3487497D3224c71Eac036f5f458842C96c92",
+      "uri": "ipfs://QmQqvED68E9zVnGk5vbxUW8vKETLcmAeYQWzA1Pi6x1YdX/0",
+      "metadata": {
+        "name": "[GAP]",
+        "description": "",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "image": "/placeholder.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 16,
+      "owner": "0xf2e4a05cBae83fb3173BECEe7a31686e8A6ae3Ce",
+      "uri": "ipfs://QmYhnzvFCb5LYEEBu27rycucJAtmCzGRTb4AVNmnjFRiUK/0",
+      "metadata": {
+        "name": "Warden",
+        "description": "A mysterious and ancient being, the Warden within the blackhole watches over the cosmic expanse with an unwavering and protective gaze. The cosmic whispers within the Oracle echo the wisdom and guidance of the enigmatic Warden, offering cryptic insights to those who approach with reverence.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Watchful"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Cloacking Rite"
+          }
+        ],
+        "image": "ipfs://QmY7Y46ZnG7aJpekjNUVkgWbnvCV61XyZ7CZvnHARtPKYJ/ID15.JPG",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 17,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmQML1NcfCQMu36HZcNdkotXevjxcDj89ebwQioUnViahx/0",
+      "metadata": {
+        "name": "Vertebrae",
+        "description": "Once an incomprehensibly colossal creature of incomprehensible proportions, the ancient colossus defied the limits of the human mind. Its remains, now the vessel of its former greatness, rest in an eternal spiral.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Dreadful"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Obscure"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Necrosis"
+          }
+        ],
+        "image": "ipfs://QmfRxe2DGXtCNwbdaT1frvFNHiimKLYhHU4SWPazWV6Lsy/ID16.JPG",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 18,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmfMPtS9kYU2fRDuiUaeQrR7Fj9QYMfKmdG1U7yiFWJQkF/0",
+      "metadata": {
+        "name": "Childhood Void",
+        "description": "It is said a child, in the age of discovery, once wandered upon this black hole. The blackhole retained the curiosity of a cosmic child exploring the vastness of space. It now gazes infinitely at the universe with childlike wonder.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Playful Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Subtle"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Discovery Stroll"
+          }
+        ],
+        "image": "ipfs://QmNgxUSUy4oPA1mCF4NJpBeyPuHoxY3iN513Xw6F3N3q2c/ID17.JPG",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 19,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmXBh9rK7JSS9ZoorHUKJvApYcwzDrVFDhpgpRoDnTwcvz/0",
+      "metadata": {
+        "name": "Pathway ",
+        "description": "The Pathway is adorned with celestial trails, guiding cosmic travelers through the vast cosmic expanse.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Guiding"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Pathweaving"
+          }
+        ],
+        "image": "ipfs://QmQnCnmH8HzzaN2yy4GyZzsCJyyhDUb3jtCHFAjVEqzurG/ID18.JPG",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 20,
+      "owner": "0x9e138C3C1249f1627168D02359A4BA82e5f2EBd4",
+      "uri": "ipfs://QmY2E8t1kSW1hRFxXsD8WZhviHfYt7JAPjMwEKejRM2aX5/0",
+      "metadata": {
+        "name": "Guiding Star",
+        "description": "The enigmatic Guiding Star, a black hole that serves as a celestial guide for those who venture towards it. Emitting a gentle and guiding light, it stands as a Celestial Beacon, cutting through the darkness to lead all those who wander.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Gentle"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Serene"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Energy Outburst"
+          }
+        ],
+        "image": "ipfs://QmXVSRPNgU77uvL96oDtgbkcGA1agvDZPH8FHiSHS3qnBa/ID19.JPG",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 21,
+      "owner": "0x589041adb44855FfB953057cc9BBAc2fF1f2c40e",
+      "uri": "ipfs://QmSFcPTGJT6XbJQzASHN2NrYCWo3YduFBuVH8i8GsojSxz/0",
+      "metadata": {
+        "name": "Fateful Embrace",
+        "description": "This Oracle is a gateway to the fate of those bold enough to seek it, guiding them through the ebb and flow of their destinies. ",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Acceptance Embrace"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Subtle"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Destiny"
+          }
+        ],
+        "image": "ipfs://QmdF9nTMaQ916YzY1PELApCaapDccfgS8bAXJombvzsLca/20.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 22,
+      "owner": "0x62c6E060EA69b7C6d145B73bC834ede9a1B7Eed8",
+      "uri": "ipfs://Qmcw4hNVpkj5Ur7pgu2ayyfwquBNE1nhDUzyzDqhhfzjBH/0",
+      "metadata": {
+        "name": "Avian Vortex",
+        "description": "A black hole adorned with the ethereal presence of cosmic birds in perpetual flight. ",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Feather-Mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Serene"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Plume Convergence"
+          }
+        ],
+        "image": "ipfs://QmYwxVZ9Keam7DrrwLsgJai151CnbsLoPspfvjKzj7B9ES/21.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 23,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmZY5CLbSk4rZ2mzbu2dXG4EaDKENpzWjWS4nzjryYfMnj/0",
+      "metadata": {
+        "name": "Patchwork",
+        "description": "A myriad of cosmic fragments, each a remnant of distant galaxies, ancient stars, and celestial phenomena, stitched together to form a beatiful quilted pattern. The Patchwork spans the tapestry of space and time, seamlessly blending the remnants of diverse celestial events into an intricate composition.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Time-Woven"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Stitching"
+          }
+        ],
+        "image": "ipfs://QmVcHJuBRgUp2zeDjw7wzbfKT9NrsRMjbrVgrin1YjEYAc/22.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 24,
+      "owner": "0xaa882903D7E8D07Bf44242A11E7368d1B8dE9F92",
+      "uri": "ipfs://QmWSkkfCHVjkDv7B5cSNs6utwsDFx24Pd48qZh42FxMVwk/0",
+      "metadata": {
+        "name": "Mist Veil",
+        "description": "A black hole with a mass that resembles ethereal clouds that drifts and dances within the cosmic winds.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Celestial Nebula"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Nebular Whispers"
+          }
+        ],
+        "image": "ipfs://QmXsmMrFk5hkX6YYUtf1ee1EfQ5PVCHnhqqi3KakimGGRx/23.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 25,
+      "owner": "0xbCCC3487497D3224c71Eac036f5f458842C96c92",
+      "uri": "ipfs://QmZFGQBurALbTCE2MkNGYaow1bLfsNffo4JqmLYrVuKUvm/0",
+      "metadata": {
+        "name": "Avalanche",
+        "description": "In the heart of a distant galaxy stands a red pyramid... wait, is that a chikn hanging out at the edge of the universe?",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Formation Process",
+            "value": "bok"
+          }
+        ],
+        "image": "ipfs://QmeHvf7HwN9NUXpPoRv8G6btYhZ2U2uNknetQsiK4k8ScZ/24.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 26,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmTh4LezJdy6FhwDfww5h3ATLbGoK15itfmHZmaWwHrm4T/0",
+      "metadata": {
+        "name": "Gateway",
+        "description": "This black hole is a gateway between realms. A celestial threshold where the fabric of space an time bends to facilitate passage between worlds.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fast Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Transcendental"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Threshold"
+          }
+        ],
+        "image": "ipfs://Qmc2rAUCvNESia1wEtNi7XJWciQaNEK5SEGiK6buV7Z9Hn/25.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 27,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://Qmd2xxH1xUWDAsQKzMk1pvVv3NCatesKLgxf1Y1vZNEh6R/0",
+      "metadata": {
+        "name": "Ripple",
+        "description": "The Ripple possesses a mass that undulates with vibrant waves of color, creating a kaleidoscopic spectacle that dances across the cosmic canvas.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Wavelike"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Surf"
+          }
+        ],
+        "image": "ipfs://QmWAebEf71inmBJaEQ64yL3Kj98fNbiNX4RD25HHCYYDeJ/26.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 28,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmR1NF1AsuK2KE3ncPGcqP4oH1SoyXwA48v6x6EwL1eMxd/0",
+      "metadata": {
+        "name": "Frontier",
+        "description": "The Frontier serves as the ephemeral boundary between light and darkness, where cosmic forces converge in a delicate balance of opposing energies.",
+        "background_color": "",
+        "external_url": "",
+        "customImage": "",
+        "customAnimationUrl": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Equilibrium"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Strong"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Equinox"
+          }
+        ],
+        "image": "ipfs://QmPY1HYw4LZEuME4WAYwTfuCLQd4J3L1DNQS5BJDLJ7EYE/27.png",
+        "animation_url": ""
+      }
+    },
+    {
+      "id": 29,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmZ8m1VMAfLCLjQZDVix6EH78RRvMeLn6XzB6fddq2K4N8/0",
+      "metadata": {
+        "name": "The Monk",
+        "description": "This Oracle carries an enlightened aura, guarded by the serene presence of a cosmic monk, embodying wisdom and tranquility amidst the chaos.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Serene"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Duty"
+          }
+        ],
+        "image": "ipfs://QmZbP9zWRTLM11Qu1m5aPp7Fm8Vv7DrYAY68xDax7Bjcwz/28.png"
+      }
+    },
+    {
+      "id": 30,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmYWwSrywgANmSh4hVEVGaEgaQ249cqsztz3DwNXFwFPXd/0",
+      "metadata": {
+        "name": "Sanctuary",
+        "description": "The Sanctuary is a celestial refuge, where cosmic wanderers find solace and renewal, shielded from the chaotic forces that ripple through the cosmos.",
+        "image": "ipfs://Qmf6mnbF2KWZxBrhW1Zc582vvc7kh7tfCCQpEZQ9vBT7sZ/29.png",
+        "external_url": "",
+        "background_color": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Harmonious"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Extreme"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Stellar Devotion"
+          }
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "owner": "0xCe5213D07FD17a75Ab96409f76E807e01FAAc16f",
+      "uri": "ipfs://Qmd6YrubvRJMWEneNFZuwdzZdkK3DM8T1UtNJcCakG69k6/0",
+      "metadata": {
+        "name": "Traverse",
+        "description": "The Traverse transcends convential black hole properties, serving as a celestial gateway that allows travelers to travel its depths onto another worlds.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Gentle"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Transcendental"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Transit "
+          }
+        ],
+        "image": "ipfs://QmVYmGbuQ79E2qA1GfS7DuLHs9XfpMW5MUJkhMQnySHdVz/30.png"
+      }
+    },
+    {
+      "id": 32,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmXEMAUiHWMQG9TxKDdx6Kq7SeZC75ivMq5tUN1kqcTgLw/0",
+      "metadata": {
+        "name": "Orb",
+        "description": "The Orb acts as a cosmic beacon of attraction, drawing bodies into its gravitational embrace with irresistible force.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Orbital Momentum"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Irresistible"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Cosmic Attraction"
+          }
+        ],
+        "image": "ipfs://QmZUnQPpu3ASw7stbugc9jdRjc2sDN7L3bWXP1fXQb3pwo/31.png"
+      }
+    },
+    {
+      "id": 33,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://Qmdg8R9ZSSKky3CxmAL4HPZEojBi4JpG61yEWixtLUZmPa/0",
+      "metadata": {
+        "name": "The Fall",
+        "description": "The Fall represents the eternal descent into oblivion, plunging voyagers into the depths of despair.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Eternal Descent"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Unyielding"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Cosmic Descent"
+          }
+        ],
+        "image": "ipfs://QmV8Z5cF4ELPjL5ohaz93t4qLczVJ9h5r93MoM8DGmaeu2/32.png"
+      }
+    },
+    {
+      "id": 34,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmdKXAbjCcXAShLQLCifdqJbDoWnYNShextmLHMXyxmcnw/0",
+      "metadata": {
+        "name": "Firmament",
+        "description": "This black hole embodies the essence of the cosmic firmament, symbolizing the overarching structure and order of the universe.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eternal"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Cosmic Structure"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Divine Order"
+          }
+        ],
+        "image": "ipfs://QmRHwJp39g5wtBAZWYdC1RBbBk8Qh6ofa473DNVfVLJ9p3/33.png"
+      }
+    },
+    {
+      "id": 35,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmNYNhobyMfpnLot8iM8V4nt3VKrA2gni2zDq7m9Htq8bP/0",
+      "metadata": {
+        "name": "Lovers",
+        "description": "This Oracle symbolizes the eternal bond between cosmic lovers, where their souls interwine in a cosmic array of love and unity.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Two Souls"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eternal Devotion"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Harmonious"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Eternal Bond"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Love"
+          }
+        ],
+        "image": "ipfs://QmbhSnZk5iYQCX2QfkwaQfQFdTdPY4rTgoSugHCKwtt9YM/34.png"
+      }
+    },
+    {
+      "id": 36,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmfTTujNKqf3dKDEH1nnH5rSaMsizKgsdSL68wcqLM8T7y/0",
+      "metadata": {
+        "name": "River Cross",
+        "description": "The River Oracle mimics the fluidity of a cosmic river, where celestial currents ripple and flow through the vastness of the universe.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Cosmic Stream"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Artistic Momentum"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Subtle"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Orange Paint"
+          }
+        ],
+        "image": "ipfs://QmSgX2Nz51vbHK5x8tZW36Tt8TAe4uwha2FUwUwTLThYi3/35.png"
+      }
+    },
+    {
+      "id": 37,
+      "owner": "0xd93BAb51CD83881cE1228650B9798EE8FC3E746c",
+      "uri": "ipfs://QmfMwwUD6APQXWRRXe3VdmJ7oyF2ZJKmK9UvXViCT2JGJY/0",
+      "metadata": {
+        "name": "Artist's Dream",
+        "description": "By gazing into the abyss, the artist captures the swirling colors and the cosmic brillance of the universe.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Artistic Momentum"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Inspirational"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Blue Paint"
+          }
+        ],
+        "image": "ipfs://QmZoay9xLbHyirNoQNBZYARRzMZE9pCSPBpZEkcHewQcuS/36.png"
+      }
+    },
+    {
+      "id": 38,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmZnGzkKCgw9ycoXe2wtH1MMz6W7P9j2nVVe6kQ9Sm9iF3/0",
+      "metadata": {
+        "name": "Starriest Night",
+        "description": "Emerging from the ethereal strokes of an artist's brush, this celestial twilight converges with the cosmic fabric, sculpting the universe into a radiant homage to artistic brilliance.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eternal Twilight"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Artistic Momentum"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Enchanted"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Yellow Paint"
+          }
+        ],
+        "image": "ipfs://QmfZKisE1EwMH146nUqbgnznYqMTLD8PbPo1vgiSgBqR2x/37.png"
+      }
+    },
+    {
+      "id": 39,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmXo3UkpX5nxq3rGtL5TTdsyAiTC2wPPKQHXNRp4LAfmGc/0",
+      "metadata": {
+        "name": "Reverie",
+        "description": "The Reverie Oracle resonates with solitude and introspection. It draws melancholic souls into its depths, offering solace to those lost in contemplative reverie.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Artistic Momentum"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Reflective"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Black Paint"
+          }
+        ],
+        "image": "ipfs://QmYNs6x1iCWbWEEFLfXoXLcQnnERQr51gwDiztbzqmuBmS/38.png"
+      }
+    },
+    {
+      "id": 40,
+      "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+      "uri": "ipfs://QmTRzBxU6ejkCGsmu5qgsbJ1i3Ku29NuRrHYCfVTCd3T6T/0",
+      "metadata": {
+        "name": "Village",
+        "description": "For ages, this Oracle has silently watched over the village, witnessing its stories and the passage of time. This black hole stands as a guiding beacon above the quaint village below. For ages, this Oracle has silently watched over the villagers, witnessing their stories and the passage of time.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Artistic Momentum"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Vigilant"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "White Paint"
+          }
+        ],
+        "image": "ipfs://QmdAMYTrBPgpXvEiGxYVGsfJuiK4uFquzc34KrMXue8a4g/39.png"
+      }
+    },
+    {
+      "id": 41,
+      "owner": "0xCe5213D07FD17a75Ab96409f76E807e01FAAc16f",
+      "uri": "ipfs://QmSyBY49fEmTyaxkW6CofgB4aZNfQNR6g7uu8eB6DUS9TM/0",
+      "metadata": {
+        "name": "Maelstrom",
+        "description": "Behold the Maelstrom, a starry vortex of unmatched allure and power. This imposing black hole draws all cosmic matter into its swirling embrace.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Expansive"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Vortex"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Invincible"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bull Market"
+          }
+        ],
+        "image": "ipfs://QmejDi5Lif5zxxTdPUMFw2JQdeQWg22vvzVWPmhQWdNziT/40.png"
+      }
+    },
+    {
+      "id": 42,
+      "owner": "0xE7833409E03e96174a39c53fBA864Df14ff7b357",
+      "uri": "ipfs://QmXacCacY2qw7rMNqRJkPX74ddYz7cGsPAexdzbApd8neZ/0",
+      "metadata": {
+        "name": "Volute",
+        "description": "The Volute stands as a testament to the ancient forces of the cosmos. This vortex has existed since time-immemorial, a silent witness to the unfolding of galactic epochs.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Monumental"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Vortex"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Unyielding"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bull Market"
+          }
+        ],
+        "image": "ipfs://Qmbc3SVncQTermgtWYYvftwPgRfiYm5bTJ1JrvPkFnrLsm/41.png"
+      }
+    },
+    {
+      "id": 43,
+      "owner": "0x9e138C3C1249f1627168D02359A4BA82e5f2EBd4",
+      "uri": "ipfs://QmcrcdRTUy5YEryDT8KdVY8zasWGvB1UMNHj1Y86S4CiVL/0",
+      "metadata": {
+        "name": "Whirlwind",
+        "description": "The Whirlwind is a paradox among black holes, an enigmatic vortex that not only devours light but also radiates a luminescent aura. With its immense mass, it anchors itself as the central figure in its galactic neighborhood, dictating the motion of all celestial entities around it.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Immense"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Colossal"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Vortex"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Intense"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bull Market"
+          }
+        ],
+        "image": "ipfs://QmSnyCpp8qSNyCznwp2VdP2zq6p4LM1x4iWDwrZuhoc8pH/42.png"
+      }
+    },
+    {
+      "id": 44,
+      "owner": "0x589041adb44855FfB953057cc9BBAc2fF1f2c40e",
+      "uri": "ipfs://QmVk74btqBnN9ZnvLDEX15uwtix3WuRyntgrrP795SRNWy/0",
+      "metadata": {
+        "name": "Twister Bride",
+        "description": "The Twister Bride is a hauntingly beautiful black hole, named for its legendary absorption of a celestial phenomenon resembling a bride. This black hole boasts a substantial mass, exerting a significant influence on its cosmic surroundings.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Immense"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Stellar-size"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Vortex"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Entrapping"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bull Market"
+          }
+        ],
+        "image": "ipfs://QmV3LT7pDtEVLpEPFLCyTHGWMMA8v1EbuiNSq8qwuvdHUv/43.png"
+      }
+    },
+    {
+      "id": 45,
+      "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+      "uri": "ipfs://QmV6NaFfiGnEou8mpwXRUd1RK1MHtEFZo3aJ4jdrYwUEuP/0",
+      "metadata": {
+        "name": "Cyclone",
+        "description": "The Cyclone is a strikingly vibrant black hole, distinguished by its deep blue hue and intense rotational energy.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Moderate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Medium"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Vortex"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Rapid"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bull Market"
+          }
+        ],
+        "image": "ipfs://QmRWVFPuoqeSYm9XJ4bofTGAybbmJh41SBJAmvBsRJPFPY/44.png"
+      }
+    },
+    {
+      "id": 46,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmdhT6KFtwkMztgKNxVXhMT5p7nsp4kTr8jCndWnQd9wEt/0",
+      "metadata": {
+        "name": "Greenlands",
+        "description": "You've been high all day. After that nap you took, you woke up in the Greenlands. Try not looking too deep into its void.",
+        "image": "ipfs://QmRGsAYeGn6fpKw7pJWVAiFDVbBLoUettCuF54zfPym5pA/45.png",
+        "external_url": "",
+        "background_color": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Light Mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Blunt Rotation"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Sleepy"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Sour Diesel"
+          }
+        ]
+      }
+    },
+    {
+      "id": 47,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmQj7GmRzywgvuFm66k4TLYHzV9cmd6uVb2CANVfnb6Tub/0",
+      "metadata": {
+        "name": "Enlightment",
+        "description": "The Enlightment Oracle is known among stoners for its mystical ability to elevate consciousness. It has the ability to induce a trance-like state in those who gaze upon it.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Ageless"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Blunt Rotation"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Elavating"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Kush"
+          }
+        ],
+        "image": "ipfs://QmTvoGQKy5qNQhoF5kRrtePHFsZ5C3seXyp2xiwvYEuGrK/46.png"
+      }
+    },
+    {
+      "id": 48,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmUSVpTdaz6gN17DQ2jJZau5yxQLWSEgsCQEWS5di4C95e/0",
+      "metadata": {
+        "name": "Bad Trip",
+        "description": "You went too far inside your own mind. Was that last puff really necessary?",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Expansive"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Blunt Rotation"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Tripping"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Purple Haze"
+          }
+        ],
+        "image": "ipfs://QmTGPGumNcxxCwJxDfUph7pZhGnowQFwocWwoDSYsLJ7fE/47.png"
+      }
+    },
+    {
+      "id": 49,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmQYm2oYthwjUcJmJBWL9oJ8DsurP2tu36ZqKE4fNwQJbs/0",
+      "metadata": {
+        "name": "Lonely Stoner",
+        "description": "The Lonely Stoner gazes upon this Oracle trying to free his mind at night. He looks for peace, but don't seem to attain.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Intimate"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Blunt Rotation"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Lonely"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "AK-47"
+          }
+        ],
+        "image": "ipfs://QmSbe1suGJ19R3kdrrDuLtfUkiTimGhGsiqpQxix1kGHQ9/48.png"
+      }
+    },
+    {
+      "id": 50,
+      "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+      "uri": "ipfs://QmZYmsywy6SrBGj5QncZnVMoeUdXHfo9frzXB7rZ8jxRsE/0",
+      "metadata": {
+        "name": "Spliff",
+        "description": "The Spliff is a colossal black hole that takes the form of a giant joint, its smoke billowing out into the cosmos and attracting stoners from all corners of the universe",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Mega-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Colossal"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Blunt Rotation"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Spiraling Cloud"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Lemon Haze"
+          }
+        ],
+        "image": "ipfs://Qmbg7wX8mUo7pBnbQQCXNmGSE4btu4ZkySp47G2Pmp6J1z/49.png"
+      }
+    },
+    {
+      "id": 51,
+      "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+      "uri": "ipfs://QmWwEvhNV6xuvEBahGi6WJXewFHo65mNzHgjXLrniagdAG/0",
+      "metadata": {
+        "name": "Bonfire",
+        "description": "The Bonfire blazes fiercely in the depths of space, a cosmic pyre burning with eternal flames.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Vast"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Fiery"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Consuming"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Sticks and Rocks"
+          }
+        ],
+        "image": "ipfs://QmfXUGFRYeRY3MjGhpo15zZej8Jbcfx4wAuqNarw1Y5q1t/50.png"
+      }
+    },
+    {
+      "id": 52,
+      "owner": "0xE7833409E03e96174a39c53fBA864Df14ff7b357",
+      "uri": "ipfs://QmTYs7yoUKPc4p6o4LFEnHNa4RTq1FwyAGtdjyBfZwvhc3/0",
+      "metadata": {
+        "name": "Ember",
+        "description": "Ember is a fading black hole, once ablaze with cosmic fire but now dwindling into obscurity.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Fading"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Diminishing"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Slow Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Waning"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Charcoal"
+          }
+        ],
+        "image": "ipfs://QmeGwPR5EH9Mt9ecX9HggLgCSZeJhYvKnap8bQWT3FNP8b/51.png"
+      }
+    },
+    {
+      "id": 53,
+      "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+      "uri": "ipfs://QmavMCLnsaNDXi7ftC3fUJcHCXpRz2wqNppARENAztsJYd/0",
+      "metadata": {
+        "name": "Peak",
+        "description": "The Peak rises majestically in the cosmic landscape, resembling a mountain with a perpetual flame burning atop its tip.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Majestic"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Monumental"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Serene"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Reverent"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Eruption"
+          }
+        ],
+        "image": "ipfs://QmSqrbqCanWDinwgFAEzkSzwFjRu3Q3iR66LAVL3tXE6QZ/52.png"
+      }
+    },
+    {
+      "id": 54,
+      "owner": "0xE7833409E03e96174a39c53fBA864Df14ff7b357",
+      "uri": "ipfs://Qmcay7742hU4dF9ei2weRz5AbHRNTvGMoEhE3Vp9LdGQXM/0",
+      "metadata": {
+        "name": "Pyromaniac",
+        "description": "This black hole is consumed by insatiable pyromania, it burns everything in its path for the sheer pleasure of watching it engulf in flames.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Voracious"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Engulfing"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Chaotic"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Devouring"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Arson"
+          }
+        ],
+        "image": "ipfs://QmPNWwAetqRZi37bZ8CgHRgK58pf7iaXzerUjrhd6Uk6uf/53.png"
+      }
+    },
+    {
+      "id": 55,
+      "owner": "0xd7F4711bAFB2E2b0D42DCbcFF195F0E79dd272e5",
+      "uri": "ipfs://QmePPFNaJrXZsJP3vMKpAqR28t7QgVDtDg5wXEEZtZJf8G/0",
+      "metadata": {
+        "name": "Phoenix",
+        "description": "Watch how stronger it rises after it burns.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Formation Process",
+            "value": "BURN"
+          }
+        ],
+        "image": "ipfs://QmNZLe3NjBYtTGVEvCLAyssBb98e79iGVHQXxPhF1swwhZ/54.png"
+      }
+    },
+    {
+      "id": 56,
+      "owner": "0xeAB8E50f305C3B97aa5EB818E09A59124C357B91",
+      "uri": "ipfs://QmdZDwYyxnxdZ2KqEXXakbHtKjrtXSHzszXbHAgUXNpnsq/0",
+      "metadata": {
+        "name": "Xeno",
+        "description": "The Xeno black hole emerged from a cataclysmic event where the forces of organic and mechanical energy intertwined, giving birth to a cosmic entity that defies classification. It stands as a testament to the dark beauty of the cosmos.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Mature"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Schwarzschild radius"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Twisted"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Hypnotic"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bio-Mechanical Fusion"
+          }
+        ],
+        "image": "ipfs://QmYSna33mchPutWEcNa3NRS6zFSGpM1eLfYXCAfBq2E1TW/55.png"
+      }
+    },
+    {
+      "id": 57,
+      "owner": "0x737f6DE2d616E6d37423A05183B3262d5E6ab4Cc",
+      "uri": "ipfs://QmPVFrJP9zXy6pWuEeqNDX82vFCT5hNhu59ppDrTCor89g/0",
+      "metadata": {
+        "name": "Reject",
+        "description": "The gigerian Reject exists as a grim reminder of the failures and disappointments that litter the cosmic landscape. Its mass, formed by an eternity of discarded dreams, makes for a cosmic landfill that populates the edge of the universe.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Majestic"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Forgotten"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Monumental"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Dreadful"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Devouring"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bio-Mechanical Fusion"
+          }
+        ],
+        "image": "ipfs://QmWYhzuKd9sTTuiNXQQ5Z5HNXizcE8NJTMLkGwdSyLipmv/56.png"
+      }
+    },
+    {
+      "id": 58,
+      "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+      "uri": "ipfs://QmYmfSjmu6jD3wJKxccRyjGvLzpMWGTb3Q9fKfqkDFS5Mp/0",
+      "metadata": {
+        "name": "Lover's Abyss",
+        "description": "The Lover's Abyss portrays the tragic fate of two lovers as they journey into the depths of cosmic despair. Their mass is enmeshed, entwined in a perverse embrace that binds them together for eternity.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Enmeshed"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Young"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Engulfing"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Suffocating"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Entrapping"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bio-Mechanical Fusion"
+          }
+        ],
+        "image": "ipfs://QmXe8S2pbUSxSXEXj4UrKQSvvRRxRG3BGUcU67K6M27tnm/57.png"
+      }
+    },
+    {
+      "id": 59,
+      "owner": "0xd93BAb51CD83881cE1228650B9798EE8FC3E746c",
+      "uri": "ipfs://QmaKtNz7ko39ajYiyBiBeDiagW3oTUFcQQgoXhijC9h7pS/0",
+      "metadata": {
+        "name": "Conduit",
+        "description": "The Conduit is a black hole whose energy is harnessed and manipulated by a mysterious creature lurking in the depths of space. It is symbiotic, existing in a state of mutual dependence with the enigmatic being that controls its power.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Symbiotic"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Vast"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Coiled"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Subjugating"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bio-Mechanical Fusion"
+          }
+        ],
+        "image": "ipfs://QmUfJnELVWsj6mavaqy6nnKW9ArFKhgEYLoeBYRQwfQNYT/58.png"
+      }
+    },
+    {
+      "id": 60,
+      "owner": "0x7b858379a5A4eA3fab076e6c8140498eDa0f084F",
+      "uri": "ipfs://QmUntLorvqTiLcG2ZqoGASkZanZH3bT4tYAgQCEa3KRfka/0",
+      "metadata": {
+        "name": "Rift",
+        "description": "The Rift is a black hole nestled amidst the desolate remnants of a forgotten city, its presence echoes through the abandoned streets and crumbling structures.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Echoing"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Weathered"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Diminishing"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Serene"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Enigmatic"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Bio-Mechanical Fusion"
+          }
+        ],
+        "image": "ipfs://QmWTx8jHF1jiWFmq9piEar1tvYErzYm3KNSG59ACez3zpn/59.png"
+      }
+    },
+    {
+      "id": 61,
+      "owner": "0x1B262e62dDBC64e619Fa61C2885BFCE552ced9ce",
+      "uri": "ipfs://QmVDjbQnzqf7YwedqqbfjXSuGMbi99Szq3uXBnrhd1tLhu/0",
+      "metadata": {
+        "name": "Aurea Chain",
+        "description": "The Aurea Chain is a black hole woven from golden chains, an inescapable prison where the condemned and the wayward are drawn, bound for eternity. Its luminous shackles glisten with the weight of cosmic judgment, tightening with each futile struggle. No plea is heard, no escape is granted—only submission to the unyielding pull of fate.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eternal"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Unbreakable"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Absolute"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Celestial Decree"
+          }
+        ],
+        "image": "ipfs://QmboKxJ1dxYLppzJwqeT9kYsP1qs8UmvfjGqV1uGDuAnHE/60.PNG"
+      }
+    },
+    {
+      "id": 62,
+      "owner": "0xE45AE2fC6F28c7b0B8aBA6f844f95D6b052c7dEE",
+      "uri": "ipfs://QmTCL8vzh4xR8UkTGykERaMHX3bWPSAR9EjVCVaq7sZVqz/0",
+      "metadata": {
+        "name": "Emperor",
+        "description": "The Emperor dominates the void, a titan among black holes, its event horizon aglow with golden radiance. Neither deceptive nor concealed, it looms with undeniable presence, an emperor of gravity — an abyss that does not lure, only demands.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Ultra-Massive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Primordial"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Immeasurable"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Regal"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Sovereign"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Coronation"
+          }
+        ],
+        "image": "ipfs://QmdWsNCZs8uYXsfDgqnE9KQVnHw16ZxJEvj55RFuBjby3j/61.PNG"
+      }
+    },
+    {
+      "id": 63,
+      "owner": "0xfe7C2B6cE4b61AC06C83637154e4eA05f665B5fB",
+      "uri": "ipfs://Qmb9WzZn3bZLPQC4qPnDwyncZV6TBBz94QKPdZKKw7c5xG/0",
+      "metadata": {
+        "name": "Baroque",
+        "description": "The Baroque is a masterpiece of cosmic excess, it does not merely consume—it curates, selecting only the finest matter and light to vanish within its opulent depths. To gaze upon it is to witness a gravitational symphony, where decadence and destruction are one and the same.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Classical"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Grandiose"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Ornamental"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Selective"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Craftsmanship"
+          }
+        ],
+        "image": "ipfs://QmYE8jUQpxbGUPZF7gcXkj3LB73QMUDXadYVxRNRywizU6/62.PNG"
+      }
+    },
+    {
+      "id": 64,
+      "owner": "0x2beF98060bb8e38046BCBFc952D697729a2B44ea",
+      "uri": "ipfs://QmVXuCqYu2GYVw5F1C9UNDc2G3KsCJXGXLWz3UcDtgtaE7/0",
+      "metadata": {
+        "name": "Midas Touch",
+        "description": "The Midas Touch is a paradox of cosmic hunger—devouring all, yet leaving nothing behind but gold. Matter, light, even the void itself succumbs to its alchemy, transformed into radiant opulence before vanishing forever.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Supermassive"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Vast"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Transmutative"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Irresistible"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Curse"
+          }
+        ],
+        "image": "ipfs://QmZVycKvdtuYB8JyeCewAj27uiHB7g7GrrDYyHrMZckUYo/63.PNG"
+      }
+    },
+    {
+      "id": 65,
+      "owner": "0x60604A93e0dA21ff373043fcD37D6a98357eF858",
+      "uri": "ipfs://QmcQwN7Gv6sJBa784Qp7wVc7HoyswDYgfoN7AYSopBtG6t/0",
+      "metadata": {
+        "name": "Golden Weave",
+        "description": "The Golden Weave is a black hole of delicate brilliance, its form traced by impossibly thin golden filaments, interwoven like the threads of a celestial tapestry. fragile in appearance yet absolute in force, it ensnares light and matter in an intricate dance before unraveling them into nothingness.",
+        "background_color": "",
+        "external_url": "",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Ephemeral"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Slender"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Intricate"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Deceptive"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Threading"
+          }
+        ],
+        "image": "ipfs://QmZqJHwmotQyUrd6fwvBHTgdd9qhyZdFsiRe2J7iJ8J34C/64.PNG"
+      }
+    },
+    {
+      "id": 66,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/65.json",
+      "metadata": {
+        "name": "Verdant",
+        "description": "In the emerald-deep sectors where no starmap dares extend, Virid Obsidian pulses at the center of a forgotten procession of moons. Its glow is not reflection, but memory: the last breath of dying light trapped in an endless spiral.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/65.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Intermediate"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Pre-Cosmic"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Serpent-like"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Elegiac"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Emerald Radiation"
+          }
+        ]
+      }
+    },
+    {
+      "id": 67,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/66.json",
+      "metadata": {
+        "name": "Auremald",
+        "description": "Its spiral arms stretch like the golden threads of some ancient loom, weaving new laws of motion in defiance of Euclidean reason. Auremerald  doesn't devour, it selects. Those taken are not destroyed, but rewritten.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/66.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Stellar-Mass"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Imperial"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Palace-Grade"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Regal"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Selective"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Golden Collapse"
+          }
+        ]
+      }
+    },
+    {
+      "id": 68,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/67.json",
+      "metadata": {
+        "name": "Cluster",
+        "description": "A celestial pantheon collapsed into itself and became one many-eyed god. A sovereign among voids, its silence is composed of many voices. To approach it is to be watched by the absence of sight.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/67.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Compound"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Eldritch"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Multinodal"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Hegemony"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Hierarchical"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Gravitational Choir"
+          }
+        ]
+      }
+    },
+    {
+      "id": 69,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/68.json",
+      "metadata": {
+        "name": "Trivortex",
+        "description": "Suspended at the intersection of three galactic currents, Trivortex Axiom balances entropy across planes. Each spiral is a law, each rotation a sentence. Scholars say it doesn't exist in space, but defines it.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/68.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Triad-Vector Core"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Primordial"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Vast"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Tri-Spiral Sync"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Asymmetry"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Tri-Fold Collapse"
+          }
+        ]
+      }
+    },
+    {
+      "id": 70,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/69.json",
+      "metadata": {
+        "name": "Howl",
+        "description": "It spins with the fury of a hundred suns unwept. Howl is the echo of a war that ended before time began: a black hole born not of death, but rebellion.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/69.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Hyper-Stellar"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Rage"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Helixstorm"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Violent"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Dual-Star Detonation"
+          }
+        ]
+      }
+    },
+    {
+      "id": 71,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/70.json",
+      "metadata": {
+        "name": "Amarallure",
+        "description": "There are black holes that devour stars, and then there is Amarallure, which tempts them. This one's different: elegant, indulgent, almost seductive. It feels like it doesn't consume out of need, but out of desire.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/70.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Hyper-Stellar"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Sublime"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Velvet Ellipse"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Waltzing Spin"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Entrapment"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Infrared Drift"
+          }
+        ]
+      }
+    },
+    {
+      "id": 72,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/71.json",
+      "metadata": {
+        "name": "Solari",
+        "description": "Solari was first observed transmitting prime numbers into deep space. Then silence. It's unclear whether it was built, born, or merely discovered. But its orbit behaves like a script: one line rewritten. Forever.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/71.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Architectonic-Class"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Timeless"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Algorithmic Ellipse"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Binary Loop"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Logicbound"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Dark Syntax"
+          }
+        ]
+      }
+    },
+    {
+      "id": 73,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/72.json",
+      "metadata": {
+        "name": "Velatrix",
+        "description": "This black hole is not a wound, but a blade. Its swirling tendrils carve through galaxies like ritual incisions. No matter dares approach twice.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/72.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Hyper-Stellar"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Paradox"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Hollow Core"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Helical Lance"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Surgical"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Laceration"
+          }
+        ]
+      }
+    },
+    {
+      "id": 74,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/73.json",
+      "metadata": {
+        "name": "Monad",
+        "description": "A lens? A throne? An engine? The symmetry is too perfect to be natural, too ancient to be artificial. Monad is said to encode the final constant, the number that ends time. Its form is flawless, elliptical, and indifferent. The rings around it are not debris, but encryption.",
+        "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/73.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Monadic"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Pre-Cosmic"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Event Horizon Diameter"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Axiomatic"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Symbolic"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Collapse of a Prime Reality Thread"
+          }
+        ]
+      }
+    },
+    {
+      "id": 75,
+      "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+      "uri": "ipfs://bafybeifnnztwt4ifhpfbfkceyazexkobt5yr44y6gwl4rfjoggizopjbta/74.json",
+      "metadata": {
+        "name": "Cindervoid",
+        "description": "Every empire ends in fire. Cindervoid is the last breath of such an end — a spiral forged in apocalyptic heat, still smoking in the language of collapsing suns. Ancient civilizations marked its arrival as an omen. It never left.",
+        "image": "https://ipfs.io/ipfs/bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/74.png",
+        "attributes": [
+          {
+            "trait_type": "Mass",
+            "value": "Solar-Flare-Class"
+          },
+          {
+            "trait_type": "Age",
+            "value": "Cataclysmic"
+          },
+          {
+            "trait_type": "Size",
+            "value": "Infernal"
+          },
+          {
+            "trait_type": "Angular Momentum",
+            "value": "Supernova Echo"
+          },
+          {
+            "trait_type": "Gravitational Pull",
+            "value": "Scorch-Well"
+          },
+          {
+            "trait_type": "Formation Process",
+            "value": "Cascade Flare Implosion"
+          }
+        ]
+      }
+    }
+  ],
+  "totalSupply": 76,
+  "lastUpdated": "2025-05-06T18:52:57.014Z"
+}

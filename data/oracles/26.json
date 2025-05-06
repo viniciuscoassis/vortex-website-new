@@ -1,0 +1,38 @@
+{
+  "id": 26,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Gateway",
+  "description": "This black hole is a gateway between realms. A celestial threshold where the fabric of space an time bends to facilitate passage between worlds.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Transcendental"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Threshold"
+    }
+  ],
+  "image": "ipfs://Qmc2rAUCvNESia1wEtNi7XJWciQaNEK5SEGiK6buV7Z9Hn/25.png",
+  "animation_url": ""
+}

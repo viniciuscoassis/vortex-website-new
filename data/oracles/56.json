@@ -1,0 +1,35 @@
+{
+  "id": 56,
+  "owner": "0xeAB8E50f305C3B97aa5EB818E09A59124C357B91",
+  "name": "Xeno",
+  "description": "The Xeno black hole emerged from a cataclysmic event where the forces of organic and mechanical energy intertwined, giving birth to a cosmic entity that defies classification. It stands as a testament to the dark beauty of the cosmos.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Twisted"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Hypnotic"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bio-Mechanical Fusion"
+    }
+  ],
+  "image": "ipfs://QmYSna33mchPutWEcNa3NRS6zFSGpM1eLfYXCAfBq2E1TW/55.png"
+}

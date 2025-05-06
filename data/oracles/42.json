@@ -1,0 +1,35 @@
+{
+  "id": 42,
+  "owner": "0xE7833409E03e96174a39c53fBA864Df14ff7b357",
+  "name": "Volute",
+  "description": "The Volute stands as a testament to the ancient forces of the cosmos. This vortex has existed since time-immemorial, a silent witness to the unfolding of galactic epochs.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Monumental"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Vortex"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Unyielding"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bull Market"
+    }
+  ],
+  "image": "ipfs://Qmbc3SVncQTermgtWYYvftwPgRfiYm5bTJ1JrvPkFnrLsm/41.png"
+}

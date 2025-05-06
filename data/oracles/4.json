@@ -1,0 +1,38 @@
+{
+  "id": 4,
+  "owner": "0xf2e4a05cBae83fb3173BECEe7a31686e8A6ae3Ce",
+  "name": "Dreamweaver",
+  "description": "A celestial mistery where cosmic threads interwine and the ethereal dance of reality and dreams converges in the enigmatic grasp of the Dreamweaver Abyss",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Timeless Weaver"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Moderate"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Nebular Elegy"
+    }
+  ],
+  "image": "ipfs://QmPRACQxzMQuqa5DkE1b8jQBtN71fNEPfKgPKPQrqtEHXZ/4.png",
+  "animation_url": ""
+}

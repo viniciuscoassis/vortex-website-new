@@ -1,0 +1,35 @@
+{
+  "id": 47,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Enlightment",
+  "description": "The Enlightment Oracle is known among stoners for its mystical ability to elevate consciousness. It has the ability to induce a trance-like state in those who gaze upon it.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Ageless"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Blunt Rotation"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Elavating"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Kush"
+    }
+  ],
+  "image": "ipfs://QmTvoGQKy5qNQhoF5kRrtePHFsZ5C3seXyp2xiwvYEuGrK/46.png"
+}

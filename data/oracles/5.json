@@ -1,0 +1,38 @@
+{
+  "id": 5,
+  "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+  "name": "Uzumaki",
+  "description": "Emerging from the convergence of dark energies and otherworldly forces, as if summoned from the nightmares woven by the fabric of the universe. Spiralling away in a dreadful sorrow.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Dreadful"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Moderate"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Dark Energy Convergence"
+    }
+  ],
+  "image": "ipfs://QmQfqpqeqBAFP1KBcL1ytyPKd7TM1k4Jwbx9cpnTPkb3oa/5.png",
+  "animation_url": ""
+}

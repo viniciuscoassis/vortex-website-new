@@ -143,9 +143,7 @@ export function OracleCarousel() {
             style={{ transform: `translateX(-${currentIndex * (100 / cardsToShow)}%)` }}
           >
             {randomOracles.map((oracle) => {
-              const imageUrl = oracle.metadata.image
-                ? oracle.metadata.image.replace('ipfs://', 'https://ipfs.io/ipfs/')
-                : "/placeholder.png"
+              const imageUrl = oracle.metadata.image.replace('ipfs://', 'https://ipfs.io/ipfs/')
 
               return (
                 <div key={oracle.id} className="flex-shrink-0" style={{ width: `${100 / cardsToShow}%` }}>

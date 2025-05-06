@@ -1,0 +1,38 @@
+{
+  "id": 16,
+  "owner": "0xf2e4a05cBae83fb3173BECEe7a31686e8A6ae3Ce",
+  "name": "Warden",
+  "description": "A mysterious and ancient being, the Warden within the blackhole watches over the cosmic expanse with an unwavering and protective gaze. The cosmic whispers within the Oracle echo the wisdom and guidance of the enigmatic Warden, offering cryptic insights to those who approach with reverence.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Watchful"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Cloacking Rite"
+    }
+  ],
+  "image": "ipfs://QmY7Y46ZnG7aJpekjNUVkgWbnvCV61XyZ7CZvnHARtPKYJ/ID15.JPG",
+  "animation_url": ""
+}

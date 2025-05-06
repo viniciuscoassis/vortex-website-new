@@ -1,0 +1,35 @@
+{
+  "id": 30,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Sanctuary",
+  "description": "The Sanctuary is a celestial refuge, where cosmic wanderers find solace and renewal, shielded from the chaotic forces that ripple through the cosmos.",
+  "image": "ipfs://Qmf6mnbF2KWZxBrhW1Zc582vvc7kh7tfCCQpEZQ9vBT7sZ/29.png",
+  "external_url": "",
+  "background_color": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Harmonious"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Extreme"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Stellar Devotion"
+    }
+  ]
+}

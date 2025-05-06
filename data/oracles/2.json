@@ -1,0 +1,38 @@
+{
+  "id": 2,
+  "owner": "0xeAB8E50f305C3B97aa5EB818E09A59124C357B91",
+  "name": "QuasarQuicksilver",
+  "description": "The quicksilver marvel that defies the laws of cosmic stillness, carving paths trough the vastness of space.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Time Bending"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Extreme"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Galactic Sprint"
+    }
+  ],
+  "image": "ipfs://QmcFpfHzR6PmDxHcy1WReYZ5qdvFv4FrLd4DetnPSmq8xF/2.png",
+  "animation_url": ""
+}

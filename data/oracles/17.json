@@ -1,0 +1,38 @@
+{
+  "id": 17,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Vertebrae",
+  "description": "Once an incomprehensibly colossal creature of incomprehensible proportions, the ancient colossus defied the limits of the human mind. Its remains, now the vessel of its former greatness, rest in an eternal spiral.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Dreadful"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Obscure"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Necrosis"
+    }
+  ],
+  "image": "ipfs://QmfRxe2DGXtCNwbdaT1frvFNHiimKLYhHU4SWPazWV6Lsy/ID16.JPG",
+  "animation_url": ""
+}

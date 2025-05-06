@@ -1,0 +1,35 @@
+{
+  "id": 57,
+  "owner": "0x737f6DE2d616E6d37423A05183B3262d5E6ab4Cc",
+  "name": "Reject",
+  "description": "The gigerian Reject exists as a grim reminder of the failures and disappointments that litter the cosmic landscape. Its mass, formed by an eternity of discarded dreams, makes for a cosmic landfill that populates the edge of the universe.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Majestic"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Forgotten"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Monumental"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Dreadful"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Devouring"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bio-Mechanical Fusion"
+    }
+  ],
+  "image": "ipfs://QmWYhzuKd9sTTuiNXQQ5Z5HNXizcE8NJTMLkGwdSyLipmv/56.png"
+}

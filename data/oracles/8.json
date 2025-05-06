@@ -1,0 +1,38 @@
+{
+  "id": 8,
+  "owner": "0x35beed229ed0cDd0430191eA48C9b9e972A2B4e2",
+  "name": "The Crossroads",
+  "description": "At the convergence of celestial pathways, there exists a supermassive black hole of unparalled desolation. Those who chance upon The Crossroads are drawn by an irresistible force — a relentess abyss that beckons them into the cosmic crucible.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Stillness"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Strong"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Star collapse"
+    }
+  ],
+  "image": "ipfs://QmUckeHzkzMcwMz68QLCtaZusw2G2R28fts3LYNmiuxsmx/8.png",
+  "animation_url": ""
+}

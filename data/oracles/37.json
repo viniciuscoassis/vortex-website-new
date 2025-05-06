@@ -1,0 +1,35 @@
+{
+  "id": 37,
+  "owner": "0xd93BAb51CD83881cE1228650B9798EE8FC3E746c",
+  "name": "Artist's Dream",
+  "description": "By gazing into the abyss, the artist captures the swirling colors and the cosmic brillance of the universe.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Artistic Momentum"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Inspirational"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Blue Paint"
+    }
+  ],
+  "image": "ipfs://QmZoay9xLbHyirNoQNBZYARRzMZE9pCSPBpZEkcHewQcuS/36.png"
+}

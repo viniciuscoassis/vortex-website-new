@@ -1,0 +1,35 @@
+{
+  "id": 52,
+  "owner": "0xE7833409E03e96174a39c53fBA864Df14ff7b357",
+  "name": "Ember",
+  "description": "Ember is a fading black hole, once ablaze with cosmic fire but now dwindling into obscurity.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Fading"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Diminishing"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Waning"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Charcoal"
+    }
+  ],
+  "image": "ipfs://QmeGwPR5EH9Mt9ecX9HggLgCSZeJhYvKnap8bQWT3FNP8b/51.png"
+}

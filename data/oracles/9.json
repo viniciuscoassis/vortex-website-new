@@ -1,0 +1,38 @@
+{
+  "id": 9,
+  "owner": "0xCe5213D07FD17a75Ab96409f76E807e01FAAc16f",
+  "name": "Abyssal Vacuum ",
+  "description": "Emerging from the vast reaches of nothingness where not even light can escape, a vast vacuum at the heart of the cosmos.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Extreme"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Cosmic Vacancy"
+    }
+  ],
+  "image": "ipfs://QmRssvWzyXbbwVW2DJ8UWbzqXSU5MmMwuE9wrHq35uPBXA/9.png",
+  "animation_url": ""
+}

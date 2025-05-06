@@ -1,0 +1,35 @@
+{
+  "id": 60,
+  "owner": "0x7b858379a5A4eA3fab076e6c8140498eDa0f084F",
+  "name": "Rift",
+  "description": "The Rift is a black hole nestled amidst the desolate remnants of a forgotten city, its presence echoes through the abandoned streets and crumbling structures.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Echoing"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Weathered"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Diminishing"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Serene"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Enigmatic"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bio-Mechanical Fusion"
+    }
+  ],
+  "image": "ipfs://QmWTx8jHF1jiWFmq9piEar1tvYErzYm3KNSG59ACez3zpn/59.png"
+}

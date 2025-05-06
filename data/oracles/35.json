@@ -1,0 +1,35 @@
+{
+  "id": 35,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Lovers",
+  "description": "This Oracle symbolizes the eternal bond between cosmic lovers, where their souls interwine in a cosmic array of love and unity.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Two Souls"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eternal Devotion"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Harmonious"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Eternal Bond"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Love"
+    }
+  ],
+  "image": "ipfs://QmbhSnZk5iYQCX2QfkwaQfQFdTdPY4rTgoSugHCKwtt9YM/34.png"
+}

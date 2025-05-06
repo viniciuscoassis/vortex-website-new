@@ -1,0 +1,38 @@
+{
+  "id": 23,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Patchwork",
+  "description": "A myriad of cosmic fragments, each a remnant of distant galaxies, ancient stars, and celestial phenomena, stitched together to form a beatiful quilted pattern. The Patchwork spans the tapestry of space and time, seamlessly blending the remnants of diverse celestial events into an intricate composition.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Time-Woven"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Moderate"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Stitching"
+    }
+  ],
+  "image": "ipfs://QmVcHJuBRgUp2zeDjw7wzbfKT9NrsRMjbrVgrin1YjEYAc/22.png",
+  "animation_url": ""
+}

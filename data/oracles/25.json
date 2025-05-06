@@ -1,0 +1,18 @@
+{
+  "id": 25,
+  "owner": "0xbCCC3487497D3224c71Eac036f5f458842C96c92",
+  "name": "Avalanche",
+  "description": "In the heart of a distant galaxy stands a red pyramid... wait, is that a chikn hanging out at the edge of the universe?",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Formation Process",
+      "value": "bok"
+    }
+  ],
+  "image": "ipfs://QmeHvf7HwN9NUXpPoRv8G6btYhZ2U2uNknetQsiK4k8ScZ/24.png",
+  "animation_url": ""
+}

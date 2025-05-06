@@ -1,0 +1,33 @@
+{
+  "id": 73,
+  "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+  "name": "Velatrix",
+  "description": "This black hole is not a wound, but a blade. Its swirling tendrils carve through galaxies like ritual incisions. No matter dares approach twice.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/72.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Hyper-Stellar"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Paradox"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Hollow Core"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Helical Lance"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Surgical"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Laceration"
+    }
+  ]
+}
