@@ -31,26 +31,26 @@ type Explorer = {
 const exampleExplorers = [
   {
     id: 1,
-    name: "Martian Explorer",
+    name: "Saturnian Explorer",
     image: "/explorers/2.jpeg",
     traits: {
-      species: "Martian – green phosphorescent skin, large eyes, antennae.",
-      background: "alien desert with twin moons",
-      hat: "tactical balaclava",
-      outfit: "cosmic kevlar tactical armor",
-      weapon: "none"
+      species: "Saturnian",
+      background: "ringed gas giant",
+      hat: "stellar cowboy hat",
+      outfit: "casual martian colony wear",
+      weapon: "water gun"
     },
   },
   {
     id: 2,
-    name: "Floranoid Explorer",
+    name: "Cryon Explorer",
     image: "/explorers/19.png",
     traits: {
-      species: "Floranoid – plant-animal hybrid, branches, petals, thorns.",
-      background: "purple nebula",
-      hat: "luminescent plant tiara",
-      outfit: "tribal wear with bioluminescent fibers",
-      weapon: "none"
+      species: "Cryon",
+      background: "frozen moon surface",
+      hat: "steampunk bronze diving helmet",
+      outfit: "retro astronaut suit",
+      weapon: "dimensional flashlight"
     },
   },
   {
@@ -58,11 +58,11 @@ const exampleExplorers = [
     name: "Voidborn Explorer",
     image: "/explorers/3.jpeg",
     traits: {
-      species: "Voidborn – distorted silhouette, living shadow, born near black holes.",
-      background: "starlit sky with moving constellations",
-      hat: "floating rune tiara",
-      outfit: "andaran elder ceremonial robe",
-      weapon: "sacred voidborn book"
+      species: "Voidborn",
+      background: "bioluminescent low-gravity forest",
+      hat: "wormhole halo",
+      outfit: "tribal wear with bioluminescent fibers",
+      weapon: "cosmic ice spear"
     },
   },
   {
@@ -70,11 +70,11 @@ const exampleExplorers = [
     name: "Techniderm Explorer",
     image: "/explorers/20.png",
     traits: {
-      species: "Techniderm – metallic skin with circuits, symbiotic AI.",
-      background: "floating futuristic city",
-      hat: "HUD visor helmet",
-      outfit: "quantum containment suit",
-      weapon: "electric pulse blaster"
+      species: "Techniderm",
+      background: "ringed gas giant",
+      hat: "animated binary crown",
+      outfit: "synthetic leather jacket with LEDs",
+      weapon: "quantum screwdriver"
     },
   },
 ]
