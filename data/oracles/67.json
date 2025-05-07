@@ -1,0 +1,33 @@
+{
+  "id": 67,
+  "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+  "name": "Auremald",
+  "description": "Its spiral arms stretch like the golden threads of some ancient loom, weaving new laws of motion in defiance of Euclidean reason. Auremerald  doesn't devour, it selects. Those taken are not destroyed, but rewritten.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/66.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-Mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Imperial"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Palace-Grade"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Regal"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Selective"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Golden Collapse"
+    }
+  ]
+}

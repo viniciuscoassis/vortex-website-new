@@ -1,0 +1,38 @@
+{
+  "id": 22,
+  "owner": "0x62c6E060EA69b7C6d145B73bC834ede9a1B7Eed8",
+  "name": "Avian Vortex",
+  "description": "A black hole adorned with the ethereal presence of cosmic birds in perpetual flight. ",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Feather-Mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Serene"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Plume Convergence"
+    }
+  ],
+  "image": "ipfs://QmYwxVZ9Keam7DrrwLsgJai151CnbsLoPspfvjKzj7B9ES/21.png",
+  "animation_url": ""
+}

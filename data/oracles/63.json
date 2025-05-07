@@ -1,0 +1,35 @@
+{
+  "id": 63,
+  "owner": "0xfe7C2B6cE4b61AC06C83637154e4eA05f665B5fB",
+  "name": "Baroque",
+  "description": "The Baroque is a masterpiece of cosmic excess, it does not merely consume—it curates, selecting only the finest matter and light to vanish within its opulent depths. To gaze upon it is to witness a gravitational symphony, where decadence and destruction are one and the same.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Classical"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Grandiose"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Ornamental"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Selective"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Craftsmanship"
+    }
+  ],
+  "image": "ipfs://QmYE8jUQpxbGUPZF7gcXkj3LB73QMUDXadYVxRNRywizU6/62.PNG"
+}

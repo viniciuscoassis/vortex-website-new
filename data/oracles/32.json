@@ -1,0 +1,35 @@
+{
+  "id": 32,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Orb",
+  "description": "The Orb acts as a cosmic beacon of attraction, drawing bodies into its gravitational embrace with irresistible force.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Orbital Momentum"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Irresistible"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Cosmic Attraction"
+    }
+  ],
+  "image": "ipfs://QmZUnQPpu3ASw7stbugc9jdRjc2sDN7L3bWXP1fXQb3pwo/31.png"
+}

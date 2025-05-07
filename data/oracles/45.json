@@ -1,0 +1,35 @@
+{
+  "id": 45,
+  "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+  "name": "Cyclone",
+  "description": "The Cyclone is a strikingly vibrant black hole, distinguished by its deep blue hue and intense rotational energy.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Moderate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Medium"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Vortex"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Rapid"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bull Market"
+    }
+  ],
+  "image": "ipfs://QmRWVFPuoqeSYm9XJ4bofTGAybbmJh41SBJAmvBsRJPFPY/44.png"
+}

@@ -1,0 +1,38 @@
+{
+  "id": 18,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Childhood Void",
+  "description": "It is said a child, in the age of discovery, once wandered upon this black hole. The blackhole retained the curiosity of a cosmic child exploring the vastness of space. It now gazes infinitely at the universe with childlike wonder.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Playful Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Subtle"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Discovery Stroll"
+    }
+  ],
+  "image": "ipfs://QmNgxUSUy4oPA1mCF4NJpBeyPuHoxY3iN513Xw6F3N3q2c/ID17.JPG",
+  "animation_url": ""
+}

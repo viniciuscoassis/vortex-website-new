@@ -1,0 +1,38 @@
+{
+  "id": 10,
+  "owner": "0xaa882903D7E8D07Bf44242A11E7368d1B8dE9F92",
+  "name": "Umbral",
+  "description": "The Umbral casts an eternal nightfall across space, where not even starlight can escape its grasp. The surroundings are held in a cold and longing stillness.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Stillness"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Obscure"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Dark Energy Convergence"
+    }
+  ],
+  "image": "ipfs://QmcY7bRFdQrQHVLS9WczN52RF9b2ibCfuJK1PMdGfxvQQA/0.png",
+  "animation_url": ""
+}

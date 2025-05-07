@@ -1,0 +1,35 @@
+{
+  "id": 29,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "The Monk",
+  "description": "This Oracle carries an enlightened aura, guarded by the serene presence of a cosmic monk, embodying wisdom and tranquility amidst the chaos.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Serene"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Duty"
+    }
+  ],
+  "image": "ipfs://QmZbP9zWRTLM11Qu1m5aPp7Fm8Vv7DrYAY68xDax7Bjcwz/28.png"
+}

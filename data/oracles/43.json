@@ -1,0 +1,35 @@
+{
+  "id": 43,
+  "owner": "0x9e138C3C1249f1627168D02359A4BA82e5f2EBd4",
+  "name": "Whirlwind",
+  "description": "The Whirlwind is a paradox among black holes, an enigmatic vortex that not only devours light but also radiates a luminescent aura. With its immense mass, it anchors itself as the central figure in its galactic neighborhood, dictating the motion of all celestial entities around it.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Immense"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Colossal"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Vortex"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Intense"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bull Market"
+    }
+  ],
+  "image": "ipfs://QmSnyCpp8qSNyCznwp2VdP2zq6p4LM1x4iWDwrZuhoc8pH/42.png"
+}

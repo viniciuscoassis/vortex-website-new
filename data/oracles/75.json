@@ -1,0 +1,33 @@
+{
+  "id": 75,
+  "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+  "name": "Cindervoid",
+  "description": "Every empire ends in fire. Cindervoid is the last breath of such an end — a spiral forged in apocalyptic heat, still smoking in the language of collapsing suns. Ancient civilizations marked its arrival as an omen. It never left.",
+  "image": "https://ipfs.io/ipfs/bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/74.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Solar-Flare-Class"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Cataclysmic"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Infernal"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Supernova Echo"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Scorch-Well"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Cascade Flare Implosion"
+    }
+  ]
+}

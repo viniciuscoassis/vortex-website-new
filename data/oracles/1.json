@@ -1,0 +1,38 @@
+{
+  "id": 1,
+  "owner": "0xF468595bDBdFDC1c3dC60f22815F340a2526E6E9",
+  "name": "Slumbering Spiral",
+  "description": "A celestial vagabond spining a cosmic lullaby, inviting all who gaze upon it to partake in the tranquil dance of the universe.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Ancient"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Strong"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Star collapse"
+    }
+  ],
+  "image": "ipfs://QmWDVLNrznxJ6MU2Zi6N9KQm7DKiM3UTLMGv2okjY8oFgs/1.png",
+  "animation_url": ""
+}

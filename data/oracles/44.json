@@ -1,0 +1,35 @@
+{
+  "id": 44,
+  "owner": "0x589041adb44855FfB953057cc9BBAc2fF1f2c40e",
+  "name": "Twister Bride",
+  "description": "The Twister Bride is a hauntingly beautiful black hole, named for its legendary absorption of a celestial phenomenon resembling a bride. This black hole boasts a substantial mass, exerting a significant influence on its cosmic surroundings.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Immense"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Stellar-size"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Vortex"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Entrapping"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bull Market"
+    }
+  ],
+  "image": "ipfs://QmV3LT7pDtEVLpEPFLCyTHGWMMA8v1EbuiNSq8qwuvdHUv/43.png"
+}

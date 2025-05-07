@@ -1,0 +1,35 @@
+{
+  "id": 61,
+  "owner": "0x1B262e62dDBC64e619Fa61C2885BFCE552ced9ce",
+  "name": "Aurea Chain",
+  "description": "The Aurea Chain is a black hole woven from golden chains, an inescapable prison where the condemned and the wayward are drawn, bound for eternity. Its luminous shackles glisten with the weight of cosmic judgment, tightening with each futile struggle. No plea is heard, no escape is granted—only submission to the unyielding pull of fate.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eternal"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Unbreakable"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Absolute"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Decree"
+    }
+  ],
+  "image": "ipfs://QmboKxJ1dxYLppzJwqeT9kYsP1qs8UmvfjGqV1uGDuAnHE/60.PNG"
+}

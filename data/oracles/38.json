@@ -1,0 +1,35 @@
+{
+  "id": 38,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Starriest Night",
+  "description": "Emerging from the ethereal strokes of an artist's brush, this celestial twilight converges with the cosmic fabric, sculpting the universe into a radiant homage to artistic brilliance.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eternal Twilight"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Artistic Momentum"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Enchanted"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Yellow Paint"
+    }
+  ],
+  "image": "ipfs://QmfZKisE1EwMH146nUqbgnznYqMTLD8PbPo1vgiSgBqR2x/37.png"
+}

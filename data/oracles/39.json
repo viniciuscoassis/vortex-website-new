@@ -1,0 +1,35 @@
+{
+  "id": 39,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Reverie",
+  "description": "The Reverie Oracle resonates with solitude and introspection. It draws melancholic souls into its depths, offering solace to those lost in contemplative reverie.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Artistic Momentum"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Reflective"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Black Paint"
+    }
+  ],
+  "image": "ipfs://QmYNs6x1iCWbWEEFLfXoXLcQnnERQr51gwDiztbzqmuBmS/38.png"
+}

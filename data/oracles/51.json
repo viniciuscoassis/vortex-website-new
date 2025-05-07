@@ -1,0 +1,35 @@
+{
+  "id": 51,
+  "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+  "name": "Bonfire",
+  "description": "The Bonfire blazes fiercely in the depths of space, a cosmic pyre burning with eternal flames.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Vast"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fiery"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Consuming"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Sticks and Rocks"
+    }
+  ],
+  "image": "ipfs://QmfXUGFRYeRY3MjGhpo15zZej8Jbcfx4wAuqNarw1Y5q1t/50.png"
+}

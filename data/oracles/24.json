@@ -1,0 +1,38 @@
+{
+  "id": 24,
+  "owner": "0xaa882903D7E8D07Bf44242A11E7368d1B8dE9F92",
+  "name": "Mist Veil",
+  "description": "A black hole with a mass that resembles ethereal clouds that drifts and dances within the cosmic winds.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Celestial Nebula"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Moderate"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Nebular Whispers"
+    }
+  ],
+  "image": "ipfs://QmXsmMrFk5hkX6YYUtf1ee1EfQ5PVCHnhqqi3KakimGGRx/23.png",
+  "animation_url": ""
+}

@@ -1,0 +1,35 @@
+{
+  "id": 36,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "River Cross",
+  "description": "The River Oracle mimics the fluidity of a cosmic river, where celestial currents ripple and flow through the vastness of the universe.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Cosmic Stream"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Artistic Momentum"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Subtle"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Orange Paint"
+    }
+  ],
+  "image": "ipfs://QmSgX2Nz51vbHK5x8tZW36Tt8TAe4uwha2FUwUwTLThYi3/35.png"
+}

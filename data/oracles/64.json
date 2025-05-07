@@ -1,0 +1,35 @@
+{
+  "id": 64,
+  "owner": "0x2beF98060bb8e38046BCBFc952D697729a2B44ea",
+  "name": "Midas Touch",
+  "description": "The Midas Touch is a paradox of cosmic hunger—devouring all, yet leaving nothing behind but gold. Matter, light, even the void itself succumbs to its alchemy, transformed into radiant opulence before vanishing forever.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Vast"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Transmutative"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Irresistible"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Curse"
+    }
+  ],
+  "image": "ipfs://QmZVycKvdtuYB8JyeCewAj27uiHB7g7GrrDYyHrMZckUYo/63.PNG"
+}

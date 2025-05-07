@@ -1,0 +1,18 @@
+{
+  "id": 7,
+  "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+  "name": "The Jackpot",
+  "description": "Gazing into this abyss grants you infinite luck – only if it gazes back.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Formation Process",
+      "value": "Pure luck"
+    }
+  ],
+  "image": "ipfs://QmYaEKXzgBwcjGepQtRBJ7KfjtdgaEcheFZhqhh11MPLtU/7.png",
+  "animation_url": ""
+}

@@ -1,0 +1,35 @@
+{
+  "id": 62,
+  "owner": "0xE45AE2fC6F28c7b0B8aBA6f844f95D6b052c7dEE",
+  "name": "Emperor",
+  "description": "The Emperor dominates the void, a titan among black holes, its event horizon aglow with golden radiance. Neither deceptive nor concealed, it looms with undeniable presence, an emperor of gravity — an abyss that does not lure, only demands.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Ultra-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Primordial"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Immeasurable"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Regal"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Sovereign"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Coronation"
+    }
+  ],
+  "image": "ipfs://QmdWsNCZs8uYXsfDgqnE9KQVnHw16ZxJEvj55RFuBjby3j/61.PNG"
+}

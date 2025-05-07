@@ -1,0 +1,38 @@
+{
+  "id": 3,
+  "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+  "name": "Eclipsing Vortex",
+  "description": "A celestial dreamer in the cosmic symphony, gently weaving tales in the tapestry of the night sky",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Ancient"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Extreme"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Galactic Ballet"
+    }
+  ],
+  "image": "ipfs://QmVJzHMQ5Zt9iD8asufAva1oHfMu4WFYWnoYhLdPPG49By/3.png",
+  "animation_url": ""
+}

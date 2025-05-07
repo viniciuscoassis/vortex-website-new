@@ -1,0 +1,38 @@
+{
+  "id": 11,
+  "owner": "0x35beed229ed0cDd0430191eA48C9b9e972A2B4e2",
+  "name": "Aquarelle",
+  "description": "This cosmic masterpiece is a testament to cosmic artistry—a breathtaking watercolor display that invites observers to marvel at the beauty etched into the canvas of the Universe.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Subtle"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Cellestial Aquerelle"
+    }
+  ],
+  "image": "ipfs://QmZco1QxhSRvvURQBzzcQxr8DgtZAj9qNsPuySj8S5aUwh/1.png",
+  "animation_url": ""
+}

@@ -1,0 +1,15 @@
+{
+  "id": 55,
+  "owner": "0xd7F4711bAFB2E2b0D42DCbcFF195F0E79dd272e5",
+  "name": "Phoenix",
+  "description": "Watch how stronger it rises after it burns.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Formation Process",
+      "value": "BURN"
+    }
+  ],
+  "image": "ipfs://QmNZLe3NjBYtTGVEvCLAyssBb98e79iGVHQXxPhF1swwhZ/54.png"
+}

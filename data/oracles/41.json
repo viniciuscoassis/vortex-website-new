@@ -1,0 +1,35 @@
+{
+  "id": 41,
+  "owner": "0xCe5213D07FD17a75Ab96409f76E807e01FAAc16f",
+  "name": "Maelstrom",
+  "description": "Behold the Maelstrom, a starry vortex of unmatched allure and power. This imposing black hole draws all cosmic matter into its swirling embrace.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Expansive"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Vortex"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Invincible"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bull Market"
+    }
+  ],
+  "image": "ipfs://QmejDi5Lif5zxxTdPUMFw2JQdeQWg22vvzVWPmhQWdNziT/40.png"
+}

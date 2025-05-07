@@ -1,0 +1,38 @@
+{
+  "id": 21,
+  "owner": "0x589041adb44855FfB953057cc9BBAc2fF1f2c40e",
+  "name": "Fateful Embrace",
+  "description": "This Oracle is a gateway to the fate of those bold enough to seek it, guiding them through the ebb and flow of their destinies. ",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Acceptance Embrace"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Subtle"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Destiny"
+    }
+  ],
+  "image": "ipfs://QmdF9nTMaQ916YzY1PELApCaapDccfgS8bAXJombvzsLca/20.png",
+  "animation_url": ""
+}

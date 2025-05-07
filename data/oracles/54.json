@@ -1,0 +1,35 @@
+{
+  "id": 54,
+  "owner": "0xE7833409E03e96174a39c53fBA864Df14ff7b357",
+  "name": "Pyromaniac",
+  "description": "This black hole is consumed by insatiable pyromania, it burns everything in its path for the sheer pleasure of watching it engulf in flames.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Voracious"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Engulfing"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Chaotic"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Devouring"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Arson"
+    }
+  ],
+  "image": "ipfs://QmPNWwAetqRZi37bZ8CgHRgK58pf7iaXzerUjrhd6Uk6uf/53.png"
+}

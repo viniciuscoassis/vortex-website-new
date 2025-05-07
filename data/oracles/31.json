@@ -1,0 +1,35 @@
+{
+  "id": 31,
+  "owner": "0xCe5213D07FD17a75Ab96409f76E807e01FAAc16f",
+  "name": "Traverse",
+  "description": "The Traverse transcends convential black hole properties, serving as a celestial gateway that allows travelers to travel its depths onto another worlds.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Supermassive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Gentle"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Transcendental"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Transit "
+    }
+  ],
+  "image": "ipfs://QmVYmGbuQ79E2qA1GfS7DuLHs9XfpMW5MUJkhMQnySHdVz/30.png"
+}

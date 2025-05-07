@@ -1,0 +1,38 @@
+{
+  "id": 6,
+  "owner": "0xb495023D8Eb9526D8EC346703f2CFf12F2A6963d",
+  "name": "Werther's Lament",
+  "description": "A cosmic entity with a heavy heart. Its mournful spin reflects the universal theme of unrequited love, akin to Young Werther's sorrows. Celestial wanderers are drawn by its sorrowful pull, entering a nebular tragedy that mirrors the melancholic tale across the cosmos.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Stellar-mass"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Weeping"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Melancholic "
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Stellar Tragedy"
+    }
+  ],
+  "image": "ipfs://QmaWVVFvQghGGJeNqZ81QAgyyJsfhQreDT7M7UKaHWXDa7/6.png",
+  "animation_url": ""
+}

@@ -1,0 +1,35 @@
+{
+  "id": 40,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Village",
+  "description": "For ages, this Oracle has silently watched over the village, witnessing its stories and the passage of time. This black hole stands as a guiding beacon above the quaint village below. For ages, this Oracle has silently watched over the villagers, witnessing their stories and the passage of time.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Schwarzschild radius"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Artistic Momentum"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Vigilant"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "White Paint"
+    }
+  ],
+  "image": "ipfs://QmdAMYTrBPgpXvEiGxYVGsfJuiK4uFquzc34KrMXue8a4g/39.png"
+}

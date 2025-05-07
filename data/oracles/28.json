@@ -1,0 +1,38 @@
+{
+  "id": 28,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Frontier",
+  "description": "The Frontier serves as the ephemeral boundary between light and darkness, where cosmic forces converge in a delicate balance of opposing energies.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eldritch"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Equilibrium"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Strong"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Celestial Equinox"
+    }
+  ],
+  "image": "ipfs://QmPY1HYw4LZEuME4WAYwTfuCLQd4J3L1DNQS5BJDLJ7EYE/27.png",
+  "animation_url": ""
+}

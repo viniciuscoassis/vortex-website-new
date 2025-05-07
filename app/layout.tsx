@@ -10,6 +10,20 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Vortex Foundation",
   description: "Explore the cosmic unknown with Vortex Foundation NFTs",
+  icons: {
+    icon: [
+      {
+        url: '/logo.png',
+        type: 'image/png',
+      }
+    ],
+    apple: [
+      {
+        url: '/logo.png',
+        type: 'image/png',
+      }
+    ],
+  },
 }
 
 export default function RootLayout({

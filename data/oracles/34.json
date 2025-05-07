@@ -1,0 +1,35 @@
+{
+  "id": 34,
+  "owner": "0xDa9f37c1333BB2474A7012024D397654E603c3F1",
+  "name": "Firmament",
+  "description": "This black hole embodies the essence of the cosmic firmament, symbolizing the overarching structure and order of the universe.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Eternal"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Cosmic Structure"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Slow Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Moderate"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Divine Order"
+    }
+  ],
+  "image": "ipfs://QmRHwJp39g5wtBAZWYdC1RBbBk8Qh6ofa473DNVfVLJ9p3/33.png"
+}

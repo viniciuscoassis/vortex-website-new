@@ -1,0 +1,38 @@
+{
+  "id": 14,
+  "owner": "0x04eEaadf602411105414727596E956F85216C0C9",
+  "name": "Morpho",
+  "description": "Its playful shapeshifting nature create a mesmerizing display of ever-changing shapes and colors, a cosmic kaleidoscope that defies predictabillity.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Shapeshifting"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Fast Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Illusory"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Creativity"
+    }
+  ],
+  "image": "ipfs://QmRLbeVku34bN6mURWxia8nHAF3p56LosDAEeYoSNTEGrA/4.png",
+  "animation_url": ""
+}

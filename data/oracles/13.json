@@ -1,0 +1,38 @@
+{
+  "id": 13,
+  "owner": "0xaa882903D7E8D07Bf44242A11E7368d1B8dE9F92",
+  "name": "Furor",
+  "description": "Furor emanates a fierce and angry glow, a display of intense and vibrant colors that mirror its cosmic wrath.",
+  "background_color": "",
+  "external_url": "",
+  "customImage": "",
+  "customAnimationUrl": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Intermediate"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Aggresive Spin"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Furious"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Energy Outburst"
+    }
+  ],
+  "image": "ipfs://QmYuJmLBdBgMetKT5BGnkA4sjmzTkcZLfA8E69z4YmtjKd/3.png",
+  "animation_url": ""
+}

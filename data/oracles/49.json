@@ -1,0 +1,35 @@
+{
+  "id": 49,
+  "owner": "0x887b86dB960988D38409fB8211d475a199BdAEF7",
+  "name": "Lonely Stoner",
+  "description": "The Lonely Stoner gazes upon this Oracle trying to free his mind at night. He looks for peace, but don't seem to attain.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Mega-Massive"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Mature"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Intimate"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Blunt Rotation"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Lonely"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "AK-47"
+    }
+  ],
+  "image": "ipfs://QmSbe1suGJ19R3kdrrDuLtfUkiTimGhGsiqpQxix1kGHQ9/48.png"
+}

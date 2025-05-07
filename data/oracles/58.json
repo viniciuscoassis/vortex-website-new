@@ -1,0 +1,35 @@
+{
+  "id": 58,
+  "owner": "0x808af82545A721C06D1FcCEbea915a6F5128BeF9",
+  "name": "Lover's Abyss",
+  "description": "The Lover's Abyss portrays the tragic fate of two lovers as they journey into the depths of cosmic despair. Their mass is enmeshed, entwined in a perverse embrace that binds them together for eternity.",
+  "background_color": "",
+  "external_url": "",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Enmeshed"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Young"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Engulfing"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Suffocating"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Entrapping"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Bio-Mechanical Fusion"
+    }
+  ],
+  "image": "ipfs://QmXe8S2pbUSxSXEXj4UrKQSvvRRxRG3BGUcU67K6M27tnm/57.png"
+}

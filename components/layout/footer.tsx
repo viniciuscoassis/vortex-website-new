@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Frame, Twitter, MessageCircle, ExternalLink, BookOpen, BarChart3 } from "lucide-react"
 
@@ -7,14 +8,20 @@ export default function Footer() {
     <footer className="bg-black/80 backdrop-blur-md border-t border-zinc-800 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
-          <div className="md:col-span-1">
+          {/* Brand */}
+          <div>
             <Link href="/" className="flex items-center gap-2 text-lg font-semibold mb-4">
-              <Frame className="w-6 h-6 text-emerald-400" />
+              <Image 
+                src="/logo.png" 
+                alt="Vortex Foundation Logo" 
+                width={32} 
+                height={32} 
+                className="w-8 h-8"
+              />
               <span>Vortex Foundation</span>
             </Link>
             <p className="text-zinc-400 text-sm">
-              Explore the cosmic unknown. Discover the secrets of the universe through our NFT collection.
+              Explore the cosmic unknown with Vortex Foundation NFTs
             </p>
           </div>
 

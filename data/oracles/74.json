@@ -1,0 +1,33 @@
+{
+  "id": 74,
+  "owner": "0xA9c1242D472DF3F8a7be582D33ffb13c01EEC6Fc",
+  "name": "Monad",
+  "description": "A lens? A throne? An engine? The symmetry is too perfect to be natural, too ancient to be artificial. Monad is said to encode the final constant, the number that ends time. Its form is flawless, elliptical, and indifferent. The rings around it are not debris, but encryption.",
+  "image": "ipfs://bafybeibgo6v27dcbek3czgcmcuyt24l7sa7gv7ouf2awye3dumdmpkhuqi/73.png",
+  "attributes": [
+    {
+      "trait_type": "Mass",
+      "value": "Monadic"
+    },
+    {
+      "trait_type": "Age",
+      "value": "Pre-Cosmic"
+    },
+    {
+      "trait_type": "Size",
+      "value": "Event Horizon Diameter"
+    },
+    {
+      "trait_type": "Angular Momentum",
+      "value": "Axiomatic"
+    },
+    {
+      "trait_type": "Gravitational Pull",
+      "value": "Symbolic"
+    },
+    {
+      "trait_type": "Formation Process",
+      "value": "Collapse of a Prime Reality Thread"
+    }
+  ]
+}
