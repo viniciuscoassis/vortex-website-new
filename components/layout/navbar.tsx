@@ -40,9 +40,9 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-between h-auto md:h-20 py-2 md:py-0 gap-y-2 md:gap-y-0">
+          {/* Logo with text on desktop, only logo on mobile */}
+          <Link href="/" className="flex items-center justify-center w-full md:w-auto gap-2">
             <Image 
               src="/logo.png" 
               alt="Vortex Foundation Logo" 
@@ -50,7 +50,7 @@ export default function Navbar() {
               height={32} 
               className="w-8 h-8"
             />
-            <span className="text-white">Vortex Foundation</span>
+            <span className="text-white text-lg font-semibold hidden md:inline">Vortex Foundation</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -69,14 +69,14 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Network Switcher and Wallet Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Network Switcher and Wallet Button - always visible, stacked on mobile */}
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:w-auto justify-center md:justify-end">
             <NetworkSwitcher />
             <ConnectWalletButton />
           </div>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+          <Button variant="ghost" size="icon" className="md:hidden absolute right-4 top-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             {mobileMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
           </Button>
         </div>
@@ -100,10 +100,6 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 flex flex-col space-y-3">
-                <NetworkSwitcher />
-                <ConnectWalletButton />
-              </div>
             </nav>
           </div>
         </div>
