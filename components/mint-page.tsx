@@ -1,6 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import { useWallet } from "@/lib/wallet-context"
+import { getClientForNetwork, getWalletClientForNetwork } from "@/lib/public-clients"
+import { explorersABI } from "@/data/abi/explorers"
+import { parseEther } from "viem"
+import { sonic, sonicBlazeTestnet } from "viem/chains"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -81,6 +86,7 @@ const exampleExplorers = [
 ]
 
 export default function MintPage() {
+  const { address, isConnected, walletClient } = useWallet()
   const [selectedTraits, setSelectedTraits] = useState({
     species: traits.species[0],
     background: traits.backgrounds[0],
@@ -88,6 +94,7 @@ export default function MintPage() {
     outfit: traits.outfits[0],
     weapon: "none"
   })
+  const [isMinting, setIsMinting] = useState(false)
 
   // Check if minting is enabled via environment variable
   const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
@@ -125,18 +132,134 @@ export default function MintPage() {
     })
   }
 
-  const handleMint = () => {
-    // Log the selected traits
-    console.log("Selected traits for minting:", {
-      species: selectedTraits.species,
-      background: selectedTraits.background,
-      hat: selectedTraits.hat,
-      outfit: selectedTraits.outfit,
-      weapon: selectedTraits.weapon
-    })
-    
-    // Mint logic would go here
-    alert(`Explorer minting initiated with selected traits: ${JSON.stringify(selectedTraits)}`)
+  const handleMint = async () => {
+    if (!isConnected || !address || !walletClient) {
+      alert("Please connect your wallet first")
+      return
+    }
+
+    setIsMinting(true)
+
+    try {
+      // Create traits JSON string
+      const traitsJson = JSON.stringify(selectedTraits)
+      
+      console.log("🚀 Starting mint process with traits:", selectedTraits)
+
+      // Step 1: Get signature from the API
+      const signResponse = await fetch('/api/sign', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          traitsJson,
+          userAddress: address
+        }),
+      })
+
+      if (!signResponse.ok) {
+        const errorData = await signResponse.json()
+        throw new Error(`Failed to get signature: ${errorData.error}`)
+      }
+
+      const { signature } = await signResponse.json()
+      console.log("✅ Received signature:", signature)
+
+      // Step 2: Verify signature on the contract before minting
+      console.log("🔍 Verifying signature on contract...")
+      
+      const network = process.env.NEXT_PUBLIC_NETWORK === 'testnet' ? 'testnet' : 'mainnet'
+      const client = getClientForNetwork(network)
+      const chain = network === 'testnet' ? sonicBlazeTestnet : sonic
+      
+      const explorerAddresses = {
+        testnet: process.env.NEXT_PUBLIC_TESTNET_EXPLORERS_CONTRACT_ADDRESS as `0x${string}`,
+        mainnet: process.env.NEXT_PUBLIC_MAINNET_EXPLORERS_CONTRACT_ADDRESS as `0x${string}`
+      }
+
+      const contractAddress = explorerAddresses[network]
+      
+      if (!contractAddress) {
+        throw new Error('Explorers contract address not configured')
+      }
+
+      // // Call the contract's verifySignature function
+      // const isValid = await client.readContract({
+      //   address: contractAddress,
+      //   abi: explorersABI,
+      //   functionName: 'verifySignature',
+      //   args: [traitsJson, signature]
+      // }) as boolean
+
+      // if (!isValid) {
+      //   throw new Error("Invalid signature - verification failed on contract")
+      // }
+      
+      // console.log("✅ Signature verified successfully on contract")
+
+      // Step 3: Call the contract's mintWithTraits function
+      console.log("🎯 Calling mintWithTraits on contract...")
+      
+      // Get mint price from contract
+      const mintPrice = await client.readContract({
+        address: contractAddress,
+        abi: explorersABI,
+        functionName: 'MINT_PRICE'
+      }) as bigint
+
+      console.log("💰 Mint price:", mintPrice.toString())
+
+      // Call the mint function
+      const hash = await walletClient.writeContract({
+        address: contractAddress,
+        abi: explorersABI,
+        functionName: 'mintWithTraits',
+        args: [traitsJson, signature],
+        value: mintPrice,
+        chain,
+        account: address
+      })
+
+      console.log("📝 Transaction hash:", hash)
+
+      // Wait for transaction confirmation
+      console.log("⏳ Waiting for transaction confirmation...")
+      const receipt = await client.waitForTransactionReceipt({ hash })
+      
+      console.log("✅ Transaction confirmed:", receipt)
+
+      // Check if the transaction was successful
+      if (receipt.status === 'success') {
+        alert(`🎉 Explorer minted successfully! Transaction: ${hash}`)
+        
+        // Optionally refresh the user's NFTs
+        // You could trigger a refetch of UserNFTs here
+      } else {
+        throw new Error("Transaction failed")
+      }
+      
+    } catch (error) {
+      console.error("❌ Minting failed:", error)
+      
+      // Provide more specific error messages
+      let errorMessage = "Minting failed"
+      if (error instanceof Error) {
+        if (error.message.includes("insufficient funds")) {
+          errorMessage = "Insufficient funds for minting"
+        } else if (error.message.includes("user rejected")) {
+          errorMessage = "Transaction was cancelled"
+        } else if (error.message.includes("Invalid signature")) {
+          errorMessage = "Signature verification failed"
+        } else {
+          errorMessage = error.message
+        }
+      }
+      
+      alert(`Minting failed: ${errorMessage}`)
+    } finally {
+      setIsMinting(false)
+    }
   }
 
   return (
@@ -242,7 +365,13 @@ export default function MintPage() {
               </div>
             </div>
 
-            {!isMintingEnabled ? (
+            {!isConnected ? (
+              <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                <p className="text-yellow-400 text-sm text-center">
+                  ⚠️ Please connect your wallet to mint an Explorer
+                </p>
+              </div>
+            ) : !isMintingEnabled ? (
               <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
                 <p className="text-yellow-400 text-sm text-center">
                   ⚠️ Minting is not available yet. Stay tuned for the launch of Galaxy Explorers!
@@ -260,9 +389,11 @@ export default function MintPage() {
               onClick={handleMint}
               className="w-full mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white"
               size="lg"
-              disabled={!isMintingEnabled}
+              disabled={!isConnected || !isMintingEnabled || isMinting}
             >
-              {isMintingEnabled ? "Mint for 50 $S" : "Minting Coming Soon"}
+              {!isConnected ? "Connect Wallet" : 
+               !isMintingEnabled ? "Minting Coming Soon" :
+               isMinting ? "Minting..." : "Mint for 50 $S"}
             </Button>
           </CardContent>
         </Card>
