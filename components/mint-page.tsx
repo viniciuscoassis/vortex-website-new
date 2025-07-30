@@ -12,6 +12,7 @@ import { MintInfo } from "@/components/mint-info"
 import { UserNFTs } from "@/components/user-nfts"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
+import { Shuffle } from "lucide-react"
 import traits from "@/data/traits.json"
 
 type Explorer = {
@@ -88,8 +89,40 @@ export default function MintPage() {
     weapon: "none"
   })
 
+  // Check if minting is enabled via environment variable
+  const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
+
   const handleTraitChange = (trait: string, value: string) => {
     setSelectedTraits((prev) => ({ ...prev, [trait]: value }))
+  }
+
+  const generateRandomTraits = () => {
+    const randomSpecies = traits.species[Math.floor(Math.random() * traits.species.length)]
+    const randomBackground = traits.backgrounds[Math.floor(Math.random() * traits.backgrounds.length)]
+    const randomHat = traits.hats[Math.floor(Math.random() * traits.hats.length)]
+    const randomOutfit = traits.outfits[Math.floor(Math.random() * traits.outfits.length)]
+    
+    // 50% chance to have a weapon, 50% chance to have none
+    const shouldHaveWeapon = Math.random() > 0.5
+    const randomWeapon = shouldHaveWeapon 
+      ? traits.weapons[Math.floor(Math.random() * traits.weapons.length)]
+      : "none"
+
+    setSelectedTraits({
+      species: randomSpecies,
+      background: randomBackground,
+      hat: randomHat,
+      outfit: randomOutfit,
+      weapon: randomWeapon
+    })
+
+    console.log("🎲 Generated random traits:", {
+      species: randomSpecies,
+      background: randomBackground,
+      hat: randomHat,
+      outfit: randomOutfit,
+      weapon: randomWeapon
+    })
   }
 
   const handleMint = () => {
@@ -113,7 +146,18 @@ export default function MintPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
         <Card className="bg-black/40 backdrop-blur-md border-zinc-800 h-full">
           <CardContent className="p-6 flex flex-col h-full">
-            <h2 className="text-2xl font-bold mb-4 text-emerald-400">Mint Your Custom Explorer</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-emerald-400">Mint Your Custom Explorer</h2>
+              <Button
+                onClick={generateRandomTraits}
+                variant="outline"
+                size="sm"
+                className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50"
+              >
+                <Shuffle className="h-4 w-4 mr-2" />
+                Random
+              </Button>
+            </div>
 
             <div className="space-y-4 flex-grow">
               <div className="space-y-2">
@@ -198,19 +242,27 @@ export default function MintPage() {
               </div>
             </div>
 
-            <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-              <p className="text-yellow-400 text-sm text-center">
-                ⚠️ Minting is not available yet. Stay tuned for the launch of Galaxy Explorers!
-              </p>
-            </div>
+            {!isMintingEnabled ? (
+              <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                <p className="text-yellow-400 text-sm text-center">
+                  ⚠️ Minting is not available yet. Stay tuned for the launch of Galaxy Explorers!
+                </p>
+              </div>
+            ) : (
+              <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+                <p className="text-emerald-400 text-sm text-center">
+                  ✅ Minting is now live! Create your unique Galaxy Explorer.
+                </p>
+              </div>
+            )}
 
             <Button
               onClick={handleMint}
               className="w-full mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white"
               size="lg"
-              disabled
+              disabled={!isMintingEnabled}
             >
-              Mint for 50 $S
+              {isMintingEnabled ? "Mint for 50 $S" : "Minting Coming Soon"}
             </Button>
           </CardContent>
         </Card>
