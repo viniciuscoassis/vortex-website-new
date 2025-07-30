@@ -18,6 +18,16 @@ interface ExplorerNFT {
   }
 }
 
+// Function to convert IPFS URLs to HTTP URLs
+const convertIpfsToHttp = (url: string): string => {
+  if (url.startsWith('ipfs://')) {
+    // Remove 'ipfs://' prefix and use IPFS gateway
+    const ipfsHash = url.replace('ipfs://', '')
+    return `https://ipfs.io/ipfs/${ipfsHash}`
+  }
+  return url
+}
+
 export function UserNFTs() {
   const { isConnected, connect, address, walletChainId, isNetworkMismatch } = useWallet()
   const [nfts, setNfts] = useState<ExplorerNFT[]>([])
@@ -68,14 +78,28 @@ export function UserNFTs() {
             args: [tokenId]
           }) as string
 
+          console.log(`Token ${tokenId} URI:`, tokenURI)
+
+          // Convert IPFS URI to HTTP if needed
+          const httpURI = convertIpfsToHttp(tokenURI)
+          console.log(`Token ${tokenId} HTTP URI:`, httpURI)
+
           // Fetch metadata from IPFS or HTTP
-          const response = await fetch(tokenURI)
+          const response = await fetch(httpURI)
+          if (!response.ok) {
+            throw new Error(`Failed to fetch metadata: ${response.status} ${response.statusText}`)
+          }
+          
           const metadata = await response.json()
+          console.log(`Token ${tokenId} metadata:`, metadata)
+
+          // Convert image URL to HTTP if it's IPFS
+          const imageUrl = metadata.image ? convertIpfsToHttp(metadata.image) : '/placeholder.png'
 
           return {
             tokenId: tokenId.toString(),
             name: metadata.name || `Explorer #${tokenId}`,
-            image: metadata.image || '/placeholder.png',
+            image: imageUrl,
             traits: metadata.attributes || {}
           }
         } catch (err) {
