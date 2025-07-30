@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useWallet } from "@/lib/wallet-context"
 import { getClientForNetwork, getWalletClientForNetwork } from "@/lib/public-clients"
 import { explorersABI } from "@/data/abi/explorers"
@@ -17,7 +17,7 @@ import { MintInfo } from "@/components/mint-info"
 import { UserNFTs } from "@/components/user-nfts"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Shuffle } from "lucide-react"
+import { Shuffle, Crown, Gift } from "lucide-react"
 import traits from "@/data/traits.json"
 
 type Explorer = {
@@ -95,9 +95,71 @@ export default function MintPage() {
     weapon: "none"
   })
   const [isMinting, setIsMinting] = useState(false)
+  const [isWhitelisted, setIsWhitelisted] = useState(false)
+  const [hasClaimedFree, setHasClaimedFree] = useState(false)
+  const [whitelistLoading, setWhitelistLoading] = useState(false)
 
   // Check if minting is enabled via environment variable
   const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
+
+  // Check whitelist status when wallet connects
+  useEffect(() => {
+    const checkWhitelistStatus = async () => {
+      if (!isConnected || !address) {
+        setIsWhitelisted(false)
+        setHasClaimedFree(false)
+        return
+      }
+
+      setWhitelistLoading(true)
+      try {
+        const network = process.env.NEXT_PUBLIC_NETWORK === 'testnet' ? 'testnet' : 'mainnet'
+        const client = getClientForNetwork(network)
+        
+        const explorerAddresses = {
+          testnet: process.env.NEXT_PUBLIC_TESTNET_EXPLORERS_CONTRACT_ADDRESS as `0x${string}`,
+          mainnet: process.env.NEXT_PUBLIC_MAINNET_EXPLORERS_CONTRACT_ADDRESS as `0x${string}`
+        }
+
+        const contractAddress = explorerAddresses[network]
+        
+        if (!contractAddress) {
+          console.error('Explorers contract address not configured')
+          return
+        }
+
+        // Check if user is whitelisted
+        const whitelisted = await client.readContract({
+          address: contractAddress,
+          abi: explorersABI,
+          functionName: 'whitelist',
+          args: [address]
+        }) as boolean
+
+        setIsWhitelisted(whitelisted)
+
+        // Check if user has already claimed free NFT
+        const claimedFree = await client.readContract({
+          address: contractAddress,
+          abi: explorersABI,
+          functionName: 'hasClaimedFree',
+          args: [address]
+        }) as boolean
+
+        setHasClaimedFree(claimedFree)
+
+        console.log('Whitelist status:', { whitelisted, claimedFree, address })
+      } catch (error) {
+        console.error('Failed to check whitelist status:', error)
+        setIsWhitelisted(false)
+        setHasClaimedFree(false)
+      } finally {
+        setWhitelistLoading(false)
+      }
+    }
+
+    checkWhitelistStatus()
+  }, [isConnected, address])
 
   const handleTraitChange = (trait: string, value: string) => {
     setSelectedTraits((prev) => ({ ...prev, [trait]: value }))
@@ -201,14 +263,22 @@ export default function MintPage() {
       // Step 3: Call the contract's mintWithTraits function
       console.log("🎯 Calling mintWithTraits on contract...")
       
-      // Get mint price from contract
-      const mintPrice = await client.readContract({
-        address: contractAddress,
-        abi: explorersABI,
-        functionName: 'MINT_PRICE'
-      }) as bigint
-
-      console.log("💰 Mint price:", mintPrice.toString())
+      // Determine mint value based on whitelist status
+      let mintValue = BigInt(0)
+      if (isWhitelisted && !hasClaimedFree) {
+        // Free mint for whitelisted users who haven't claimed
+        mintValue = BigInt(0)
+        console.log("🎁 Free mint for whitelisted user")
+      } else {
+        // Paid mint - get price from contract
+        const mintPrice = await client.readContract({
+          address: contractAddress,
+          abi: explorersABI,
+          functionName: 'MINT_PRICE'
+        }) as bigint
+        mintValue = mintPrice
+        console.log("💰 Paid mint - price:", mintPrice.toString())
+      }
 
       // Call the mint function
       const hash = await walletClient.writeContract({
@@ -216,7 +286,7 @@ export default function MintPage() {
         abi: explorersABI,
         functionName: 'mintWithTraits',
         args: [traitsJson, signature],
-        value: mintPrice,
+        value: mintValue,
         chain,
         account: address
       })
@@ -231,7 +301,13 @@ export default function MintPage() {
 
       // Check if the transaction was successful
       if (receipt.status === 'success') {
-        alert(`🎉 Explorer minted successfully! Transaction: ${hash}`)
+        const mintType = isWhitelisted && !hasClaimedFree ? "FREE" : "PAID"
+        alert(`🎉 Explorer minted successfully (${mintType})! Transaction: ${hash}`)
+        
+        // Update whitelist status after successful mint
+        if (isWhitelisted && !hasClaimedFree) {
+          setHasClaimedFree(true)
+        }
         
         // Optionally refresh the user's NFTs
         // You could trigger a refetch of UserNFTs here
@@ -262,6 +338,56 @@ export default function MintPage() {
     }
   }
 
+  // Determine button text and status
+  const getMintButtonText = () => {
+    if (!isConnected) return "Connect Wallet"
+    if (!isMintingEnabled) return "Minting Coming Soon"
+    if (isMinting) return "Minting..."
+    
+    if (isWhitelisted && !hasClaimedFree) {
+      return "Mint FREE (Whitelisted)"
+    } else if (isWhitelisted && hasClaimedFree) {
+      return "Mint for 50 $S (Whitelisted - Free Claimed)"
+    } else {
+      return "Mint for 50 $S"
+    }
+  }
+
+  const getMintStatusMessage = () => {
+    if (!isConnected) {
+      return {
+        type: "warning" as const,
+        message: "⚠️ Please connect your wallet to mint an Explorer"
+      }
+    }
+    
+    if (!isMintingEnabled) {
+      return {
+        type: "warning" as const,
+        message: "⚠️ Minting is not available yet. Stay tuned for the launch of Galaxy Explorers!"
+      }
+    }
+
+    if (isWhitelisted && !hasClaimedFree) {
+      return {
+        type: "success" as const,
+        message: "🎁 You're whitelisted! Claim your FREE Explorer NFT."
+      }
+    } else if (isWhitelisted && hasClaimedFree) {
+      return {
+        type: "info" as const,
+        message: "👑 You're whitelisted! You've claimed your free NFT. Additional mints cost 50 $S."
+      }
+    } else {
+      return {
+        type: "success" as const,
+        message: "✅ Minting is now live! Create your unique Galaxy Explorer."
+      }
+    }
+  }
+
+  const mintStatus = getMintStatusMessage()
+
   return (
     <div>
       <MintInfo />
@@ -281,6 +407,28 @@ export default function MintPage() {
                 Random
               </Button>
             </div>
+
+            {/* Whitelist Status Display */}
+            {isConnected && !whitelistLoading && (
+              <div className="mb-4 p-3 rounded-lg border">
+                {isWhitelisted ? (
+                  <div className="flex items-center gap-2 text-emerald-400">
+                    <Crown className="h-4 w-4" />
+                    <span className="text-sm font-medium">Whitelisted</span>
+                    {!hasClaimedFree && (
+                      <div className="flex items-center gap-1 ml-2">
+                        <Gift className="h-4 w-4 text-yellow-400" />
+                        <span className="text-xs text-yellow-400">Free NFT Available</span>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-2 text-zinc-400">
+                    <span className="text-sm">Not whitelisted - Standard pricing applies</span>
+                  </div>
+                )}
+              </div>
+            )}
 
             <div className="space-y-4 flex-grow">
               <div className="space-y-2">
@@ -365,35 +513,29 @@ export default function MintPage() {
               </div>
             </div>
 
-            {!isConnected ? (
-              <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <p className="text-yellow-400 text-sm text-center">
-                  ⚠️ Please connect your wallet to mint an Explorer
-                </p>
-              </div>
-            ) : !isMintingEnabled ? (
-              <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <p className="text-yellow-400 text-sm text-center">
-                  ⚠️ Minting is not available yet. Stay tuned for the launch of Galaxy Explorers!
-                </p>
-              </div>
-            ) : (
-              <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
-                <p className="text-emerald-400 text-sm text-center">
-                  ✅ Minting is now live! Create your unique Galaxy Explorer.
-                </p>
-              </div>
-            )}
+            <div className={cn(
+              "mt-4 p-4 rounded-lg border",
+              mintStatus.type === "warning" && "bg-yellow-500/10 border-yellow-500/20",
+              mintStatus.type === "success" && "bg-emerald-500/10 border-emerald-500/20",
+              mintStatus.type === "info" && "bg-blue-500/10 border-blue-500/20"
+            )}>
+              <p className={cn(
+                "text-sm text-center",
+                mintStatus.type === "warning" && "text-yellow-400",
+                mintStatus.type === "success" && "text-emerald-400",
+                mintStatus.type === "info" && "text-blue-400"
+              )}>
+                {mintStatus.message}
+              </p>
+            </div>
 
             <Button
               onClick={handleMint}
               className="w-full mt-4 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white"
               size="lg"
-              disabled={!isConnected || !isMintingEnabled || isMinting}
+              disabled={!isConnected || !isMintingEnabled || isMinting || whitelistLoading}
             >
-              {!isConnected ? "Connect Wallet" : 
-               !isMintingEnabled ? "Minting Coming Soon" :
-               isMinting ? "Minting..." : "Mint for 50 $S"}
+              {whitelistLoading ? "Checking Whitelist..." : getMintButtonText()}
             </Button>
           </CardContent>
         </Card>
@@ -443,7 +585,7 @@ export default function MintPage() {
         </TabsList>
         <TabsContent value="examples" className="mt-6">
           <h2 className="text-2xl font-bold mb-6 text-emerald-400">Example Galaxy Explorers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <NFTCard
               name="Cosmic Wanderer #42"
               traits={{
