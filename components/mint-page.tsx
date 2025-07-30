@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useWallet } from "@/lib/wallet-context"
 import { getClientForNetwork, getWalletClientForNetwork } from "@/lib/public-clients"
 import { explorersABI } from "@/data/abi/explorers"
@@ -14,7 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { NFTCard } from "@/components/nft-card"
 import { MintInfo } from "@/components/mint-info"
-import { UserNFTs } from "@/components/user-nfts"
+import { UserNFTs, UserNFTsRef } from "@/components/user-nfts"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Shuffle, Crown, Gift } from "lucide-react"
@@ -87,6 +87,7 @@ const exampleExplorers = [
 
 export default function MintPage() {
   const { address, isConnected, walletClient } = useWallet()
+  const userNFTsRef = useRef<UserNFTsRef>(null)
   const [selectedTraits, setSelectedTraits] = useState({
     species: traits.species[0],
     background: traits.backgrounds[0],
@@ -309,8 +310,11 @@ export default function MintPage() {
           setHasClaimedFree(true)
         }
         
-        // Optionally refresh the user's NFTs
-        // You could trigger a refetch of UserNFTs here
+        // Refresh the user's NFTs to show the newly minted NFT
+        console.log("🔄 Refreshing user's NFT collection...")
+        if (userNFTsRef.current) {
+          await userNFTsRef.current.refetch()
+        }
       } else {
         throw new Error("Transaction failed")
       }
@@ -633,7 +637,7 @@ export default function MintPage() {
           </div>
         </TabsContent>
         <TabsContent value="owned" className="mt-6">
-          <UserNFTs />
+          <UserNFTs ref={userNFTsRef} />
         </TabsContent>
       </Tabs>
     </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useImperativeHandle, forwardRef } from "react"
 import { useWallet } from "@/lib/wallet-context"
 import { getClientForNetwork } from "@/lib/public-clients"
 import { explorersABI } from "@/data/abi/explorers"
@@ -28,7 +28,11 @@ const convertIpfsToHttp = (url: string): string => {
   return url
 }
 
-export function UserNFTs() {
+export interface UserNFTsRef {
+  refetch: () => Promise<void>
+}
+
+export const UserNFTs = forwardRef<UserNFTsRef>((props, ref) => {
   const { isConnected, connect, address, walletChainId, isNetworkMismatch } = useWallet()
   const [nfts, setNfts] = useState<ExplorerNFT[]>([])
   const [loading, setLoading] = useState(false)
@@ -122,6 +126,11 @@ export function UserNFTs() {
       setLoading(false)
     }
   }
+
+  // Expose refetch function to parent components
+  useImperativeHandle(ref, () => ({
+    refetch: fetchUserNFTs
+  }), [address])
 
   // Refetch NFTs when wallet connection, address, or network changes
   useEffect(() => {
@@ -261,4 +270,6 @@ export function UserNFTs() {
       )}
     </div>
   )
-}
+})
+
+UserNFTs.displayName = 'UserNFTs'
