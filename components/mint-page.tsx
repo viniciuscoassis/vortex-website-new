@@ -15,6 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { NFTCard } from "@/components/nft-card"
 import { MintInfo } from "@/components/mint-info"
 import { UserNFTs, UserNFTsRef } from "@/components/user-nfts"
+import { useToast } from "@/hooks/use-toast"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Shuffle, Crown, Gift } from "lucide-react"
@@ -87,6 +88,7 @@ const exampleExplorers = [
 
 export default function MintPage() {
   const { address, isConnected, walletClient } = useWallet()
+  const { toast } = useToast()
   const userNFTsRef = useRef<UserNFTsRef>(null)
   const [selectedTraits, setSelectedTraits] = useState({
     species: traits.species[0],
@@ -197,7 +199,11 @@ export default function MintPage() {
 
   const handleMint = async () => {
     if (!isConnected || !address || !walletClient) {
-      alert("Please connect your wallet first")
+      toast({
+        title: "Wallet Required",
+        description: "Please connect your wallet first",
+        variant: "destructive",
+      })
       return
     }
 
@@ -303,7 +309,12 @@ export default function MintPage() {
       // Check if the transaction was successful
       if (receipt.status === 'success') {
         const mintType = isWhitelisted && !hasClaimedFree ? "FREE" : "PAID"
-        alert(`🎉 Explorer minted successfully (${mintType})! Transaction: ${hash}`)
+        
+        toast({
+          title: "🎉 Explorer Minted Successfully!",
+          description: `Your ${mintType.toLowerCase()} Explorer has been minted. Transaction: ${hash.slice(0, 10)}...${hash.slice(-8)}`,
+          variant: "default",
+        })
         
         // Update whitelist status after successful mint
         if (isWhitelisted && !hasClaimedFree) {
@@ -323,20 +334,29 @@ export default function MintPage() {
       console.error("❌ Minting failed:", error)
       
       // Provide more specific error messages
-      let errorMessage = "Minting failed"
+      let errorTitle = "Minting Failed"
+      let errorDescription = "An unexpected error occurred during minting"
+      
       if (error instanceof Error) {
         if (error.message.includes("insufficient funds")) {
-          errorMessage = "Insufficient funds for minting"
+          errorTitle = "Insufficient Funds"
+          errorDescription = "You don't have enough funds to complete this transaction"
         } else if (error.message.includes("user rejected")) {
-          errorMessage = "Transaction was cancelled"
+          errorTitle = "Transaction Cancelled"
+          errorDescription = "You cancelled the transaction"
         } else if (error.message.includes("Invalid signature")) {
-          errorMessage = "Signature verification failed"
+          errorTitle = "Signature Error"
+          errorDescription = "Signature verification failed"
         } else {
-          errorMessage = error.message
+          errorDescription = error.message
         }
       }
       
-      alert(`Minting failed: ${errorMessage}`)
+      toast({
+        title: errorTitle,
+        description: errorDescription,
+        variant: "destructive",
+      })
     } finally {
       setIsMinting(false)
     }
