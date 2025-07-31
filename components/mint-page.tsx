@@ -1,23 +1,26 @@
 "use client"
 
-import { MintInfo, MintInfoRef } from "@/components/mint-info"
-import { NFTCard } from "@/components/nft-card"
+import { useState, useEffect } from "react"
+import { useWallet } from "@/lib/wallet-context"
+import { getClientForNetwork, getWalletClientForNetwork } from "@/lib/public-clients"
+import { explorersABI } from "@/data/abi/explorers"
+import { parseEther } from "viem"
+import { sonic, sonicBlazeTestnet } from "viem/chains"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { UserNFTs, UserNFTsRef } from "@/components/user-nfts"
-import { explorersABI } from "@/data/abi/explorers"
-import traits from "@/data/traits.json"
+import { Badge } from "@/components/ui/badge"
+import { NFTCard } from "@/components/nft-card"
+import { MintInfo } from "@/components/mint-info"
+import { UserNFTs } from "@/components/user-nfts"
 import { useToast } from "@/hooks/use-toast"
-import { getClientForNetwork } from "@/lib/public-clients"
-import { cn } from "@/lib/utils"
-import { useWallet } from "@/lib/wallet-context"
-import { Crown, Gift, Shuffle } from "lucide-react"
+import { useMintStore } from "@/lib/store/mint-store"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
-import { sonic, sonicBlazeTestnet } from "viem/chains"
+import { cn } from "@/lib/utils"
+import { Shuffle, Crown, Gift } from "lucide-react"
+import traits from "@/data/traits.json"
 
 type Explorer = {
   id: number
@@ -87,8 +90,7 @@ const exampleExplorers = [
 export default function MintPage() {
   const { address, isConnected, walletClient } = useWallet()
   const { toast } = useToast()
-  const userNFTsRef = useRef<UserNFTsRef>(null)
-  const mintInfoRef = useRef<MintInfoRef>(null)
+  const { triggerNFTRefresh, triggerMintDataRefresh } = useMintStore()
   const [selectedTraits, setSelectedTraits] = useState({
     species: traits.species[0],
     background: traits.backgrounds[0],
@@ -320,17 +322,10 @@ export default function MintPage() {
           setHasClaimedFree(true)
         }
         
-        // Refresh the user's NFTs to show the newly minted NFT
-        console.log("🔄 Refreshing user's NFT collection...")
-        if (userNFTsRef.current) {
-          await userNFTsRef.current.refetch()
-        }
-        
-        // Refresh mint info to update statistics
-        console.log("📊 Refreshing mint statistics...")
-        if (mintInfoRef.current) {
-          await mintInfoRef.current.refetch()
-        }
+        // Trigger refreshes via Zustand store
+        console.log("🔄 Triggering refreshes via Zustand...")
+        triggerNFTRefresh()
+        triggerMintDataRefresh()
       } else {
         throw new Error("Transaction failed")
       }
@@ -419,7 +414,7 @@ export default function MintPage() {
 
   return (
     <div>
-      <MintInfo ref={mintInfoRef} />
+      <MintInfo />
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
         <Card className="bg-black/40 backdrop-blur-md border-zinc-800 h-full">
@@ -662,7 +657,7 @@ export default function MintPage() {
           </div>
         </TabsContent>
         <TabsContent value="owned" className="mt-6">
-          <UserNFTs ref={userNFTsRef} />
+          <UserNFTs />
         </TabsContent>
       </Tabs>
     </div>

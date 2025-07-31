@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState, useImperativeHandle, forwardRef } from "react"
+import { useEffect, useState } from "react"
 import { useWallet } from "@/lib/wallet-context"
 import { getClientForNetwork } from "@/lib/public-clients"
 import { explorersABI } from "@/data/abi/explorers"
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { NFTCard } from "@/components/nft-card"
 import { WalletIcon, Loader2, AlertCircle } from "lucide-react"
+import { useMintStore } from "@/lib/store/mint-store"
 
 interface ExplorerNFT {
   tokenId: string
@@ -28,12 +29,9 @@ const convertIpfsToHttp = (url: string): string => {
   return url
 }
 
-export interface UserNFTsRef {
-  refetch: () => Promise<void>
-}
-
-export const UserNFTs = forwardRef<UserNFTsRef>((props, ref) => {
+export function UserNFTs() {
   const { isConnected, connect, address, walletChainId, isNetworkMismatch } = useWallet()
+  const { lastNFTRefreshTime } = useMintStore()
   const [nfts, setNfts] = useState<ExplorerNFT[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -100,11 +98,27 @@ export const UserNFTs = forwardRef<UserNFTsRef>((props, ref) => {
           // Convert image URL to HTTP if it's IPFS
           const imageUrl = metadata.image ? convertIpfsToHttp(metadata.image) : '/placeholder.png'
 
+          // Transform traits from array format to key-value object
+          let transformedTraits: { [key: string]: string } = {}
+          
+          if (metadata.attributes && Array.isArray(metadata.attributes)) {
+            // Handle standard NFT metadata format: [{trait_type: "Background", value: "Space"}]
+            transformedTraits = metadata.attributes.reduce((acc: { [key: string]: string }, trait: any) => {
+              if (trait.trait_type && trait.value !== undefined) {
+                acc[trait.trait_type] = String(trait.value)
+              }
+              return acc
+            }, {})
+          } else if (metadata.attributes && typeof metadata.attributes === 'object') {
+            // Handle direct key-value format: {background: "Space", species: "Human"}
+            transformedTraits = metadata.attributes
+          }
+
           return {
             tokenId: tokenId.toString(),
             name: metadata.name || `Explorer #${tokenId}`,
             image: imageUrl,
-            traits: metadata.attributes || {}
+            traits: transformedTraits
           }
         } catch (err) {
           console.error(`Failed to fetch metadata for token ${tokenId}:`, err)
@@ -127,12 +141,7 @@ export const UserNFTs = forwardRef<UserNFTsRef>((props, ref) => {
     }
   }
 
-  // Expose refetch function to parent components
-  useImperativeHandle(ref, () => ({
-    refetch: fetchUserNFTs
-  }), [address])
-
-  // Refetch NFTs when wallet connection, address, or network changes
+  // Refetch NFTs when wallet connection, address, network changes, or refresh is triggered
   useEffect(() => {
     if (isConnected && address && !isNetworkMismatch) {
       fetchUserNFTs()
@@ -141,7 +150,7 @@ export const UserNFTs = forwardRef<UserNFTsRef>((props, ref) => {
       setNfts([])
       setError(null)
     }
-  }, [isConnected, address, walletChainId, isNetworkMismatch])
+  }, [isConnected, address, walletChainId, isNetworkMismatch, lastNFTRefreshTime])
 
   if (!isConnected) {
     return (
@@ -270,6 +279,4 @@ export const UserNFTs = forwardRef<UserNFTsRef>((props, ref) => {
       )}
     </div>
   )
-})
-
-UserNFTs.displayName = 'UserNFTs'
+}

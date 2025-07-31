@@ -1,89 +1,27 @@
 "use client"
 
-import { useState, useEffect, useImperativeHandle, forwardRef } from "react"
+import { useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { getClientForNetwork } from "@/lib/public-clients"
-import { explorersABI } from "@/data/abi/explorers"
-import { formatEther } from "viem"
+import { useMintStore } from "@/lib/store/mint-store"
 
-export interface MintInfoRef {
-  refetch: () => Promise<void>
-}
-
-export const MintInfo = forwardRef<MintInfoRef>((props, ref) => {
-  const [totalMinted, setTotalMinted] = useState<number>(0)
-  const [maxSupply, setMaxSupply] = useState<number>(2222)
-  const [mintPrice, setMintPrice] = useState<string>("0")
-  const [loading, setLoading] = useState(false)
+export function MintInfo() {
+  const { 
+    totalMinted, 
+    maxSupply, 
+    mintPrice, 
+    loading, 
+    lastMintTime,
+    fetchMintData 
+  } = useMintStore()
 
   // Check if minting is enabled via environment variable
   const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
 
-  const fetchMintData = async () => {
-    setLoading(true)
-    try {
-      const network = process.env.NEXT_PUBLIC_NETWORK === 'testnet' ? 'testnet' : 'mainnet'
-      const client = getClientForNetwork(network)
-      
-      const explorerAddresses = {
-        testnet: process.env.NEXT_PUBLIC_TESTNET_EXPLORERS_CONTRACT_ADDRESS as `0x${string}`,
-        mainnet: process.env.NEXT_PUBLIC_MAINNET_EXPLORERS_CONTRACT_ADDRESS as `0x${string}`
-      }
-
-      const contractAddress = explorerAddresses[network]
-      
-      if (!contractAddress) {
-        console.error('Explorers contract address not configured')
-        return
-      }
-
-      // Fetch total minted
-      const totalMintedResult = await client.readContract({
-        address: contractAddress,
-        abi: explorersABI,
-        functionName: 'totalMinted'
-      }) as bigint
-
-      // Fetch max supply
-      const maxSupplyResult = await client.readContract({
-        address: contractAddress,
-        abi: explorersABI,
-        functionName: 'MAX_SUPPLY'
-      }) as bigint
-
-      // Fetch mint price
-      const mintPriceResult = await client.readContract({
-        address: contractAddress,
-        abi: explorersABI,
-        functionName: 'MINT_PRICE'
-      }) as bigint
-
-      setTotalMinted(Number(totalMintedResult))
-      setMaxSupply(Number(maxSupplyResult))
-      setMintPrice(formatEther(mintPriceResult))
-
-      console.log('Mint data fetched:', {
-        totalMinted: Number(totalMintedResult),
-        maxSupply: Number(maxSupplyResult),
-        mintPrice: formatEther(mintPriceResult)
-      })
-    } catch (error) {
-      console.error('Failed to fetch mint data:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  // Expose refetch function to parent components
-  useImperativeHandle(ref, () => ({
-    refetch: fetchMintData
-  }), [])
-
-  // Fetch data on component mount
+  // Fetch data on component mount and when lastMintTime changes
   useEffect(() => {
     fetchMintData()
-  }, [])
+  }, [fetchMintData, lastMintTime])
 
   // Calculate progress percentage
   const progressPercentage = maxSupply > 0 ? (totalMinted / maxSupply) * 100 : 0
@@ -144,14 +82,9 @@ export const MintInfo = forwardRef<MintInfoRef>((props, ref) => {
                 style={{ width: `${progressPercentage}%` }}
               ></div>
             </div>
-            {/* <p className="text-xs text-zinc-400 mt-1">
-              {progressPercentage.toFixed(1)}% Complete
-            </p> */}
           </CardContent>
         </Card>
       </div>
     </div>
   )
-})
-
-MintInfo.displayName = 'MintInfo'
+}
