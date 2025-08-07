@@ -11,10 +11,41 @@ interface NFTCardProps {
 }
 
 export function NFTCard({ name, traits, image }: NFTCardProps) {
+  const isUnrevealed = name === "Unrevealed Explorer"
+  const isVideo = image.toLowerCase().endsWith('.mp4') || image.toLowerCase().includes('.mp4')
+
+  // Use local unrevealed.mp4 for unrevealed explorers
+  const displayImage = isUnrevealed ? "/unrevealed.mp4" : image
+
   return (
     <Card className="bg-black/40 backdrop-blur-md border-zinc-800 overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/10">
       <div className="aspect-square relative">
-        <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover" />
+        {isUnrevealed ? (
+          <video
+            src={displayImage}
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls={false}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              console.error('Video failed to load:', displayImage, e)
+            }}
+          />
+        ) : (
+          <Image 
+            src={image || "/placeholder.svg"} 
+            alt={name} 
+            fill 
+            className="object-cover" 
+          />
+        )}
+        
+        {/* Overlay for unrevealed explorers */}
+        {isUnrevealed && (
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+        )}
       </div>
       <CardContent className="p-4">
         <h3 className="text-lg font-bold text-white mb-2">{name}</h3>
