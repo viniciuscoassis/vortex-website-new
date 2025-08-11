@@ -51,18 +51,6 @@ type SelectedTraits = {
 const exampleExplorers = [
   {
     id: 1,
-    name: "Saturnian Explorer",
-    image: "/explorers/2.jpeg",
-    traits: {
-      species: "Saturnian – translucent blue, tentacles, luminescent eyes.",
-      background: "ringed gas giant",
-      hat: "stellar cowboy hat",
-      outfit: "casual martian colony wear",
-      weapon: "water gun"
-    },
-  },
-  {
-    id: 2,
     name: "Cryon Explorer",
     image: "/explorers/19.png",
     traits: {
@@ -71,6 +59,18 @@ const exampleExplorers = [
       hat: "steampunk bronze diving helmet",
       outfit: "retro astronaut suit",
       weapon: "dimensional flashlight"
+    },
+  },
+  {
+    id: 2,
+    name: "Saturnian Explorer",
+    image: "/explorers/2.jpeg",
+    traits: {
+      species: "Saturnian – translucent blue, tentacles, luminescent eyes.",
+      background: "ringed gas giant",
+      hat: "stellar cowboy hat",
+      outfit: "casual martian colony wear",
+      weapon: "water gun"
     },
   },
   {
@@ -109,7 +109,7 @@ export default function MintPage() {
     background: traits.backgrounds.find(t => t.available)?.name || "",
     hat: traits.hats.find(t => t.available)?.name || "",
     outfit: traits.outfits.find(t => t.available)?.name || "",
-    weapon: "none"
+    weapon: traits.weapons.find(t => t.available)?.name || ""
   })
   const [isMinting, setIsMinting] = useState(false)
   const [isWhitelisted, setIsWhitelisted] = useState(false)

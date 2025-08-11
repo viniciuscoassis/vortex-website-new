@@ -54,6 +54,12 @@
 
   "hats": [
     {
+      "name": "tinfoil hat",
+      "category": "coming-soon",
+      "rarity": "common",
+      "available": false
+    },
+    {
       "name": "flat-brim cap",
       "category": "default",
       "rarity": "common",
@@ -337,27 +343,31 @@
     },
     {
       "name": "animated binary crown",
-      "category": "new",
+      "category": "default",
       "rarity": "mythic",
-      "available": true,
-      "collabPartner": "BinaryCorp"
+      "available": true
     },
     {
       "name": "neural command tiara",
-      "category": "new",
+      "category": "default",
       "rarity": "mythic",
-      "available": true,
-      "collabPartner": "NeuralTech"
+      "available": true
     },
     {
       "name": "golden cosmic samurai helm",
-      "category": "new",
+      "category": "default",
       "rarity": "mythic",
-      "available": true,
-      "collabPartner": "SamuraiDAO"
+      "available": true
     }
   ],
   "weapons": [
+    {
+      "name": "oil lamp",
+      "category": "new",
+      "rarity": "common",
+      "available": true,
+      "collabPartner": "Moth"
+    },
     {
       "name": "laser sword",
       "category": "default",
@@ -540,10 +550,9 @@
     },
     {
       "name": "robotic raven",
-      "category": "new",
+      "category": "default",
       "rarity": "mythic",
-      "available": true,
-      "collabPartner": "RavenTech"
+      "available": true
     }
   ],
   "backgrounds": [
@@ -617,8 +626,7 @@
       "name": "quantum void realm",
       "category": "default",
       "rarity": "mythic",
-      "available": true,
-      "collabPartner": "QuantumCorp"
+      "available": true
     }
   ],
   "outfits": [
@@ -752,8 +760,7 @@
       "name": "cosmic dragon scale armor",
       "category": "default",
       "rarity": "mythic",
-      "available": true,
-      "collabPartner": "DragonDAO"
+      "available": true
     }
   ]
 } 
