@@ -17,7 +17,7 @@ import { MintInfo } from "@/components/mint-info"
 import { UserNFTs } from "@/components/user-nfts"
 import { useToast } from "@/hooks/use-toast"
 import { useMintStore } from "@/lib/store/mint-store"
-import { useMintedExplorers } from "@/hooks/use-minted-explorers"
+import { useMintedExplorers, type MintedExplorer } from "@/hooks/use-minted-explorers"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Shuffle, Crown, Gift, Clock, Users, Zap, Lock } from "lucide-react"
@@ -26,7 +26,6 @@ import traits from "@/data/traits.json"
 type TraitItem = {
   name: string
   category: 'default' | 'old' | 'new' | 'coming-soon'
-  rarity: 'common' | 'rare' | 'epic' | 'legendary' | 'mythic'
   available: boolean
   collabPartner?: string
 }
@@ -219,14 +218,12 @@ export default function MintPage() {
     })
   }
 
-  const getRarityBadge = (rarity: string) => {
-    switch (rarity) {
-      case 'common': return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
-      case 'rare': return { label: 'Rare', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' }
-      case 'epic': return { label: 'Epic', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' }
-      case 'legendary': return { label: 'Legendary', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' }
-      default: return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
-    }
+  const getRarityBadge = (percentage: number) => {
+    if (percentage >= 10) return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
+    if (percentage >= 5) return { label: 'Rare', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' }
+    if (percentage >= 2) return { label: 'Epic', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' }
+    if (percentage >= 1) return { label: 'Legendary', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' }
+    return { label: 'Mythic', color: 'bg-red-500/20 text-red-400 border-red-500/30' }
   }
 
   const getCategoryIcon = (category: string) => {
@@ -354,26 +351,89 @@ export default function MintPage() {
           </SelectContent>
         </Select>
         
-        {/* Rarity Badge only */}
+        {/* Rarity Badge and Trait Stats */}
         {selectedTraits[traitKey as keyof SelectedTraits] && (
-          <div className="flex justify-end">
-            {(() => {
-              const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
-              if (!selectedTrait) return null
-              
-              const rarityBadge = getRarityBadge(selectedTrait.rarity)
-              return (
-                <Badge 
-                  variant="outline" 
-                  className={cn(
-                    "text-xs px-2 py-0.5",
-                    rarityBadge.color
-                  )}
-                >
-                  {rarityBadge.label}
-                </Badge>
-              )
-            })()}
+          <div className="flex justify-between items-center">
+            {/* Trait Usage Stats */}
+            <div className="flex items-center gap-2 text-xs text-zinc-400">
+              {(() => {
+                const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
+                if (!selectedTrait) return null
+                
+                // Get trait stats from minted explorers
+                const traitKeyMap: Record<keyof SelectedTraits, keyof MintedExplorer> = {
+                  species: 'Species',
+                  background: 'Background', 
+                  hat: 'Hat',
+                  outfit: 'Outfit',
+                  weapon: 'Weapon'
+                }
+                
+                const mintedCount = mintedExplorers?.filter(explorer => 
+                  explorer[traitKeyMap[traitKey as keyof SelectedTraits]] === selectedTrait.name
+                ).length || 0
+                
+                const totalMinted = mintedExplorers?.length || 0
+                const percentage = totalMinted > 0 ? ((mintedCount / totalMinted) * 100).toFixed(1) : '0.0'
+                
+                return (
+                  <>
+                    <span className="text-emerald-400 font-medium">
+                      {mintedCount} minted
+                    </span>
+                    <span className="text-zinc-500">•</span>
+                    <span className="text-blue-400 font-medium">
+                      {percentage}%
+                    </span>
+                    {totalMinted > 0 && (
+                      <>
+                        <span className="text-zinc-500">•</span>
+                        <span className="text-zinc-400">
+                          of {totalMinted} total
+                        </span>
+                      </>
+                    )}
+                  </>
+                )
+              })()}
+            </div>
+
+            {/* Rarity Badge */}
+            <div className="flex items-center gap-2">
+              {(() => {
+                const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
+                if (!selectedTrait) return null
+                
+                // Calculate rarity based on actual usage
+                const traitKeyMap: Record<keyof SelectedTraits, keyof MintedExplorer> = {
+                  species: 'Species',
+                  background: 'Background', 
+                  hat: 'Hat',
+                  outfit: 'Outfit',
+                  weapon: 'Weapon'
+                }
+                
+                const mintedCount = mintedExplorers?.filter(explorer => 
+                  explorer[traitKeyMap[traitKey as keyof SelectedTraits]] === selectedTrait.name
+                ).length || 0
+                
+                const totalMinted = mintedExplorers?.length || 0
+                const percentage = totalMinted > 0 ? (mintedCount / totalMinted) * 100 : 0
+                
+                const rarityBadge = getRarityBadge(percentage)
+                return (
+                  <Badge 
+                    variant="outline" 
+                    className={cn(
+                      "text-xs px-2 py-0.5",
+                      rarityBadge.color
+                    )}
+                  >
+                    {rarityBadge.label}
+                  </Badge>
+                )
+              })()}
+            </div>
           </div>
         )}
       </div>
@@ -622,50 +682,66 @@ export default function MintPage() {
               </div>
             )}
 
-            {/* Rarity Legend */}
-            <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
-              <div className="text-sm font-medium text-zinc-300 mb-2">Rarity Levels:</div>
-              <div className="flex flex-wrap gap-1 sm:gap-2">
-                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs">
-                  Common
-                </Badge>
-                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
-                  Rare
-                </Badge>
-                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs">
-                  Epic
-                </Badge>
-                <Badge variant="outline" className="bg-orange-500/20 text-orange-400 border-orange-500/30 text-xs">
-                  Legendary
-                </Badge>
-              </div>
-            </div>
+                        {/* Collapsible Legends */}
+            <div className="mb-4">
+              <details className="group">
+                <summary className="flex items-center justify-between cursor-pointer p-4 rounded-lg border border-zinc-700 bg-zinc-900/50 hover:bg-zinc-900/70 transition-colors">
+                  <span className="text-sm font-medium text-zinc-300">Trait Information & Rarity Guide</span>
+                  <svg className="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-4 pb-4 space-y-4">
+                  {/* Rarity Legend */}
+                  <div>
+                    <div className="text-sm font-medium text-zinc-300 pt-2 mb-3">Rarity Levels (Based on Usage):</div>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs px-3 py-1.5">
+                        Common (≥10%)
+                      </Badge>
+                      <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs px-3 py-1.5">
+                        Rare (≥5%)
+                      </Badge>
+                      <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs px-3 py-1.5">
+                        Epic (≥2%)
+                      </Badge>
+                      <Badge variant="outline" className="bg-orange-500/20 text-orange-400 border-orange-500/30 text-xs px-3 py-1.5">
+                        Legendary (≥1%)
+                      </Badge>
+                      <Badge variant="outline" className="bg-red-500/20 text-red-400 border-red-500/30 text-xs px-3 py-1.5">
+                        Mythic (1%)
+                      </Badge>
+                    </div>
+                  </div>
 
-            {/* Trait Categories Legend */}
-            <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
-              <div className="text-sm font-medium text-zinc-300 mb-2">Trait Categories:</div>
-              <div className="flex flex-wrap gap-1 sm:gap-2">
-                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
-                  <Crown className="h-3 w-3 mr-1" />
-                  Default
-                </Badge>
-                <Badge variant="outline" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-xs">
-                  <Zap className="h-3 w-3 mr-1" />
-                  New
-                </Badge>
-                <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs">
-                  <Clock className="h-3 w-3 mr-1" />
-                  Coming Soon
-                </Badge>
-                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs">
-                  <Users className="h-3 w-3 mr-1" />
-                  Collab
-                </Badge>
-                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs">
-                  <Lock className="h-3 w-3 mr-1" />
-                  Old/Disabled
-                </Badge>
-              </div>
+                  {/* Trait Categories Legend */}
+                  <div>
+                    <div className="text-sm font-medium text-zinc-300 mb-3">Trait Categories:</div>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs px-3 py-1.5">
+                        <Crown className="h-3 w-3 mr-1" />
+                        Default
+                      </Badge>
+                      <Badge variant="outline" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-xs px-3 py-1.5">
+                        <Zap className="h-3 w-3 mr-1" />
+                        New
+                      </Badge>
+                      <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs px-3 py-1.5">
+                        <Clock className="h-3 w-3 mr-1" />
+                        Coming Soon
+                      </Badge>
+                      <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs px-3 py-1.5">
+                        <Users className="h-3 w-3 mr-1" />
+                        Collab
+                      </Badge>
+                      <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs px-3 py-1.5">
+                        <Lock className="h-3 w-3 mr-1" />
+                        Old/Disabled
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+              </details>
             </div>
 
             
@@ -761,11 +837,11 @@ export default function MintPage() {
                 
                 return (
                   <div className="relative w-full h-full rounded-lg overflow-hidden border-2 border-emerald-500/50 shadow-lg shadow-emerald-500/20 min-h-[280px] sm:min-h-[380px]">
-                    <Image 
+                  <Image 
                       src={getImageUrl(currentExplorer.image)} 
                       alt={currentExplorer.name} 
-                      fill 
-                      className="object-cover"
+                    fill 
+                    className="object-cover" 
                       onError={(e) => {
                         console.error('Image failed to load:', e)
                         // Fallback to placeholder if IPFS image fails
@@ -773,22 +849,22 @@ export default function MintPage() {
                         target.src = "/placeholder.svg"
                       }}
                       onLoad={() => console.log('Image loaded successfully')}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
                     <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
                       <p className="text-white text-sm sm:text-lg font-bold mb-2 sm:mb-3">{currentExplorer.name}</p>
                       <div className="flex flex-wrap gap-1 sm:gap-2">
                         {Object.entries(currentExplorer.traits).map(([key, value]) => (
-                          <span 
-                            key={key}
+                        <span 
+                          key={key}
                             className="text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5 bg-black/80 rounded-full text-emerald-400 border border-emerald-500/50 font-medium"
-                          >
-                            {value.split(" – ")[0]}
-                          </span>
-                        ))}
-                      </div>
+                        >
+                          {value.split(" – ")[0]}
+                        </span>
+                      ))}
                     </div>
                   </div>
+                </div>
                 )
               })()}
             </div>
