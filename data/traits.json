@@ -1,129 +1,766 @@
 {
   "species": [
-    "Martian – green phosphorescent skin, large eyes, antennae.",
-    "Saturnian – translucent blue, tentacles, luminescent eyes.",
-    "Voidborn – distorted silhouette, living shadow, born near black holes.",
-    "Cryon – crystalline ice body, cold vapors, brittle movements.",
-    "Techniderm – metallic skin with circuits, symbiotic AI.",
-    "Floranoid – plant-animal hybrid, branches, petals, thorns.",
-    "Feline – feline traits, high agility, night vision, pointed ears."
+
+    {
+      "name": "Moth – humanoid moth creature covered in fine iridescent fur. Large, feathery antennae and bright, luminescent white eyes. Expansive patterned moth wings.",
+      "category": "new",
+      "rarity": "legendary",
+      "available": true,
+      "collabPartner": "Moth"
+    },
+    {
+      "name": "Martian – green phosphorescent skin, large eyes, antennae.",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "Saturnian – translucent blue, tentacles, luminescent eyes.",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "Voidborn – distorted silhouette, living shadow, born near black holes.",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "Cryon – crystalline ice body, cold vapors, brittle movements.",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "Techniderm – metallic skin with circuits, symbiotic AI.",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "Floranoid – plant-animal hybrid, branches, petals, thorns.",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "Feline – feline traits, high agility, night vision, pointed ears.",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    }
   ],
 
   "hats": [
-    "flat-brim cap",
-    "mercenary beret",
-    "quantum beanie",
-    "space pirate bandana",
-    "tactical balaclava",
-    "spectral hood",
-    "holographic party hat",
-    "mirrored visor",
-    "cyber ninja headband",
-    "plutonium thermal cap",
-    "orbital rain hat",
-    "ethereal ice tiara",
-    "cosmic merchant hood",
-    "stellar cowboy hat",
-    "mutable turban",
-    "cracked space helmet",
-    "wide-brim sensor hat",
-    "steampunk bronze diving helmet",
-    "lunar racing helmet",
-    "pulsating energy tiara",
-    "augmented reality helmet",
-    "retro viking helm",
-    "luminescent plant tiara",
-    "binary code crown",
-    "plasma veil",
-    "alien tribal mask",
-    "orbital mining helmet",
-    "vacuum gladiator helm",
-    "floating rune tiara",
-    "solar fighter helmet",
-    "frozen lava crown",
-    "ceremonial artificial skull",
-    "floating gravity disc",
-    "exosuit helmet",
-    "cosmic crystal crown",
-    "gravity knight helm",
-    "HUD visor helmet",
-    "anti-psychic skull shield",
-    "digital halo",
-    "gravity turban",
-    "cosmic samurai helm",
-    "xeno cult helmet",
-    "time-warped top hat",
-    "symbiotic mushroom hat",
-    "wormhole halo",
-    "transparent mist helmet",
-    "animated binary crown",
-    "neural command tiara",
-    "golden cosmic samurai helm"
+    {
+      "name": "tinfoil hat",
+      "category": "coming-soon",
+      "rarity": "common",
+      "available": false
+    },
+    {
+      "name": "flat-brim cap",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "mercenary beret",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "classic space helmet",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "quantum beanie",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "space pirate bandana",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "tactical balaclava",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "spectral hood",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "holographic party hat",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "mirrored visor",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "cyber ninja headband",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "plutonium thermal cap",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "orbital rain hat",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "ethereal ice tiara",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "cosmic merchant hood",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "stellar cowboy hat",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "mutable turban",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "cracked space helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "wide-brim sensor hat",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "steampunk bronze diving helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "lunar racing helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "pulsating energy tiara",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "augmented reality helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "retro viking helm",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "luminescent plant tiara",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "binary code crown",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "plasma veil",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "alien tribal mask",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "orbital mining helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "vacuum gladiator helm",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "floating rune tiara",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "solar fighter helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "frozen lava crown",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "ceremonial artificial skull",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "floating gravity disc",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "exosuit helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "cosmic crystal crown",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "gravity knight helm",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "HUD visor helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "anti-psychic skull shield",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "digital halo",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "gravity turban",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "cosmic samurai helm",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "xeno cult helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "time-warped top hat",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "symbiotic mushroom hat",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "wormhole halo",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "transparent mist helmet",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "animated binary crown",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "neural command tiara",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "golden cosmic samurai helm",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    }
   ],
   "weapons": [
-    "laser sword",
-    "water gun",
-    "plasma rifle",
-    "quantum screwdriver",
-    "gravitational baseball bat",
-    "neon flamethrower",
-    "antimatter saber",
-    "cosmic fishing rod",
-    "holographic tablet",
-    "wormhole detonator",
-    "interplanetary golf club",
-    "slime pistol",
-    "carbon cane",
-    "electric pulse blaster",
-    "laser guitar",
-    "dimensional flashlight",
-    "dark matter slingshot",
-    "asteroid drill",
-    "alien rubik's cube",
-    "particle whip",
-    "teleportation crystal",
-    "ion rapier",
-    "retractable claw",
-    "cosmic ice spear",
-    "camouflage mirror",
-    "sacred voidborn book",
-    "portable patrol drone",
-    "interstellar coffee mug",
-    "foldable star map",
-    "robotic raven"
+    {
+      "name": "oil lamp",
+      "category": "new",
+      "rarity": "common",
+      "available": true,
+      "collabPartner": "Moth"
+    },
+    {
+      "name": "laser sword",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "standard blaster",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "water gun",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "plasma rifle",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "quantum screwdriver",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "gravitational baseball bat",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "neon flamethrower",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "antimatter saber",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "cosmic fishing rod",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "holographic tablet",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "wormhole detonator",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "interplanetary golf club",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "slime pistol",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "carbon cane",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "electric pulse blaster",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "laser guitar",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "dimensional flashlight",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "dark matter slingshot",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "asteroid drill",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "alien rubik's cube",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "particle whip",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "teleportation crystal",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "ion rapier",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "retractable claw",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "cosmic ice spear",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "camouflage mirror",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "sacred voidborn book",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "portable patrol drone",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "interstellar coffee mug",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "foldable star map",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "robotic raven",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    }
   ],
   "backgrounds": [
-    "active black hole",
-    "purple nebula",
-    "ringed gas giant",
-    "abandoned space station",
-    "supernova-lit asteroid field",
-    "frozen moon surface",
-    "alien desert with twin moons",
-    "bioluminescent low-gravity forest",
-    "floating futuristic city",
-    "starlit sky with moving constellations"
+    {
+      "name": "standard space station",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "active black hole",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "purple nebula",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "ringed gas giant",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "abandoned space station",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "supernova-lit asteroid field",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "frozen moon surface",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "alien desert with twin moons",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "bioluminescent low-gravity forest",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "floating futuristic city",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "starlit sky with moving constellations",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "quantum void realm",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    }
   ],
   "outfits": [
-    "cosmic kevlar tactical armor",
-    "intergalactic pilot uniform",
-    "andaran elder ceremonial robe",
-    "optical stealth suit",
-    "orbital mining exosuit",
-    "synthetic leather jacket with LEDs",
-    "time traveler cloak",
-    "quantum containment suit",
-    "casual martian colony wear",
-    "stellar war kimono",
-    "living symbiotic suit",
-    "space bioengineer uniform",
-    "admiral's ceremonial uniform",
-    "black hole survivor rags",
-    "holographic party attire",
-    "solar legion uniform",
-    "interspecies diplomat outfit",
-    "tribal wear with bioluminescent fibers",
-    "interstellar bounty hunter gear",
-    "retro astronaut suit"
+    {
+      "name": "cosmic kevlar tactical armor",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "standard spacesuit",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "intergalactic pilot uniform",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "andaran elder ceremonial robe",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "optical stealth suit",
+      "category": "default",
+      "rarity": "common",
+      "available": true
+    },
+    {
+      "name": "orbital mining exosuit",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "synthetic leather jacket with LEDs",
+      "category": "default",
+      "rarity": "rare",
+      "available": true
+    },
+    {
+      "name": "time traveler cloak",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "quantum containment suit",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "casual martian colony wear",
+      "category": "default",
+      "rarity": "epic",
+      "available": true
+    },
+    {
+      "name": "stellar war kimono",
+      "category": "default",
+      "rarity": "legendary",
+      "available": true
+    },
+    {
+      "name": "living symbiotic suit",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "space bioengineer uniform",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "admiral's ceremonial uniform",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "black hole survivor rags",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "holographic party attire",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "solar legion uniform",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "interspecies diplomat outfit",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "tribal wear with bioluminescent fibers",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "interstellar bounty hunter gear",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "retro astronaut suit",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    },
+    {
+      "name": "cosmic dragon scale armor",
+      "category": "default",
+      "rarity": "mythic",
+      "available": true
+    }
   ]
 } 

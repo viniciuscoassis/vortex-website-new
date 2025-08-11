@@ -17,44 +17,44 @@ import { MintInfo } from "@/components/mint-info"
 import { UserNFTs } from "@/components/user-nfts"
 import { useToast } from "@/hooks/use-toast"
 import { useMintStore } from "@/lib/store/mint-store"
+import { useMintedExplorers } from "@/hooks/use-minted-explorers"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Shuffle, Crown, Gift } from "lucide-react"
+import { Shuffle, Crown, Gift, Clock, Users, Zap, Lock } from "lucide-react"
 import traits from "@/data/traits.json"
 
-type Explorer = {
-  id: number
+type TraitItem = {
   name: string
-  image: string
-  traits: {
+  category: 'default' | 'old' | 'new' | 'coming-soon'
+  rarity: 'common' | 'rare' | 'epic' | 'legendary' | 'mythic'
+  available: boolean
+  collabPartner?: string
+}
+
+type TraitCategory = {
+  species: TraitItem[]
+  hats: TraitItem[]
+  weapons: TraitItem[]
+  backgrounds: TraitItem[]
+  outfits: TraitItem[]
+}
+
+type SelectedTraits = {
     species: string
     background: string
     hat: string
     outfit: string
     weapon: string
-  }
 }
 
 // Example explorers data
 const exampleExplorers = [
   {
     id: 1,
-    name: "Saturnian Explorer",
-    image: "/explorers/2.jpeg",
-    traits: {
-      species: "Saturnian",
-      background: "ringed gas giant",
-      hat: "stellar cowboy hat",
-      outfit: "casual martian colony wear",
-      weapon: "water gun"
-    },
-  },
-  {
-    id: 2,
     name: "Cryon Explorer",
     image: "/explorers/19.png",
     traits: {
-      species: "Cryon",
+      species: "Cryon – crystalline ice body, cold vapors, brittle movements.",
       background: "frozen moon surface",
       hat: "steampunk bronze diving helmet",
       outfit: "retro astronaut suit",
@@ -62,11 +62,23 @@ const exampleExplorers = [
     },
   },
   {
+    id: 2,
+    name: "Saturnian Explorer",
+    image: "/explorers/2.jpeg",
+    traits: {
+      species: "Saturnian – translucent blue, tentacles, luminescent eyes.",
+      background: "ringed gas giant",
+      hat: "stellar cowboy hat",
+      outfit: "casual martian colony wear",
+      weapon: "water gun"
+    },
+  },
+  {
     id: 3,
     name: "Voidborn Explorer",
     image: "/explorers/3.jpeg",
     traits: {
-      species: "Voidborn",
+      species: "Voidborn – distorted silhouette, living shadow, born near black holes.",
       background: "bioluminescent low-gravity forest",
       hat: "wormhole halo",
       outfit: "tribal wear with bioluminescent fibers",
@@ -78,7 +90,7 @@ const exampleExplorers = [
     name: "Techniderm Explorer",
     image: "/explorers/20.png",
     traits: {
-      species: "Techniderm",
+      species: "Techniderm – metallic skin with circuits, symbiotic AI.",
       background: "ringed gas giant",
       hat: "animated binary crown",
       outfit: "synthetic leather jacket with LEDs",
@@ -91,17 +103,20 @@ export default function MintPage() {
   const { address, isConnected, walletClient } = useWallet()
   const { toast } = useToast()
   const { triggerNFTRefresh, triggerMintDataRefresh } = useMintStore()
-  const [selectedTraits, setSelectedTraits] = useState({
-    species: traits.species[0],
-    background: traits.backgrounds[0],
-    hat: traits.hats[0],
-    outfit: traits.outfits[0],
-    weapon: "none"
+  const { mintedExplorers, loading: explorersLoading } = useMintedExplorers()
+  const [selectedTraits, setSelectedTraits] = useState<SelectedTraits>({
+    species: traits.species.find(t => t.available)?.name || "",
+    background: traits.backgrounds.find(t => t.available)?.name || "",
+    hat: traits.hats.find(t => t.available)?.name || "",
+    outfit: traits.outfits.find(t => t.available)?.name || "",
+    weapon: traits.weapons.find(t => t.available)?.name || ""
   })
   const [isMinting, setIsMinting] = useState(false)
   const [isWhitelisted, setIsWhitelisted] = useState(false)
   const [hasClaimedFree, setHasClaimedFree] = useState(false)
   const [whitelistLoading, setWhitelistLoading] = useState(false)
+  const [currentInspirationIndex, setCurrentInspirationIndex] = useState(0)
+
 
   // Check if minting is enabled via environment variable
   const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
@@ -165,37 +180,204 @@ export default function MintPage() {
     checkWhitelistStatus()
   }, [isConnected, address])
 
-  const handleTraitChange = (trait: string, value: string) => {
+  const handleTraitChange = (trait: keyof SelectedTraits, value: string) => {
     setSelectedTraits((prev) => ({ ...prev, [trait]: value }))
   }
 
   const generateRandomTraits = () => {
-    const randomSpecies = traits.species[Math.floor(Math.random() * traits.species.length)]
-    const randomBackground = traits.backgrounds[Math.floor(Math.random() * traits.backgrounds.length)]
-    const randomHat = traits.hats[Math.floor(Math.random() * traits.hats.length)]
-    const randomOutfit = traits.outfits[Math.floor(Math.random() * traits.outfits.length)]
+    const availableSpecies = traits.species.filter(t => t.available)
+    const availableBackgrounds = traits.backgrounds.filter(t => t.available)
+    const availableHats = traits.hats.filter(t => t.available)
+    const availableOutfits = traits.outfits.filter(t => t.available)
+    const availableWeapons = traits.weapons.filter(t => t.available)
+    
+    const randomSpecies = availableSpecies[Math.floor(Math.random() * availableSpecies.length)]
+    const randomBackground = availableBackgrounds[Math.floor(Math.random() * availableBackgrounds.length)]
+    const randomHat = availableHats[Math.floor(Math.random() * availableHats.length)]
+    const randomOutfit = availableOutfits[Math.floor(Math.random() * availableOutfits.length)]
     
     // 50% chance to have a weapon, 50% chance to have none
     const shouldHaveWeapon = Math.random() > 0.5
     const randomWeapon = shouldHaveWeapon 
-      ? traits.weapons[Math.floor(Math.random() * traits.weapons.length)]
-      : "none"
+      ? availableWeapons[Math.floor(Math.random() * availableWeapons.length)]
+      : { name: "none", category: "new", rarity: "common", available: true }
 
     setSelectedTraits({
-      species: randomSpecies,
-      background: randomBackground,
-      hat: randomHat,
-      outfit: randomOutfit,
-      weapon: randomWeapon
+      species: randomSpecies?.name || "",
+      background: randomBackground?.name || "",
+      hat: randomHat?.name || "",
+      outfit: randomOutfit?.name || "",
+      weapon: randomWeapon?.name || "none"
     })
 
     console.log("🎲 Generated random traits:", {
-      species: randomSpecies,
-      background: randomBackground,
-      hat: randomHat,
-      outfit: randomOutfit,
-      weapon: randomWeapon
+      species: randomSpecies?.name,
+      background: randomBackground?.name,
+      hat: randomHat?.name,
+      outfit: randomOutfit?.name,
+      weapon: randomWeapon?.name
     })
+  }
+
+  const getRarityBadge = (rarity: string) => {
+    switch (rarity) {
+      case 'common': return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
+      case 'rare': return { label: 'Rare', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' }
+      case 'epic': return { label: 'Epic', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' }
+      case 'legendary': return { label: 'Legendary', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' }
+      default: return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
+    }
+  }
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'default': return <Crown className="h-3 w-3" />
+      case 'new': return <Zap className="h-3 w-3" />
+      case 'coming-soon': return <Clock className="h-3 w-3" />
+      case 'old': return <Lock className="h-3 w-3" />
+      default: return null
+    }
+  }
+
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'default': return 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+      case 'new': return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+      case 'coming-soon': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+      case 'old': return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+      default: return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+    }
+  }
+
+  // Get random explorers from minted data
+  const getRandomExplorers = () => {
+    if (!mintedExplorers || mintedExplorers.length === 0) return exampleExplorers
+    
+    const shuffled = [...mintedExplorers].sort(() => 0.5 - Math.random())
+    return shuffled.slice(0, 4).map((explorer, index) => ({
+      id: index + 1,
+      name: explorer.Name || `Explorer #${explorer.TokenId}`,
+      image: explorer.ImageIPFS || `/explorers/${index + 1}.jpeg`,
+      traits: {
+        species: explorer.Species || "Unknown",
+        background: explorer.Background || "Unknown",
+        hat: explorer.Hat || "None",
+        outfit: explorer.Outfit || "Unknown",
+        weapon: explorer.Weapon || "None"
+      }
+    }))
+  }
+
+  // State to store the current set of random explorers
+  const [currentExplorers, setCurrentExplorers] = useState(() => getRandomExplorers())
+
+  // Get next random inspiration
+  const getNextInspiration = () => {
+    const newExplorers = getRandomExplorers()
+    setCurrentExplorers(newExplorers)
+    setCurrentInspirationIndex(0) // Reset to first explorer in new set
+  }
+
+  // Cycle through current explorers without randomizing
+  const cycleThroughExplorers = () => {
+    setCurrentInspirationIndex((prevIndex) => (prevIndex + 1) % currentExplorers.length)
+  }
+
+  // Convert IPFS URL to HTTP gateway URL
+  const getImageUrl = (ipfsUrl: string) => {
+    if (!ipfsUrl) return "/placeholder.svg"
+    
+    // If it's already an HTTP URL, return as is
+    if (ipfsUrl.startsWith('http')) return ipfsUrl
+    
+    // Convert IPFS URL to HTTP gateway
+    if (ipfsUrl.startsWith('ipfs://')) {
+      const hash = ipfsUrl.replace('ipfs://', '')
+      return `https://ipfs.io/ipfs/${hash}`
+    }
+    
+    // If it's just a hash, assume it's IPFS
+    if (ipfsUrl.length > 40) {
+      return `https://ipfs.io/ipfs/${ipfsUrl}`
+    }
+    
+    return ipfsUrl
+  }
+
+  const renderTraitSelect = (traitType: keyof TraitCategory, traitKey: keyof SelectedTraits, label: string) => {
+    const traitList = traits[traitType] as TraitItem[]
+
+    return (
+      <div className="space-y-2">
+        <Label htmlFor={traitKey}>{label}</Label>
+        <Select 
+          value={selectedTraits[traitKey as keyof SelectedTraits]} 
+          onValueChange={(value) => handleTraitChange(traitKey, value)}
+        >
+          <SelectTrigger id={traitKey} className="bg-zinc-900 border-zinc-700">
+            <SelectValue placeholder={`Select ${label.toLowerCase()}`} />
+          </SelectTrigger>
+          <SelectContent className="bg-zinc-900 border-zinc-700 max-h-60">
+            {traitList.map((trait) => (
+              <SelectItem 
+                key={trait.name} 
+                value={trait.name}
+                disabled={!trait.available}
+                className={cn(
+                  !trait.available && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="truncate">{trait.name.split(" – ")[0]}</span>
+                  <Badge 
+                    variant="outline" 
+                    className={cn(
+                      "text-xs px-2 py-0.5",
+                      getCategoryColor(trait.category)
+                    )}
+                  >
+                    {getCategoryIcon(trait.category)}
+                    <span className="ml-1 capitalize">{trait.category}</span>
+                  </Badge>
+                  {trait.collabPartner && (
+                    <Badge 
+                      variant="outline" 
+                      className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-400 border-purple-500/30"
+                    >
+                      <Users className="h-3 w-3 mr-1" />
+                      {trait.collabPartner}
+                    </Badge>
+                  )}
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        
+        {/* Rarity Badge only */}
+        {selectedTraits[traitKey as keyof SelectedTraits] && (
+          <div className="flex justify-end">
+            {(() => {
+              const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
+              if (!selectedTrait) return null
+              
+              const rarityBadge = getRarityBadge(selectedTrait.rarity)
+              return (
+                <Badge 
+                  variant="outline" 
+                  className={cn(
+                    "text-xs px-2 py-0.5",
+                    rarityBadge.color
+                  )}
+                >
+                  {rarityBadge.label}
+                </Badge>
+              )
+            })()}
+          </div>
+        )}
+      </div>
+    )
   }
 
   const handleMint = async () => {
@@ -253,20 +435,6 @@ export default function MintPage() {
       if (!contractAddress) {
         throw new Error('Explorers contract address not configured')
       }
-
-      // // Call the contract's verifySignature function
-      // const isValid = await client.readContract({
-      //   address: contractAddress,
-      //   abi: explorersABI,
-      //   functionName: 'verifySignature',
-      //   args: [traitsJson, signature]
-      // }) as boolean
-
-      // if (!isValid) {
-      //   throw new Error("Invalid signature - verification failed on contract")
-      // }
-      
-      // console.log("✅ Signature verified successfully on contract")
 
       // Step 3: Call the contract's mintWithTraits function
       console.log("🎯 Calling mintWithTraits on contract...")
@@ -416,16 +584,16 @@ export default function MintPage() {
     <div>
       <MintInfo />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12">
         <Card className="bg-black/40 backdrop-blur-md border-zinc-800 h-full">
-          <CardContent className="p-6 flex flex-col h-full">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-2xl font-bold text-emerald-400">Mint Your Custom Explorer</h2>
+          <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-emerald-400">Mint Your Custom Explorer</h2>
               <Button
                 onClick={generateRandomTraits}
                 variant="outline"
                 size="sm"
-                className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50"
+                className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 w-full sm:w-auto"
               >
                 <Shuffle className="h-4 w-4 mr-2" />
                 Random
@@ -454,87 +622,60 @@ export default function MintPage() {
               </div>
             )}
 
+            {/* Rarity Legend */}
+            <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
+              <div className="text-sm font-medium text-zinc-300 mb-2">Rarity Levels:</div>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
+                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs">
+                  Common
+                </Badge>
+                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
+                  Rare
+                </Badge>
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs">
+                  Epic
+                </Badge>
+                <Badge variant="outline" className="bg-orange-500/20 text-orange-400 border-orange-500/30 text-xs">
+                  Legendary
+                </Badge>
+              </div>
+            </div>
+
+            {/* Trait Categories Legend */}
+            <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
+              <div className="text-sm font-medium text-zinc-300 mb-2">Trait Categories:</div>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
+                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
+                  <Crown className="h-3 w-3 mr-1" />
+                  Default
+                </Badge>
+                <Badge variant="outline" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-xs">
+                  <Zap className="h-3 w-3 mr-1" />
+                  New
+                </Badge>
+                <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs">
+                  <Clock className="h-3 w-3 mr-1" />
+                  Coming Soon
+                </Badge>
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs">
+                  <Users className="h-3 w-3 mr-1" />
+                  Collab
+                </Badge>
+                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs">
+                  <Lock className="h-3 w-3 mr-1" />
+                  Old/Disabled
+                </Badge>
+              </div>
+            </div>
+
+            
+
             <div className="space-y-4 flex-grow">
-              <div className="space-y-2">
-                <Label htmlFor="species">Species</Label>
-                <Select value={selectedTraits.species} onValueChange={(value) => handleTraitChange("species", value)}>
-                  <SelectTrigger id="species" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select species" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.species.map((species) => (
-                      <SelectItem key={species} value={species}>
-                        {species.split(" – ")[0]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="background">Background</Label>
-                <Select value={selectedTraits.background} onValueChange={(value) => handleTraitChange("background", value)}>
-                  <SelectTrigger id="background" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select background" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.backgrounds.map((background) => (
-                      <SelectItem key={background} value={background}>
-                        {background}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="hat">Headgear</Label>
-                <Select value={selectedTraits.hat} onValueChange={(value) => handleTraitChange("hat", value)}>
-                  <SelectTrigger id="hat" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select headgear" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.hats.map((hat) => (
-                      <SelectItem key={hat} value={hat}>
-                        {hat}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="outfit">Outfit</Label>
-                <Select value={selectedTraits.outfit} onValueChange={(value) => handleTraitChange("outfit", value)}>
-                  <SelectTrigger id="outfit" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select outfit" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.outfits.map((outfit) => (
-                      <SelectItem key={outfit} value={outfit}>
-                        {outfit}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="weapon">Weapon</Label>
-                <Select value={selectedTraits.weapon} onValueChange={(value) => handleTraitChange("weapon", value)}>
-                  <SelectTrigger id="weapon" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select weapon" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    <SelectItem value="none">None</SelectItem>
-                    {traits.weapons.map((weapon) => (
-                      <SelectItem key={weapon} value={weapon}>
-                        {weapon}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+              {renderTraitSelect("species", "species", "Species")}
+              {renderTraitSelect("backgrounds", "background", "Background")}
+              {renderTraitSelect("hats", "hat", "Headgear")}
+              {renderTraitSelect("outfits", "outfit", "Outfit")}
+              {renderTraitSelect("weapons", "weapon", "Weapon")}
             </div>
 
             <div className={cn(
@@ -565,38 +706,91 @@ export default function MintPage() {
         </Card>
 
         <Card className="bg-black/40 backdrop-blur-md border-zinc-800 h-full">
-          <CardContent className="p-6 flex flex-col h-full">
-            <h2 className="text-2xl font-bold mb-4 text-emerald-400">Explorer Inspirations</h2>
-            <p className="text-zinc-300 mb-4">Get inspired by these unique explorers or create your own custom design.</p>
-
-            <div className="grid grid-cols-2 gap-4 flex-grow">
-              {exampleExplorers.map((explorer) => (
-                <div
-                  key={explorer.id}
-                  className="relative aspect-[4/3] rounded-lg overflow-hidden border border-zinc-700 opacity-80 hover:opacity-100 hover:border-zinc-500 transition-all duration-300"
+          <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-emerald-400">Explorer Inspirations</h2>
+              <div className="flex gap-2 w-full sm:w-auto">
+                <Button
+                  onClick={cycleThroughExplorers}
+                  variant="outline"
+                  size="sm"
+                  className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 flex-1 sm:flex-none"
                 >
-                  <Image 
-                    src={explorer.image || "/placeholder.svg"} 
-                    alt={explorer.name} 
-                    fill 
-                    className="object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                  <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-white text-sm font-medium">{explorer.name}</p>
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {Object.entries(explorer.traits).map(([key, value]) => (
-                        <span 
-                          key={key}
-                          className="text-[10px] px-1.5 py-0.5 bg-black/60 rounded-full text-emerald-400"
-                        >
-                          {value.split(" – ")[0]}
-                        </span>
-                      ))}
+                  <Shuffle className="h-4 w-4 mr-2" />
+                  Next
+                </Button>
+                <Button
+                  onClick={getNextInspiration}
+                  variant="outline"
+                  size="sm"
+                  className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 flex-1 sm:flex-none"
+                >
+                  <Shuffle className="h-4 w-4 mr-2" />
+                  Random
+                </Button>
+              </div>
+            </div>
+            <p className="text-zinc-300 mb-4 text-sm sm:text-base">Get inspired by these unique explorers or create your own custom design.</p>
+
+            {/* Single highlighted explorer */}
+            <div className="flex-grow flex items-center justify-center p-2 sm:p-4 min-h-[300px] sm:min-h-[400px]">
+              {(() => {
+                if (explorersLoading) {
+                  return (
+                    <div className="flex flex-col items-center justify-center space-y-4 text-zinc-400">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+                      <p className="text-sm">Loading explorers...</p>
+                    </div>
+                  )
+                }
+
+                const currentExplorer = currentExplorers[currentInspirationIndex] || currentExplorers[0]
+                
+                // Debug info
+                console.log('Current explorer:', currentExplorer)
+                console.log('Image URL:', getImageUrl(currentExplorer.image))
+                console.log('Minted explorers count:', mintedExplorers?.length || 0)
+                
+                if (!currentExplorer) {
+                  return (
+                    <div className="flex flex-col items-center justify-center space-y-4 text-zinc-400">
+                      <p className="text-sm">No explorers available</p>
+                    </div>
+                  )
+                }
+                
+                return (
+                  <div className="relative w-full h-full rounded-lg overflow-hidden border-2 border-emerald-500/50 shadow-lg shadow-emerald-500/20 min-h-[280px] sm:min-h-[380px]">
+                    <Image 
+                      src={getImageUrl(currentExplorer.image)} 
+                      alt={currentExplorer.name} 
+                      fill 
+                      className="object-cover"
+                      onError={(e) => {
+                        console.error('Image failed to load:', e)
+                        // Fallback to placeholder if IPFS image fails
+                        const target = e.target as HTMLImageElement
+                        target.src = "/placeholder.svg"
+                      }}
+                      onLoad={() => console.log('Image loaded successfully')}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+                      <p className="text-white text-sm sm:text-lg font-bold mb-2 sm:mb-3">{currentExplorer.name}</p>
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                        {Object.entries(currentExplorer.traits).map(([key, value]) => (
+                          <span 
+                            key={key}
+                            className="text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5 bg-black/80 rounded-full text-emerald-400 border border-emerald-500/50 font-medium"
+                          >
+                            {value.split(" – ")[0]}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })()}
             </div>
           </CardContent>
         </Card>
@@ -604,58 +798,8 @@ export default function MintPage() {
 
       <Tabs defaultValue="owned" className="mt-16">
         <TabsList className="bg-zinc-900 border border-zinc-800">
-          {/* <TabsTrigger value="examples">Example Explorers</TabsTrigger> */}
           <TabsTrigger value="owned">Your Collection</TabsTrigger>
         </TabsList>
-        <TabsContent value="examples" className="mt-6">
-          <h2 className="text-2xl font-bold mb-6 text-emerald-400">Example Galaxy Explorers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <NFTCard
-              name="Cosmic Wanderer #42"
-              traits={{
-                species: "Human",
-                headgear: "Helmet",
-                weapon: "Blaster",
-                background: "Nebula",
-                outfit: "Spacesuit",
-              }}
-              image="/futuristic-space-explorer.png"
-            />
-            <NFTCard
-              name="Void Voyager #93"
-              traits={{
-                species: "Void-Touched",
-                headgear: "None",
-                weapon: "Staff",
-                background: "Black Hole",
-                outfit: "Robe",
-              }}
-              image="/dark-space-explorer.png"
-            />
-            <NFTCard
-              name="Nebula Navigator #17"
-              traits={{
-                species: "Celestial",
-                headgear: "Crown",
-                weapon: "Sword",
-                background: "Stars",
-                outfit: "Armor",
-              }}
-              image="/blue-space-explorer.png"
-            />
-            <NFTCard
-              name="Star Seeker #128"
-              traits={{
-                species: "Synthetic",
-                headgear: "Cap",
-                weapon: "Gauntlet",
-                background: "Planet",
-                outfit: "Stealth",
-              }}
-              image="/explorer-star-map.png"
-            />
-          </div>
-        </TabsContent>
         <TabsContent value="owned" className="mt-6">
           <UserNFTs />
         </TabsContent>
