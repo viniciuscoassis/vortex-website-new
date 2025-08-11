@@ -19,20 +19,31 @@ import { useToast } from "@/hooks/use-toast"
 import { useMintStore } from "@/lib/store/mint-store"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Shuffle, Crown, Gift } from "lucide-react"
+import { Shuffle, Crown, Gift, Clock, Users, Zap, Lock } from "lucide-react"
 import traits from "@/data/traits.json"
 
-type Explorer = {
-  id: number
+type TraitItem = {
   name: string
-  image: string
-  traits: {
+  category: 'default' | 'old' | 'new' | 'coming-soon'
+  rarity: 'common' | 'rare' | 'epic' | 'legendary' | 'mythic'
+  available: boolean
+  collabPartner?: string
+}
+
+type TraitCategory = {
+  species: TraitItem[]
+  hats: TraitItem[]
+  weapons: TraitItem[]
+  backgrounds: TraitItem[]
+  outfits: TraitItem[]
+}
+
+type SelectedTraits = {
     species: string
     background: string
     hat: string
     outfit: string
     weapon: string
-  }
 }
 
 // Example explorers data
@@ -42,7 +53,7 @@ const exampleExplorers = [
     name: "Saturnian Explorer",
     image: "/explorers/2.jpeg",
     traits: {
-      species: "Saturnian",
+      species: "Saturnian – translucent blue, tentacles, luminescent eyes.",
       background: "ringed gas giant",
       hat: "stellar cowboy hat",
       outfit: "casual martian colony wear",
@@ -54,7 +65,7 @@ const exampleExplorers = [
     name: "Cryon Explorer",
     image: "/explorers/19.png",
     traits: {
-      species: "Cryon",
+      species: "Cryon – crystalline ice body, cold vapors, brittle movements.",
       background: "frozen moon surface",
       hat: "steampunk bronze diving helmet",
       outfit: "retro astronaut suit",
@@ -66,7 +77,7 @@ const exampleExplorers = [
     name: "Voidborn Explorer",
     image: "/explorers/3.jpeg",
     traits: {
-      species: "Voidborn",
+      species: "Voidborn – distorted silhouette, living shadow, born near black holes.",
       background: "bioluminescent low-gravity forest",
       hat: "wormhole halo",
       outfit: "tribal wear with bioluminescent fibers",
@@ -78,7 +89,7 @@ const exampleExplorers = [
     name: "Techniderm Explorer",
     image: "/explorers/20.png",
     traits: {
-      species: "Techniderm",
+      species: "Techniderm – metallic skin with circuits, symbiotic AI.",
       background: "ringed gas giant",
       hat: "animated binary crown",
       outfit: "synthetic leather jacket with LEDs",
@@ -91,17 +102,18 @@ export default function MintPage() {
   const { address, isConnected, walletClient } = useWallet()
   const { toast } = useToast()
   const { triggerNFTRefresh, triggerMintDataRefresh } = useMintStore()
-  const [selectedTraits, setSelectedTraits] = useState({
-    species: traits.species[0],
-    background: traits.backgrounds[0],
-    hat: traits.hats[0],
-    outfit: traits.outfits[0],
+  const [selectedTraits, setSelectedTraits] = useState<SelectedTraits>({
+    species: traits.species.find(t => t.available)?.name || "",
+    background: traits.backgrounds.find(t => t.available)?.name || "",
+    hat: traits.hats.find(t => t.available)?.name || "",
+    outfit: traits.outfits.find(t => t.available)?.name || "",
     weapon: "none"
   })
   const [isMinting, setIsMinting] = useState(false)
   const [isWhitelisted, setIsWhitelisted] = useState(false)
   const [hasClaimedFree, setHasClaimedFree] = useState(false)
   const [whitelistLoading, setWhitelistLoading] = useState(false)
+  const [showAllTraits, setShowAllTraits] = useState(false)
 
   // Check if minting is enabled via environment variable
   const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
@@ -165,37 +177,167 @@ export default function MintPage() {
     checkWhitelistStatus()
   }, [isConnected, address])
 
-  const handleTraitChange = (trait: string, value: string) => {
+  const handleTraitChange = (trait: keyof SelectedTraits, value: string) => {
     setSelectedTraits((prev) => ({ ...prev, [trait]: value }))
   }
 
   const generateRandomTraits = () => {
-    const randomSpecies = traits.species[Math.floor(Math.random() * traits.species.length)]
-    const randomBackground = traits.backgrounds[Math.floor(Math.random() * traits.backgrounds.length)]
-    const randomHat = traits.hats[Math.floor(Math.random() * traits.hats.length)]
-    const randomOutfit = traits.outfits[Math.floor(Math.random() * traits.outfits.length)]
+    const availableSpecies = traits.species.filter(t => t.available)
+    const availableBackgrounds = traits.backgrounds.filter(t => t.available)
+    const availableHats = traits.hats.filter(t => t.available)
+    const availableOutfits = traits.outfits.filter(t => t.available)
+    const availableWeapons = traits.weapons.filter(t => t.available)
+    
+    const randomSpecies = availableSpecies[Math.floor(Math.random() * availableSpecies.length)]
+    const randomBackground = availableBackgrounds[Math.floor(Math.random() * availableBackgrounds.length)]
+    const randomHat = availableHats[Math.floor(Math.random() * availableHats.length)]
+    const randomOutfit = availableOutfits[Math.floor(Math.random() * availableOutfits.length)]
     
     // 50% chance to have a weapon, 50% chance to have none
     const shouldHaveWeapon = Math.random() > 0.5
     const randomWeapon = shouldHaveWeapon 
-      ? traits.weapons[Math.floor(Math.random() * traits.weapons.length)]
-      : "none"
+      ? availableWeapons[Math.floor(Math.random() * availableWeapons.length)]
+      : { name: "none", category: "new", rarity: "common", available: true }
 
     setSelectedTraits({
-      species: randomSpecies,
-      background: randomBackground,
-      hat: randomHat,
-      outfit: randomOutfit,
-      weapon: randomWeapon
+      species: randomSpecies?.name || "",
+      background: randomBackground?.name || "",
+      hat: randomHat?.name || "",
+      outfit: randomOutfit?.name || "",
+      weapon: randomWeapon?.name || "none"
     })
 
     console.log("🎲 Generated random traits:", {
-      species: randomSpecies,
-      background: randomBackground,
-      hat: randomHat,
-      outfit: randomOutfit,
-      weapon: randomWeapon
+      species: randomSpecies?.name,
+      background: randomBackground?.name,
+      hat: randomHat?.name,
+      outfit: randomOutfit?.name,
+      weapon: randomWeapon?.name
     })
+  }
+
+  const getRarityColor = (rarity: string) => {
+    switch (rarity) {
+      case 'common': return 'text-gray-400'
+      case 'rare': return 'text-blue-400'
+      case 'epic': return 'text-purple-400'
+      case 'legendary': return 'text-orange-400'
+      case 'mythic': return 'text-red-400'
+      default: return 'text-gray-400'
+    }
+  }
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'default': return <Crown className="h-3 w-3" />
+      case 'new': return <Zap className="h-3 w-3" />
+      case 'coming-soon': return <Clock className="h-3 w-3" />
+      case 'old': return <Lock className="h-3 w-3" />
+      default: return null
+    }
+  }
+
+  const getCategoryColor = (category: string) => {
+    switch (category) {
+      case 'default': return 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+      case 'new': return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+      case 'coming-soon': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+      case 'old': return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+      default: return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+    }
+  }
+
+  const renderTraitSelect = (traitType: keyof TraitCategory, traitKey: keyof SelectedTraits, label: string) => {
+    const traitList = traits[traitType] as TraitItem[]
+    const availableTraits = traitList.filter(t => t.available)
+    const allTraits = showAllTraits ? traitList : availableTraits
+
+    return (
+      <div className="space-y-2">
+        <Label htmlFor={traitKey}>{label}</Label>
+        <Select 
+          value={selectedTraits[traitKey as keyof SelectedTraits]} 
+          onValueChange={(value) => handleTraitChange(traitKey, value)}
+        >
+          <SelectTrigger id={traitKey} className="bg-zinc-900 border-zinc-700">
+            <SelectValue placeholder={`Select ${label.toLowerCase()}`} />
+          </SelectTrigger>
+          <SelectContent className="bg-zinc-900 border-zinc-700 max-h-60">
+            {allTraits.map((trait) => (
+              <SelectItem 
+                key={trait.name} 
+                value={trait.name}
+                disabled={!trait.available}
+                className={cn(
+                  !trait.available && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                <div className="flex items-center justify-between w-full">
+                  <span className="truncate">{trait.name.split(" – ")[0]}</span>
+                  <div className="flex items-center gap-2 ml-2">
+                    <Badge 
+                      variant="outline" 
+                      className={cn(
+                        "text-xs px-2 py-0.5",
+                        getCategoryColor(trait.category)
+                      )}
+                    >
+                      {getCategoryIcon(trait.category)}
+                      <span className="ml-1 capitalize">{trait.category}</span>
+                    </Badge>
+
+                    {trait.collabPartner && (
+                      <Badge 
+                        variant="outline" 
+                        className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-400 border-purple-500/30"
+                      >
+                        <Users className="h-3 w-3 mr-1" />
+                        {trait.collabPartner}
+                      </Badge>
+                    )}
+                  </div>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        
+        {/* Show trait info if selected */}
+        {selectedTraits[traitKey as keyof SelectedTraits] && (
+          <div className="text-xs text-zinc-400">
+            {(() => {
+              const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
+              if (!selectedTrait) return null
+              
+              return (
+                <div className="flex items-center gap-2">
+                  <Badge 
+                    variant="outline" 
+                    className={cn(
+                      "text-xs px-2 py-0.5",
+                      getCategoryColor(selectedTrait.category)
+                    )}
+                  >
+                    {getCategoryIcon(selectedTrait.category)}
+                    <span className="ml-1 capitalize">{selectedTrait.category}</span>
+                  </Badge>
+
+                  {selectedTrait.collabPartner && (
+                    <Badge 
+                      variant="outline" 
+                      className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-400 border-purple-500/30"
+                    >
+                      <Users className="h-3 w-3 mr-1" />
+                      {selectedTrait.collabPartner}
+                    </Badge>
+                  )}
+                </div>
+              )
+            })()}
+          </div>
+        )}
+      </div>
+    )
   }
 
   const handleMint = async () => {
@@ -253,20 +395,6 @@ export default function MintPage() {
       if (!contractAddress) {
         throw new Error('Explorers contract address not configured')
       }
-
-      // // Call the contract's verifySignature function
-      // const isValid = await client.readContract({
-      //   address: contractAddress,
-      //   abi: explorersABI,
-      //   functionName: 'verifySignature',
-      //   args: [traitsJson, signature]
-      // }) as boolean
-
-      // if (!isValid) {
-      //   throw new Error("Invalid signature - verification failed on contract")
-      // }
-      
-      // console.log("✅ Signature verified successfully on contract")
 
       // Step 3: Call the contract's mintWithTraits function
       console.log("🎯 Calling mintWithTraits on contract...")
@@ -454,87 +582,51 @@ export default function MintPage() {
               </div>
             )}
 
+            {/* Trait Categories Legend */}
+            <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
+              <div className="text-sm font-medium text-zinc-300 mb-2">Trait Categories:</div>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30">
+                  <Crown className="h-3 w-3 mr-1" />
+                  Default
+                </Badge>
+                <Badge variant="outline" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+                  <Zap className="h-3 w-3 mr-1" />
+                  New
+                </Badge>
+                <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">
+                  <Clock className="h-3 w-3 mr-1" />
+                  Coming Soon
+                </Badge>
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30">
+                  <Users className="h-3 w-3 mr-1" />
+                  Collab
+                </Badge>
+                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30">
+                  <Lock className="h-3 w-3 mr-1" />
+                  Old/Disabled
+                </Badge>
+              </div>
+              </div>
+
+            {/* Show All Traits Toggle */}
+            <div className="mb-4">
+              <Button
+                onClick={() => setShowAllTraits(!showAllTraits)}
+                variant="outline"
+                size="sm"
+                className="w-full border-zinc-600 text-zinc-400 hover:bg-zinc-800"
+              >
+                {showAllTraits ? "Hide" : "Show"} All Traits (Including Coming Soon & Disabled)
+              </Button>
+              </div>
+
             <div className="space-y-4 flex-grow">
-              <div className="space-y-2">
-                <Label htmlFor="species">Species</Label>
-                <Select value={selectedTraits.species} onValueChange={(value) => handleTraitChange("species", value)}>
-                  <SelectTrigger id="species" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select species" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.species.map((species) => (
-                      <SelectItem key={species} value={species}>
-                        {species.split(" – ")[0]}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="background">Background</Label>
-                <Select value={selectedTraits.background} onValueChange={(value) => handleTraitChange("background", value)}>
-                  <SelectTrigger id="background" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select background" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.backgrounds.map((background) => (
-                      <SelectItem key={background} value={background}>
-                        {background}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="hat">Headgear</Label>
-                <Select value={selectedTraits.hat} onValueChange={(value) => handleTraitChange("hat", value)}>
-                  <SelectTrigger id="hat" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select headgear" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.hats.map((hat) => (
-                      <SelectItem key={hat} value={hat}>
-                        {hat}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="outfit">Outfit</Label>
-                <Select value={selectedTraits.outfit} onValueChange={(value) => handleTraitChange("outfit", value)}>
-                  <SelectTrigger id="outfit" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select outfit" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    {traits.outfits.map((outfit) => (
-                      <SelectItem key={outfit} value={outfit}>
-                        {outfit}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="weapon">Weapon</Label>
-                <Select value={selectedTraits.weapon} onValueChange={(value) => handleTraitChange("weapon", value)}>
-                  <SelectTrigger id="weapon" className="bg-zinc-900 border-zinc-700">
-                    <SelectValue placeholder="Select weapon" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zinc-900 border-zinc-700">
-                    <SelectItem value="none">None</SelectItem>
-                    {traits.weapons.map((weapon) => (
-                      <SelectItem key={weapon} value={weapon}>
-                        {weapon}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+              {renderTraitSelect("species", "species", "Species")}
+              {renderTraitSelect("backgrounds", "background", "Background")}
+              {renderTraitSelect("hats", "hat", "Headgear")}
+              {renderTraitSelect("outfits", "outfit", "Outfit")}
+              {renderTraitSelect("weapons", "weapon", "Weapon")}
             </div>
 
             <div className={cn(
@@ -604,58 +696,8 @@ export default function MintPage() {
 
       <Tabs defaultValue="owned" className="mt-16">
         <TabsList className="bg-zinc-900 border border-zinc-800">
-          {/* <TabsTrigger value="examples">Example Explorers</TabsTrigger> */}
           <TabsTrigger value="owned">Your Collection</TabsTrigger>
         </TabsList>
-        <TabsContent value="examples" className="mt-6">
-          <h2 className="text-2xl font-bold mb-6 text-emerald-400">Example Galaxy Explorers</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <NFTCard
-              name="Cosmic Wanderer #42"
-              traits={{
-                species: "Human",
-                headgear: "Helmet",
-                weapon: "Blaster",
-                background: "Nebula",
-                outfit: "Spacesuit",
-              }}
-              image="/futuristic-space-explorer.png"
-            />
-            <NFTCard
-              name="Void Voyager #93"
-              traits={{
-                species: "Void-Touched",
-                headgear: "None",
-                weapon: "Staff",
-                background: "Black Hole",
-                outfit: "Robe",
-              }}
-              image="/dark-space-explorer.png"
-            />
-            <NFTCard
-              name="Nebula Navigator #17"
-              traits={{
-                species: "Celestial",
-                headgear: "Crown",
-                weapon: "Sword",
-                background: "Stars",
-                outfit: "Armor",
-              }}
-              image="/blue-space-explorer.png"
-            />
-            <NFTCard
-              name="Star Seeker #128"
-              traits={{
-                species: "Synthetic",
-                headgear: "Cap",
-                weapon: "Gauntlet",
-                background: "Planet",
-                outfit: "Stealth",
-              }}
-              image="/explorer-star-map.png"
-            />
-          </div>
-        </TabsContent>
         <TabsContent value="owned" className="mt-6">
           <UserNFTs />
         </TabsContent>

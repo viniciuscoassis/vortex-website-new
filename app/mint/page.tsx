@@ -19,7 +19,6 @@ export default function Mint() {
             Create your unique explorer with custom traits and embark on cosmic journeys across the Vortex universe.
           </p>
         </div>
-
         <MintPage />
       </main>
     </div>
