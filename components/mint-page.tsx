@@ -113,7 +113,7 @@ export default function MintPage() {
   const [isWhitelisted, setIsWhitelisted] = useState(false)
   const [hasClaimedFree, setHasClaimedFree] = useState(false)
   const [whitelistLoading, setWhitelistLoading] = useState(false)
-  const [showAllTraits, setShowAllTraits] = useState(false)
+
 
   // Check if minting is enabled via environment variable
   const isMintingEnabled = process.env.NEXT_PUBLIC_MINTING_ENABLED === 'true'
@@ -216,14 +216,13 @@ export default function MintPage() {
     })
   }
 
-  const getRarityColor = (rarity: string) => {
+  const getRarityBadge = (rarity: string) => {
     switch (rarity) {
-      case 'common': return 'text-gray-400'
-      case 'rare': return 'text-blue-400'
-      case 'epic': return 'text-purple-400'
-      case 'legendary': return 'text-orange-400'
-      case 'mythic': return 'text-red-400'
-      default: return 'text-gray-400'
+      case 'common': return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
+      case 'rare': return { label: 'Rare', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' }
+      case 'epic': return { label: 'Epic', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' }
+      case 'legendary': return { label: 'Legendary', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' }
+      default: return { label: 'Common', color: 'bg-gray-500/20 text-gray-400 border-gray-500/30' }
     }
   }
 
@@ -249,8 +248,6 @@ export default function MintPage() {
 
   const renderTraitSelect = (traitType: keyof TraitCategory, traitKey: keyof SelectedTraits, label: string) => {
     const traitList = traits[traitType] as TraitItem[]
-    const availableTraits = traitList.filter(t => t.available)
-    const allTraits = showAllTraits ? traitList : availableTraits
 
     return (
       <div className="space-y-2">
@@ -263,7 +260,7 @@ export default function MintPage() {
             <SelectValue placeholder={`Select ${label.toLowerCase()}`} />
           </SelectTrigger>
           <SelectContent className="bg-zinc-900 border-zinc-700 max-h-60">
-            {allTraits.map((trait) => (
+            {traitList.map((trait) => (
               <SelectItem 
                 key={trait.name} 
                 value={trait.name}
@@ -272,39 +269,26 @@ export default function MintPage() {
                   !trait.available && "opacity-50 cursor-not-allowed"
                 )}
               >
-                <div className="flex items-center justify-between w-full">
+                <div className="flex items-center gap-2">
                   <span className="truncate">{trait.name.split(" – ")[0]}</span>
-                  <div className="flex items-center gap-2 ml-2">
-                    <Badge 
-                      variant="outline" 
-                      className={cn(
-                        "text-xs px-2 py-0.5",
-                        getCategoryColor(trait.category)
-                      )}
-                    >
-                      {getCategoryIcon(trait.category)}
-                      <span className="ml-1 capitalize">{trait.category}</span>
-                    </Badge>
-
-                    {trait.collabPartner && (
-                      <Badge 
-                        variant="outline" 
-                        className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-400 border-purple-500/30"
-                      >
-                        <Users className="h-3 w-3 mr-1" />
-                        {trait.collabPartner}
-                      </Badge>
+                  <Badge 
+                    variant="outline" 
+                    className={cn(
+                      "text-xs px-2 py-0.5",
+                      getRarityBadge(trait.rarity).color
                     )}
-                  </div>
+                  >
+                    {getRarityBadge(trait.rarity).label}
+                  </Badge>
                 </div>
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
         
-        {/* Show trait info if selected */}
+        {/* Category Badge at the end of input */}
         {selectedTraits[traitKey as keyof SelectedTraits] && (
-          <div className="text-xs text-zinc-400">
+          <div className="flex justify-end">
             {(() => {
               const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
               if (!selectedTrait) return null
@@ -607,19 +591,28 @@ export default function MintPage() {
                   Old/Disabled
                 </Badge>
               </div>
-              </div>
+            </div>
 
-            {/* Show All Traits Toggle */}
-            <div className="mb-4">
-              <Button
-                onClick={() => setShowAllTraits(!showAllTraits)}
-                variant="outline"
-                size="sm"
-                className="w-full border-zinc-600 text-zinc-400 hover:bg-zinc-800"
-              >
-                {showAllTraits ? "Hide" : "Show"} All Traits (Including Coming Soon & Disabled)
-              </Button>
+            {/* Rarity Legend */}
+            <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
+              <div className="text-sm font-medium text-zinc-300 mb-2">Rarity Levels:</div>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30">
+                  Common
+                </Badge>
+                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30">
+                  Rare
+                </Badge>
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30">
+                  Epic
+                </Badge>
+                <Badge variant="outline" className="bg-orange-500/20 text-orange-400 border-orange-500/30">
+                  Legendary
+                </Badge>
               </div>
+            </div>
+
+            
 
             <div className="space-y-4 flex-grow">
               {renderTraitSelect("species", "species", "Species")}
