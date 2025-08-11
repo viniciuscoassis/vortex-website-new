@@ -17,6 +17,7 @@ import { MintInfo } from "@/components/mint-info"
 import { UserNFTs } from "@/components/user-nfts"
 import { useToast } from "@/hooks/use-toast"
 import { useMintStore } from "@/lib/store/mint-store"
+import { useMintedExplorers } from "@/hooks/use-minted-explorers"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { Shuffle, Crown, Gift, Clock, Users, Zap, Lock } from "lucide-react"
@@ -102,6 +103,7 @@ export default function MintPage() {
   const { address, isConnected, walletClient } = useWallet()
   const { toast } = useToast()
   const { triggerNFTRefresh, triggerMintDataRefresh } = useMintStore()
+  const { mintedExplorers, loading: explorersLoading } = useMintedExplorers()
   const [selectedTraits, setSelectedTraits] = useState<SelectedTraits>({
     species: traits.species.find(t => t.available)?.name || "",
     background: traits.backgrounds.find(t => t.available)?.name || "",
@@ -113,6 +115,7 @@ export default function MintPage() {
   const [isWhitelisted, setIsWhitelisted] = useState(false)
   const [hasClaimedFree, setHasClaimedFree] = useState(false)
   const [whitelistLoading, setWhitelistLoading] = useState(false)
+  const [currentInspirationIndex, setCurrentInspirationIndex] = useState(0)
 
 
   // Check if minting is enabled via environment variable
@@ -246,6 +249,61 @@ export default function MintPage() {
     }
   }
 
+  // Get random explorers from minted data
+  const getRandomExplorers = () => {
+    if (!mintedExplorers || mintedExplorers.length === 0) return exampleExplorers
+    
+    const shuffled = [...mintedExplorers].sort(() => 0.5 - Math.random())
+    return shuffled.slice(0, 4).map((explorer, index) => ({
+      id: index + 1,
+      name: explorer.Name || `Explorer #${explorer.TokenId}`,
+      image: explorer.ImageIPFS || `/explorers/${index + 1}.jpeg`,
+      traits: {
+        species: explorer.Species || "Unknown",
+        background: explorer.Background || "Unknown",
+        hat: explorer.Hat || "None",
+        outfit: explorer.Outfit || "Unknown",
+        weapon: explorer.Weapon || "None"
+      }
+    }))
+  }
+
+  // State to store the current set of random explorers
+  const [currentExplorers, setCurrentExplorers] = useState(() => getRandomExplorers())
+
+  // Get next random inspiration
+  const getNextInspiration = () => {
+    const newExplorers = getRandomExplorers()
+    setCurrentExplorers(newExplorers)
+    setCurrentInspirationIndex(0) // Reset to first explorer in new set
+  }
+
+  // Cycle through current explorers without randomizing
+  const cycleThroughExplorers = () => {
+    setCurrentInspirationIndex((prevIndex) => (prevIndex + 1) % currentExplorers.length)
+  }
+
+  // Convert IPFS URL to HTTP gateway URL
+  const getImageUrl = (ipfsUrl: string) => {
+    if (!ipfsUrl) return "/placeholder.svg"
+    
+    // If it's already an HTTP URL, return as is
+    if (ipfsUrl.startsWith('http')) return ipfsUrl
+    
+    // Convert IPFS URL to HTTP gateway
+    if (ipfsUrl.startsWith('ipfs://')) {
+      const hash = ipfsUrl.replace('ipfs://', '')
+      return `https://ipfs.io/ipfs/${hash}`
+    }
+    
+    // If it's just a hash, assume it's IPFS
+    if (ipfsUrl.length > 40) {
+      return `https://ipfs.io/ipfs/${ipfsUrl}`
+    }
+    
+    return ipfsUrl
+  }
+
   const renderTraitSelect = (traitType: keyof TraitCategory, traitKey: keyof SelectedTraits, label: string) => {
     const traitList = traits[traitType] as TraitItem[]
 
@@ -275,47 +333,45 @@ export default function MintPage() {
                     variant="outline" 
                     className={cn(
                       "text-xs px-2 py-0.5",
-                      getRarityBadge(trait.rarity).color
+                      getCategoryColor(trait.category)
                     )}
                   >
-                    {getRarityBadge(trait.rarity).label}
+                    {getCategoryIcon(trait.category)}
+                    <span className="ml-1 capitalize">{trait.category}</span>
                   </Badge>
+                  {trait.collabPartner && (
+                    <Badge 
+                      variant="outline" 
+                      className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-400 border-purple-500/30"
+                    >
+                      <Users className="h-3 w-3 mr-1" />
+                      {trait.collabPartner}
+                    </Badge>
+                  )}
                 </div>
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
         
-        {/* Category Badge at the end of input */}
+        {/* Rarity Badge only */}
         {selectedTraits[traitKey as keyof SelectedTraits] && (
           <div className="flex justify-end">
             {(() => {
               const selectedTrait = traitList.find(t => t.name === selectedTraits[traitKey as keyof SelectedTraits])
               if (!selectedTrait) return null
               
+              const rarityBadge = getRarityBadge(selectedTrait.rarity)
               return (
-                <div className="flex items-center gap-2">
-                  <Badge 
-                    variant="outline" 
-                    className={cn(
-                      "text-xs px-2 py-0.5",
-                      getCategoryColor(selectedTrait.category)
-                    )}
-                  >
-                    {getCategoryIcon(selectedTrait.category)}
-                    <span className="ml-1 capitalize">{selectedTrait.category}</span>
-                  </Badge>
-
-                  {selectedTrait.collabPartner && (
-                    <Badge 
-                      variant="outline" 
-                      className="text-xs px-2 py-0.5 bg-purple-500/20 text-purple-400 border-purple-500/30"
-                    >
-                      <Users className="h-3 w-3 mr-1" />
-                      {selectedTrait.collabPartner}
-                    </Badge>
+                <Badge 
+                  variant="outline" 
+                  className={cn(
+                    "text-xs px-2 py-0.5",
+                    rarityBadge.color
                   )}
-                </div>
+                >
+                  {rarityBadge.label}
+                </Badge>
               )
             })()}
           </div>
@@ -528,16 +584,16 @@ export default function MintPage() {
     <div>
       <MintInfo />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-12">
         <Card className="bg-black/40 backdrop-blur-md border-zinc-800 h-full">
-          <CardContent className="p-6 flex flex-col h-full">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-2xl font-bold text-emerald-400">Mint Your Custom Explorer</h2>
+          <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-emerald-400">Mint Your Custom Explorer</h2>
               <Button
                 onClick={generateRandomTraits}
                 variant="outline"
                 size="sm"
-                className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50"
+                className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 w-full sm:w-auto"
               >
                 <Shuffle className="h-4 w-4 mr-2" />
                 Random
@@ -566,48 +622,48 @@ export default function MintPage() {
               </div>
             )}
 
-            {/* Trait Categories Legend */}
+            {/* Rarity Legend */}
             <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
-              <div className="text-sm font-medium text-zinc-300 mb-2">Trait Categories:</div>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30">
-                  <Crown className="h-3 w-3 mr-1" />
-                  Default
+              <div className="text-sm font-medium text-zinc-300 mb-2">Rarity Levels:</div>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
+                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs">
+                  Common
                 </Badge>
-                <Badge variant="outline" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
-                  <Zap className="h-3 w-3 mr-1" />
-                  New
+                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
+                  Rare
                 </Badge>
-                <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">
-                  <Clock className="h-3 w-3 mr-1" />
-                  Coming Soon
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs">
+                  Epic
                 </Badge>
-                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30">
-                  <Users className="h-3 w-3 mr-1" />
-                  Collab
-                </Badge>
-                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30">
-                  <Lock className="h-3 w-3 mr-1" />
-                  Old/Disabled
+                <Badge variant="outline" className="bg-orange-500/20 text-orange-400 border-orange-500/30 text-xs">
+                  Legendary
                 </Badge>
               </div>
             </div>
 
-            {/* Rarity Legend */}
+            {/* Trait Categories Legend */}
             <div className="mb-4 p-3 rounded-lg border border-zinc-700 bg-zinc-900/50">
-              <div className="text-sm font-medium text-zinc-300 mb-2">Rarity Levels:</div>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30">
-                  Common
+              <div className="text-sm font-medium text-zinc-300 mb-2">Trait Categories:</div>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
+                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30 text-xs">
+                  <Crown className="h-3 w-3 mr-1" />
+                  Default
                 </Badge>
-                <Badge variant="outline" className="bg-blue-500/20 text-blue-400 border-blue-500/30">
-                  Rare
+                <Badge variant="outline" className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30 text-xs">
+                  <Zap className="h-3 w-3 mr-1" />
+                  New
                 </Badge>
-                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30">
-                  Epic
+                <Badge variant="outline" className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30 text-xs">
+                  <Clock className="h-3 w-3 mr-1" />
+                  Coming Soon
                 </Badge>
-                <Badge variant="outline" className="bg-orange-500/20 text-orange-400 border-orange-500/30">
-                  Legendary
+                <Badge variant="outline" className="bg-purple-500/20 text-purple-400 border-purple-500/30 text-xs">
+                  <Users className="h-3 w-3 mr-1" />
+                  Collab
+                </Badge>
+                <Badge variant="outline" className="bg-gray-500/20 text-gray-400 border-gray-500/30 text-xs">
+                  <Lock className="h-3 w-3 mr-1" />
+                  Old/Disabled
                 </Badge>
               </div>
             </div>
@@ -650,38 +706,91 @@ export default function MintPage() {
         </Card>
 
         <Card className="bg-black/40 backdrop-blur-md border-zinc-800 h-full">
-          <CardContent className="p-6 flex flex-col h-full">
-            <h2 className="text-2xl font-bold mb-4 text-emerald-400">Explorer Inspirations</h2>
-            <p className="text-zinc-300 mb-4">Get inspired by these unique explorers or create your own custom design.</p>
-
-            <div className="grid grid-cols-2 gap-4 flex-grow">
-              {exampleExplorers.map((explorer) => (
-                <div
-                  key={explorer.id}
-                  className="relative aspect-[4/3] rounded-lg overflow-hidden border border-zinc-700 opacity-80 hover:opacity-100 hover:border-zinc-500 transition-all duration-300"
+          <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+              <h2 className="text-xl sm:text-2xl font-bold text-emerald-400">Explorer Inspirations</h2>
+              <div className="flex gap-2 w-full sm:w-auto">
+                <Button
+                  onClick={cycleThroughExplorers}
+                  variant="outline"
+                  size="sm"
+                  className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 flex-1 sm:flex-none"
                 >
-                  <Image 
-                    src={explorer.image || "/placeholder.svg"} 
-                    alt={explorer.name} 
-                    fill 
-                    className="object-cover" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
-                  <div className="absolute bottom-2 left-2 right-2">
-                    <p className="text-white text-sm font-medium">{explorer.name}</p>
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {Object.entries(explorer.traits).map(([key, value]) => (
-                        <span 
-                          key={key}
-                          className="text-[10px] px-1.5 py-0.5 bg-black/60 rounded-full text-emerald-400"
-                        >
-                          {value.split(" – ")[0]}
-                        </span>
-                      ))}
+                  <Shuffle className="h-4 w-4 mr-2" />
+                  Next
+                </Button>
+                <Button
+                  onClick={getNextInspiration}
+                  variant="outline"
+                  size="sm"
+                  className="border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10 hover:border-emerald-500/50 flex-1 sm:flex-none"
+                >
+                  <Shuffle className="h-4 w-4 mr-2" />
+                  Random
+                </Button>
+              </div>
+            </div>
+            <p className="text-zinc-300 mb-4 text-sm sm:text-base">Get inspired by these unique explorers or create your own custom design.</p>
+
+            {/* Single highlighted explorer */}
+            <div className="flex-grow flex items-center justify-center p-2 sm:p-4 min-h-[300px] sm:min-h-[400px]">
+              {(() => {
+                if (explorersLoading) {
+                  return (
+                    <div className="flex flex-col items-center justify-center space-y-4 text-zinc-400">
+                      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+                      <p className="text-sm">Loading explorers...</p>
+                    </div>
+                  )
+                }
+
+                const currentExplorer = currentExplorers[currentInspirationIndex] || currentExplorers[0]
+                
+                // Debug info
+                console.log('Current explorer:', currentExplorer)
+                console.log('Image URL:', getImageUrl(currentExplorer.image))
+                console.log('Minted explorers count:', mintedExplorers?.length || 0)
+                
+                if (!currentExplorer) {
+                  return (
+                    <div className="flex flex-col items-center justify-center space-y-4 text-zinc-400">
+                      <p className="text-sm">No explorers available</p>
+                    </div>
+                  )
+                }
+                
+                return (
+                  <div className="relative w-full h-full rounded-lg overflow-hidden border-2 border-emerald-500/50 shadow-lg shadow-emerald-500/20 min-h-[280px] sm:min-h-[380px]">
+                    <Image 
+                      src={getImageUrl(currentExplorer.image)} 
+                      alt={currentExplorer.name} 
+                      fill 
+                      className="object-cover"
+                      onError={(e) => {
+                        console.error('Image failed to load:', e)
+                        // Fallback to placeholder if IPFS image fails
+                        const target = e.target as HTMLImageElement
+                        target.src = "/placeholder.svg"
+                      }}
+                      onLoad={() => console.log('Image loaded successfully')}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60"></div>
+                    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+                      <p className="text-white text-sm sm:text-lg font-bold mb-2 sm:mb-3">{currentExplorer.name}</p>
+                      <div className="flex flex-wrap gap-1 sm:gap-2">
+                        {Object.entries(currentExplorer.traits).map(([key, value]) => (
+                          <span 
+                            key={key}
+                            className="text-xs sm:text-sm px-2 sm:px-3 py-1 sm:py-1.5 bg-black/80 rounded-full text-emerald-400 border border-emerald-500/50 font-medium"
+                          >
+                            {value.split(" – ")[0]}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })()}
             </div>
           </CardContent>
         </Card>
