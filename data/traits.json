@@ -47,8 +47,9 @@
   "hats": [
     {
       "name": "tinfoil hat",
-      "category": "coming-soon",
-      "available": false
+      "category": "new",
+      "available": true,
+      "collabPartner": "THC"
     },
     {
       "name": "flat-brim cap",
