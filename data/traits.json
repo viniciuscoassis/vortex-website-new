@@ -1,12 +1,5 @@
 {
   "species": [
-
-    {
-      "name": "Moth – humanoid moth creature covered in fine iridescent fur. Large, feathery antennae and bright, luminescent white eyes. Expansive patterned moth wings.",
-      "category": "new",
-      "available": true,
-      "collabPartner": "Moth"
-    },
     {
       "name": "Martian – green phosphorescent skin, large eyes, antennae.",
       "category": "default",
@@ -41,6 +34,12 @@
       "name": "Feline – feline traits, high agility, night vision, pointed ears.",
       "category": "default",
       "available": true
+    },
+    {
+      "name": "Moth – humanoid moth creature covered in fine iridescent fur. Large, feathery antennae and bright, luminescent white eyes. Expansive patterned moth wings.",
+      "category": "new",
+      "available": false,
+      "collabPartner": "Moth"
     }
   ],
 
@@ -466,6 +465,12 @@
     }
   ],
   "backgrounds": [
+    {
+      "name": "underwater city",
+      "category": "coming-soon",
+      "available": false,
+      "collabPartner": "Toona"
+    },
     {
       "name": "standard space station",
       "category": "default",
