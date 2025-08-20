@@ -1,6 +1,12 @@
 {
   "species": [
     {
+      "name": "Tuna – sleek aquatic humanoid with iridescent scales, gill slits on neck, webbed hands and feet. Large, expressive eyes adapted for deep space visibility. Bioluminescent patterns along body that pulse with cosmic energy.",
+      "category": "new",
+      "available": true,
+      "collabPartner": "Toona"
+    },
+    {
       "name": "Martian – green phosphorescent skin, large eyes, antennae.",
       "category": "default",
       "available": true
@@ -40,12 +46,6 @@
       "category": "new",
       "available": false,
       "collabPartner": "Moth"
-    },
-    {
-      "name": "Tuna – sleek aquatic humanoid with iridescent scales, gill slits on neck, webbed hands and feet. Large, expressive eyes adapted for deep space visibility. Bioluminescent patterns along body that pulse with cosmic energy.",
-      "category": "new",
-      "available": true,
-      "collabPartner": "Toona"
     }
   ],
 
@@ -309,6 +309,11 @@
   ],
   "weapons": [
     {
+      "name": "ion rapier",
+      "category": "default",
+      "available": true
+    },
+    {
       "name": "oil lamp",
       "category": "new",
       "available": true,
@@ -424,11 +429,7 @@
       "category": "default",
       "available": true
     },
-    {
-      "name": "ion rapier",
-      "category": "default",
-      "available": true
-    },
+  
     {
       "name": "retractable claw",
       "category": "default",
@@ -540,6 +541,11 @@
   ],
   "outfits": [
     {
+      "name": "solar legion uniform",
+      "category": "default",
+      "available": true
+    },
+    {
       "name": "cosmic kevlar tactical armor",
       "category": "default",
       "available": true
@@ -619,11 +625,7 @@
       "category": "default",
       "available": true
     },
-    {
-      "name": "solar legion uniform",
-      "category": "default",
-      "available": true
-    },
+   
     {
       "name": "interspecies diplomat outfit",
       "category": "default",
