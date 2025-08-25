@@ -47,7 +47,7 @@ export function useMintedExplorers() {
     setError(null)
     
     try {
-      const response = await fetch('https://bumblebeed.app.n8n.cloud/webhook/085ed6f0-21f8-4502-9162-76427aa49cd8')
+      const response = await fetch('https://webhook.vortexfdn.xyz/webhook/085ed6f0-21f8-4502-9162-76427aa49cd8')
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
