@@ -109,13 +109,13 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
+                  href="https://www.shadow.so/trade?inputCurrency=0x0000000000000000000000000000000000000000&outputCurrency=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 hover:text-emerald-400 text-sm flex items-center gap-2"
                 >
                   <ExternalLink className="h-4 w-4" />
-                  Buy Vortex Token
+                  Buy on Shadow
                 </a>
               </li>
               <li>
