@@ -38,7 +38,7 @@ export default function Home() {
                   asChild
                 >
                   <Link
-                    href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
+                    href="https://www.shadow.so/trade?inputCurrency=0x0000000000000000000000000000000000000000&outputCurrency=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
                     target="_blank"
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />

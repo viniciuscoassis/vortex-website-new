@@ -17,7 +17,7 @@ const faqItems = [
   {
     question: "How can I buy $VORTEX tokens?",
     answer:
-      "$VORTEX tokens can be purchased on Equalizer Exchange. You'll need to connect your wallet, swap SONIC for $VORTEX, and set an appropriate slippage tolerance (usually 6-7%).",
+      "$VORTEX tokens can be purchased on Shadow Exchange. You'll need to connect your wallet, swap SONIC for $VORTEX, and set an appropriate slippage tolerance (usually 6-7%).",
   },
   {
     question: "What is the total supply of $VORTEX?",
