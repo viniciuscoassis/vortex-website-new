@@ -44,7 +44,7 @@ export function TokenomicsSection() {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-zinc-400">Liquidity</span>
-              <span className="text-white">Equalizer / Shadow (Soon)</span>
+              <span className="text-white">Shadow</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-zinc-400">Sell Tax</span>
@@ -72,11 +72,11 @@ export function TokenomicsSection() {
             asChild
           >
             <Link
-              href="https://equalizer.exchange/swap?fromToken=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE&toToken=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
+              href="https://www.shadow.so/trade?inputCurrency=0x0000000000000000000000000000000000000000&outputCurrency=0xf316A1cB7376021ad52705c1403DF86C7A7A18d0"
               target="_blank"
             >
               <ExternalLink className="mr-2 h-4 w-4" />
-              Buy on Equalizer
+              Buy on Shadow
             </Link>
           </Button>
         </CardContent>
