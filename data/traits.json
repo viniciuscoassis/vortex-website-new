@@ -2,9 +2,20 @@
   "species": [
     {
       "name": "Tuna – sleek aquatic humanoid with iridescent scales, gill slits on neck, webbed hands and feet. Large, expressive eyes adapted for deep space visibility. Bioluminescent patterns along body that pulse with cosmic energy.",
-      "category": "new",
-      "available": true,
+      "category": "old",
+      "available": false,
       "collabPartner": "Toona"
+    },
+    {
+      "name": "Moth – humanoid moth creature covered in fine iridescent fur. Large, feathery antennae and bright, luminescent white eyes. Expansive patterned moth wings.",
+      "category": "old",
+      "available": false,
+      "collabPartner": "Moth"
+    },
+    {
+      "name": "Floranoid – plant-animal hybrid, branches, petals, thorns.",
+      "category": "default",
+      "available": true
     },
     {
       "name": "Martian – green phosphorescent skin, large eyes, antennae.",
@@ -27,11 +38,6 @@
       "available": true
     },
     {
-      "name": "Floranoid – plant-animal hybrid, branches, petals, thorns.",
-      "category": "default",
-      "available": true
-    },
-    {
       "name": "Feline – feline traits, high agility, night vision, pointed ears.",
       "category": "default",
       "available": true
@@ -40,12 +46,6 @@
       "name": "Voidborn – distorted silhouette, living shadow, born near black holes.",
       "category": "default",
       "available": true
-    },
-    {
-      "name": "Moth – humanoid moth creature covered in fine iridescent fur. Large, feathery antennae and bright, luminescent white eyes. Expansive patterned moth wings.",
-      "category": "new",
-      "available": false,
-      "collabPartner": "Moth"
     }
   ],
 
